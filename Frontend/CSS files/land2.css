@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-areas:
+    "a1 a1 a1 a1"
+    "a2 a2 a2 a3";
+}
+
+#header {
+  height: 65px;
+  background-color: red;
+  grid-area: a1;
+}
+
+#card_container {
+  height: 92vh;
+  background-color: blue;
+  grid-area: a2;
+}
+
+#sidebar {
+  height: 92vh;
+  background-color: green;
+  grid-area: a3;
+}
+
+@media (max-width: 600px) {
+  body {
+    margin: 0px;
+    padding: 0px;
+    display: grid;
+    grid-template-areas:
+      "a1 a1 a1 a1"
+      "a2 a2 a2 a2";
+  }
+
+  #header {
+    height: 65px;
+    background-color: red;
+    grid-area: a1;
+  }
+
+  #card_container {
+    height: 92vh;
+    background-color: blue;
+    grid-area: a2;
+  }
+
+  #sidebar {
+    display: none;
+  }
+}
