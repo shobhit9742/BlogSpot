@@ -43,7 +43,10 @@ let fetchData = async () => {
     let res = await fetch(url);
     let data = await res.json();
     appendData(data);
+    isLoading = false;
+    loadingContainer.innerHTML = "";
   } catch (error) {
+    isLoading = false;
     console.log(error);
   }
 };
