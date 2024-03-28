@@ -1,0 +1,103 @@
+/* Global styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Header styles */
+#header {
+  background-color: #FCC017;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#header img {
+  width: 200px;
+  height: auto;
+}
+
+.banner-nav {
+  display: flex;
+  gap: 10px;
+}
+
+.banner-nav div {
+  cursor: pointer;
+}
+
+.accented-button {
+  background-color: black;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* Banner styles */
+#banner {
+  background-color: #FCC017;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.banner-content {
+  max-width: 50%;
+}
+
+.banner-content h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.banner-content h3 {
+  font-size: 1.6rem;
+  color: #292929;
+  margin-bottom: 20px;
+}
+
+/* Main styles */
+#main {
+  padding: 40px;
+}
+
+.post-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.post-card img {
+  width: 80px;
+  height: auto;
+}
+
+.post-card-details {
+  flex: 1;
+}
+
+.post-card-details h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #292929;
+  margin-bottom: 10px;
+}
+
+.post-card-details p {
+  font-size: 1.2rem;
+  color: #787878;
+  margin-bottom: 5px;
+}
+
+/* Footer styles */
+#footer {
+  background-color: #FCC017;
+  padding: 20px;
+  text-align: center;
+}
