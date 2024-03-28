@@ -1,0 +1,358 @@
+body {
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+}
+
+#head {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 1000;
+    height: 90px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+
+.hlast {
+    gap: 10px;
+}
+
+.hbtn1 {
+    border-radius: 30px;
+    border: 0.5px solid black;
+    color: black;
+    width: 80px;
+    height: 40px;
+    background-color: white;
+    margin-right: 10px;
+    margin-top: 3px;
+    cursor: pointer;
+}
+
+.hbtn2 {
+    width: 80px;
+    height: 40px;
+    border-radius: 30px;
+    background-color: #242424;
+    margin-right: 25px;
+    border: 1px solid black;
+    margin-top: 3px;
+    cursor: pointer;
+    color: white;
+}
+
+.secbox {
+    display: flex;
+    border-bottom: 1px solid black;
+    position: relative;
+    top: 60px;
+    height: 100vh;
+}
+
+.sbimgg {
+    height: 430px;
+    /* border-bottom: 0.5px solid black; */
+    background-image: url(../img2.png);
+    background-size: cover;
+    background-position: center;
+}
+
+/* button yello */
+.rt {
+    vertical-align: middle;
+    width: 18px;
+    height: 18px;
+    fill: none;
+    box-sizing: inherit;
+    margin-top: 7px;
+    margin-left: 4px;
+}
+
+.rt1 {
+    vertical-align: middle;
+    width: 35px;
+    height: 35px;
+    fill: none;
+    box-sizing: inherit;
+    margin-left: 42%;
+    margin-top: 30px;
+
+}
+
+.rt>path {
+    fill: rgb(36, 36, 36);
+}
+
+.sbname,
+.sbcon {
+    font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.sbbbi {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-left: 30px;
+    margin-top: 30px;
+}
+
+.sbbb {
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+}
+
+.setgoal {
+    margin-left: 20px;
+    font-family: gt-super, Georgia, Cambria, "Times New Roman", Times, serif;
+    font-weight: normal;
+    font-size: 2.2em;
+    /* margin-top: 25px; */
+}
+
+.sbba {
+    height: 100px;
+}
+
+.ui {
+    margin-top: 25px;
+}
+
+.sbbtn {
+    position: absolute;
+    top: 395px;
+    left: 69%;
+    border-radius: 25px;
+    width: 170px;
+    height: 35px;
+    background-color: #ffc017;
+    font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    border: none;
+}
+
+.sbone {
+    width: 66%;
+    border-right: 1px solid black;
+}
+
+.sbsecond {
+    width: 34%;
+    background-image: linear-gradient(rgba(255, 255, 255, 0) 43.75%, rgb(204, 236, 230) 94.27%), url(&quot;https://miro.medium.com/v2/1*KiLGJfmh-_cRkVwGQtL7PA.png&quot;)
+}
+
+.sbh {
+    margin-top: 100px;
+    margin-left: 25px;
+    font-family: gt-super, Georgia, Cambria, "Times New Roman", Times, serif;
+    font-size: 5rem;
+    font-weight: normal;
+}
+
+.sbpara {
+    margin-top: 37vh;
+    margin-left: 25px;
+    width: 54%;
+    font-size: 1.4em;
+    font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #6e6b6b;
+}
+
+.btnbox {
+    display: flex;
+    margin-left: 25px;
+    gap: 20px;
+    margin-top: 60px;
+}
+
+.btn1,
+.btn2 {
+    width: 130px;
+    height: 45px;
+    border: 2px solid;
+    border-radius: 20px;
+    font-size: 1em;
+}
+
+.btn1 {
+    background-color: #242424;
+    color: white;
+}
+
+.btn2 {
+    border: 1px solid black;
+    color: black;
+    background-color: transparent;
+}
+
+
+/* scrolling part css  */
+.scrolfirst {
+    display: flex;
+    margin-top: 70px;
+    border-bottom: 1px solid black;
+}
+
+.scrollfone {
+    width: 30%;
+}
+
+.positionst {
+    height: auto;
+    position: sticky;
+    top: 100px;
+    z-index: 1;
+}
+
+.scrollfsec {
+    width: 70%;
+    overflow-y: auto;
+}
+
+.scrollhhh {
+    margin-left: 100px;
+    margin-top: 30px;
+    font-size: 3.2em;
+    font-weight: normal;
+}
+
+.scrolppp {
+    font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin-left: 100px;
+    width: 65%;
+    margin-top: -40px;
+    font-size: 1.3em;
+}
+
+/* scroll 2 */
+.scrollfsec2 {
+    width: 70%;
+    margin-top: -10px;
+    border-bottom: 1px solid black;
+
+}
+
+.imgbox {
+    margin-left: 100px;
+}
+
+.scrollfsecccc {
+    width: 70%;
+    overflow-y: auto;
+    display: flex;
+    gap: 30px;
+}
+
+.cardone,
+.cardsecond {
+    width: 30%;
+    height: auto;
+    border: 2px solid;
+    margin-left: 140px;
+}
+
+.cardsecond {
+    margin-left: -0px;
+}
+
+.mediam {
+    text-align: center;
+    font-size: 2em;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.monthdoler {
+    text-align: center;
+    margin-top: -30px;
+    font-weight: normal;
+    font-size: 1.2em;
+}
+
+.scrollinbtn {
+    width: 100%;
+    border-radius: 25px;
+    background-color: #1a8917;
+    color: white;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.memberonly {
+    font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 0.9em;
+}
+
+.line {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid black;
+    line-height: 0.1em;
+    margin: 20px 0;
+}
+
+.line span {
+    background-color: white;
+    padding: 0 10px;
+}
+
+/* color card part css */
+.colorcard {
+    height: 340px;
+    border-bottom: 1px solid black;
+}
+
+.colopara {
+    text-align: center;
+    font-family: gt-super, Georgia, Cambria, "Times New Roman", Times, serif;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 74px;
+    font-size: 70px;
+    padding-top: 80px;
+}
+
+.colobtn {
+    width: 130px;
+    height: 40px;
+    border: none;
+    background-color: black;
+    color: white;
+    border-radius: 25px;
+    font-size: 1em;
+}
+
+.bttt {
+    text-align: center;
+    margin-top: -20px;
+}
+
+/* footer  */
+#footer {
+    display: flex;
+    height: 80px;
+    background-color: white;
+    justify-content: space-between;
+}
+
+.ullist {
+    display: flex;
+    list-style: none;
+    gap: 6px;
+    margin-right: 20px;
+    text-decoration: underline;
+    align-items: center;
+    margin-top: 35px;
+}
+
+.ullist li {
+    font-size: 0.8em;
+}
