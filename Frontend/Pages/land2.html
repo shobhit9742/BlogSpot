@@ -11,11 +11,296 @@
       sizes="any"
     />
     <link rel="stylesheet" href="../CSS files/land2.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
-    <div id="header"></div>
-    <div id="card_container"></div>
-    <div id="sidebar"></div>
+    <!-- Navbar -->
+    <div id="header">
+      <div id="h-left">
+        <div>
+          <img
+            src="../assets/Pink Magenta Simple Milk Tea Logo (1).svg"
+            alt="logo"
+            width="80px"
+          />
+        </div>
+        <div style="align-self: center">
+          <form role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+          </form>
+        </div>
+      </div>
+      <div id="h-right">
+        <div><i class="fa-regular fa-pen-to-square"></i> Write</div>
+        <div><i class="fa-regular fa-bell"></i></div>
+        <div data-bs-toggle="modal" data-bs-target="#signInModal">
+          <i class="fa-regular fa-user"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content  -->
+    <div id="content_section">
+      <!-- Article Content  -->
+      <div id="container">
+        <div class="card_section"></div>
+        <div class="loading-container"></div>
+      </div>
+
+      <!-- Sidebar Content  -->
+      <div id="sidebar_section">
+        <div>
+          <p>Staff Picks</p>
+          <div class="staff_card">
+            <div class="card_img">UserImage</div>
+            <div class="card_author">Ryan Fan in Invisible Illness</div>
+            <p class="card_desc">
+              The Embrace of Sports Gambling Has Gone Too Far
+            </p>
+          </div>
+
+          <div class="staff_card">
+            <div class="card_img">UserImage</div>
+            <div class="card_author">Ryan Fan in Invisible Illness</div>
+            <p class="card_desc">
+              The Embrace of Sports Gambling Has Gone Too Far
+            </p>
+          </div>
+
+          <div class="staff_card">
+            <div class="card_img">UserImage</div>
+            <div class="card_author">Ryan Fan in Invisible Illness</div>
+            <p class="card_desc">
+              The Embrace of Sports Gambling Has Gone Too Far
+            </p>
+          </div>
+
+          <p class="link">See the full list</p>
+        </div>
+        <div><p>Recommended topics</p></div>
+        <div><p>Who to follow</p></div>
+        <div><p>Reading list</p></div>
+      </div>
+    </div>
+
+    <!--SignIn Modal -->
+    <div
+      class="modal fade"
+      id="signInModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5 modal_head" id="exampleModalLabel">
+              Welcome back.
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="signInBtns">
+              <div id="google">
+                <button class="btn button">
+                  <i class="fa-brands fa-google me-3"></i> Sign in with Google
+                </button>
+              </div>
+              <div class="vl"></div>
+
+              <div id="signInForm">
+                <form>
+                  <div class="mb-3">
+                    <label for="user_email" class="form-label"
+                      >Email address</label
+                    >
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="user_email"
+                      aria-describedby="emailHelp"
+                    />
+                    <div id="emailHelp" class="form-text">
+                      We'll never share your email with anyone else.
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="user_pwd" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="user_pwd" />
+                  </div>
+
+                  <button
+                    type="submit"
+                    class="btn btn-outline-secondary"
+                    id="submit_btn"
+                  >
+                    Submit
+                  </button>
+                </form>
+              </div>
+            </div>
+            <div class="modal_footer">
+              <div>
+                <p>
+                  No account ?
+                  <a
+                    href="#"
+                    id="signUp"
+                    data-bs-toggle="modal"
+                    data-bs-target="#signUpModal"
+                    >Create One</a
+                  >
+                </p>
+              </div>
+              <div>
+                <p class="grey">
+                  Forgot email or trouble signing in?
+                  <a href="#" class="grey">Get help.</a>
+                </p>
+              </div>
+              <div class="grey">
+                Click “Sign in” to agree to Medium’s
+                <a href="#" class="grey">Terms of Service</a> and acknowledge
+                that <br />
+                Medium’s
+                <a href="#" class="grey">Privacy Policy</a>
+                applies to you.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SignUp Modal -->
+    <div
+      class="modal fade"
+      id="signUpModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5 modal_head" id="signUpModalLabel">
+              Join BlogSpot.
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="signInBtns">
+              <div>
+                <button class="btn button">
+                  <i class="fa-brands fa-google me-3"></i> Sign in with Google
+                </button>
+              </div>
+              <div class="vl2"></div>
+
+              <div id="signUpForm">
+                <form>
+                  <div class="mb-3">
+                    <label for="fName" class="form-label">First Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="fName"
+                      aria-describedby="emailHelp"
+                    />
+                    <label for="lName" class="form-label">Last Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="lName"
+                      aria-describedby="emailHelp"
+                    />
+                    <label for="signUp_email" class="form-label"
+                      >Email address</label
+                    >
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="signUp_email"
+                      aria-describedby="emailHelp"
+                    />
+                    <div id="emailhelp" class="form-text">
+                      We'll never share your email with anyone else.
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="signUp_pwd" class="form-label">Password</label>
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="signUp_pwd"
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    class="btn btn-outline-secondary"
+                    id="signUp_submit_btn"
+                  >
+                    Submit
+                  </button>
+                </form>
+              </div>
+            </div>
+            <div class="modal_footer">
+              <div>
+                <p>
+                  Already have an account?
+                  <a
+                    href="#"
+                    id="signUp"
+                    data-bs-toggle="modal"
+                    data-bs-target="#signInModal"
+                    >Sign In</a
+                  >
+                </p>
+              </div>
+              <div class="grey">
+                Click “Sign up” to agree to Medium’s
+                <a href="#" class="grey">Terms of Service</a> and acknowledge
+                that <br />
+                Medium’s
+                <a href="#" class="grey">Privacy Policy</a>
+                applies to you.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
   <script src="../JS files/land2.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://kit.fontawesome.com/6e1cf5e47b.js"
+    crossorigin="anonymous"
+  ></script>
 </html>
