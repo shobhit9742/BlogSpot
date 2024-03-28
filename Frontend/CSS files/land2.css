@@ -1,10 +1,6 @@
 body {
   margin: 0;
   padding: 0;
-  display: grid;
-  grid-template-areas:
-    "a1 a1 a1 a1"
-    "a2 a2 a2 a3";
 }
 
 #header {
@@ -14,39 +10,32 @@ body {
 }
 
 #card_container {
-  height: 92vh;
-  background-color: blue;
-  grid-area: a2;
+  height: 100px;
+  flex-grow: 2;
+  display: grid;
+  justify-content: center;
+}
+
+#content {
+  display: flex;
+  position: relative;
 }
 
 #sidebar {
-  height: 92vh;
+  height: 100vh;
+  /* width: 100px; */
   background-color: green;
-  grid-area: a3;
+  position: sticky;
+  top: 0px;
+  left: 200px;
 }
 
-@media (max-width: 600px) {
-  body {
-    margin: 0px;
-    padding: 0px;
-    display: grid;
-    grid-template-areas:
-      "a1 a1 a1 a1"
-      "a2 a2 a2 a2";
-  }
+.card {
+  border: 1px solid red;
+  width: 400px;
+}
 
-  #header {
-    height: 65px;
-    background-color: red;
-    grid-area: a1;
-  }
-
-  #card_container {
-    height: 92vh;
-    background-color: blue;
-    grid-area: a2;
-  }
-
+@media (max-width: 900px) {
   #sidebar {
     display: none;
   }
