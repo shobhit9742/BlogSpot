@@ -53,25 +53,78 @@ let fetchData = async () => {
 
 let appendData = (data) => {
   data.forEach((el) => {
-    console.log(el);
-    const { name_title, author_name, profile_Img } = el;
-    card(name_title, author_name, profile_Img);
+    // console.log(el);
+    let card = createCard(el);
+    resultContainer.append(card);
   });
 };
 
-let card = (name_title, author_name, profile_Img) => {
-  let card = document.createElement("div");
-  let title = document.createElement("h1");
-  let author = document.createElement("p");
-  let profile_img = document.createElement("img");
+function createCard(data) {
+  let blogCard = document.createElement("div");
+  blogCard.className = "card";
 
-  title.textContent = name_title;
-  author.textContent = author_name;
-  profile_img.src = profile_Img;
+  let allText = document.createElement("div");
+  allText.className = "ProImgText";
+  let imgAllText = document.createElement("div");
+  imgAllText.className = "imageAllText";
 
-  card.append(title, author, profile_img);
-  resultContainer.append(card);
-};
+  let img = document.createElement("img");
+  img.src = data.profile_Img;
+  img.style.width = "30px";
+  img.style.height = "30px";
+  img.style.marginRight = "10px";
+  img.style.borderRadius = "6px";
+
+  let name = document.createElement("p");
+  name.innerText = data.author_name;
+  name.style.fontFamily = "sohne, Helvetica Neue, Helvetica, Arial, sans-serif";
+  name.style.fontSize = "15.5px";
+
+  let name_title = document.createElement("p");
+  name_title.innerText = data.name_title;
+  name_title.style.fontSize = "15.5px";
+
+  let title = document.createElement("h3");
+  title.innerText = data.title;
+  title.style.marginTop = "-2px";
+  title.style.fontFamily =
+    "sohne, Helvetica Neue, Helvetica, Arial, sans-serif";
+  title.style.fontSize = "18px";
+  let description = document.createElement("p");
+  description.innerText = data.description;
+  description.style.marginTop = "-10px";
+  description.style.color = "Gray";
+  description.style.fontSize = "15.5px";
+
+  let date_pub = document.createElement("span");
+  date_pub.innerText = data.date_pub;
+  date_pub.style.color = "Gray";
+  date_pub.style.marginRight = "10px";
+  date_pub.style.fontSize = "15px";
+
+  let reading_time = document.createElement("span");
+  reading_time.innerText = data.reading_time;
+  reading_time.style.color = "Gray";
+  reading_time.style.marginRight = "10px";
+  reading_time.style.fontSize = "15px";
+
+  let tag = document.createElement("span");
+  tag.innerText = data.tag;
+  tag.style.color = "Gray";
+  tag.style.marginRight = "10px";
+  tag.style.fontSize = "15px";
+
+  let img_src = document.createElement("img");
+  img_src.src = data.img_src;
+  img_src.style.width = "220px";
+  // img_src.style.height = "150px"
+
+  imgAllText.append(img, name, name_title);
+  allText.append(imgAllText, title, description, date_pub, reading_time, tag);
+  blogCard.append(allText, img_src);
+
+  return blogCard;
+}
 
 container.onscroll = () => {
   if (isLoading) return;

@@ -52,7 +52,7 @@ body {
   color: grey;
 }
 
-#signUp {
+.signUp {
   color: green;
   text-decoration: none;
   font-weight: bold;
@@ -72,19 +72,13 @@ body {
   background-color: #fff;
 }
 
-.card_section {
-  /* width: 70%; */
-  /* height: 250vh; */
-  border: 3px solid green;
-}
-
 #sidebar_section {
   width: 40%;
   height: 90vh;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  border: 3px solid red;
+  /* border: 3px solid red; */
 }
 
 .staff_card {
@@ -109,7 +103,7 @@ body {
 }
 
 .link {
-  color: green;
+  /* color: green; */
   cursor: pointer;
   font-size: 12px;
 }
@@ -128,10 +122,31 @@ body {
 #container {
   background-color: white;
   width: 100%;
-  border: 2px solid black;
-  /* position: fixed; */
-  /* left: 50%; */
-  /* transform: translateX(-50%); */
+  /* border: 2px solid black; */
   padding: 30px;
-  /* overflow-y: scroll; */
+}
+
+.card {
+  width: 90%;
+  /* height: 200px; */
+  margin-left: 70px;
+  padding: 10px;
+  /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+  display: flex;
+  margin-top: 20px;
+}
+
+.ProImgText {
+  width: 70%;
+  /* border: 1px solid skyblue; */
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.imageAllText {
+  width: 100%;
+  /* border: 1px solid rgb(0, 255, 13); */
+  display: flex;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  gap: 5px;
 }
