@@ -9,7 +9,7 @@ let page = 1;
 
 async function fetchData() {
     try {
-        let res = await fetch('https://tech-tatva-2345-1.onrender.com/blog_posts');
+        let res = await fetch('https://tech-tatva-2345-1.onrender.com/blog_posts?_limit=8');
         let data = await res.json();
         console.log(data);
         appendData(data)
@@ -24,7 +24,6 @@ fetchData()
 //font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 //create card
-
 function createCard(data) {
     let blogCard = document.createElement("div")
     blogCard.className = "card";
@@ -45,8 +44,8 @@ function createCard(data) {
     name.innerText = data.author_name;
     name.style.fontFamily = "sohne, Helvetica Neue, Helvetica, Arial, sans-serif";
     name.style.fontSize = "15px"
-    // let by = document.createElement("p")
-    // by.innerText = data.by2;
+    let by = document.createElement("p")
+    by.innerText = data.by2;
 
     let name_title = document.createElement("p");
     name_title.innerText = data.name_title;
@@ -81,13 +80,14 @@ function createCard(data) {
     reading_time.style.marginRight = "10px"
     reading_time.style.fontSize = "14px"
 
-    // let by8 = document.createElement("span");
-    // by8.innerText = data.by8;
+    let by_8 = document.createElement("span");
+    by_8.innerText = data.by8;
 
     let tag = document.createElement("button");
     tag.innerText = data.tag;
     tag.style.color = "Gray"
     tag.style.marginRight = "10px"
+    tag.style.marginLeft = "5px"
     tag.style.fontSize = "14px"
     tag.style.paddingLeft = "10px"
     tag.style.paddingRight = "10px"
@@ -100,7 +100,6 @@ function createCard(data) {
     logoBox.className = "logoIcon"
     let icon = document.createElement("img");
     icon.src = "/Tech-Tatva-2345/image/bookmark.svg";
-    // icon.style.marginLeft = "225px"
     icon.style.cursor = "pointer";
 
     icon.addEventListener("click", function () {
@@ -111,7 +110,6 @@ function createCard(data) {
         icon.src = "/Tech-Tatva-2345/image/saved.svg";
         icon.style.width = "28px";
         icon.style.height = "28px";
-        // icon.style.marginLeft = "225px";
         icon.removeEventListener("click", this);
     });
 
@@ -121,10 +119,10 @@ function createCard(data) {
     img_src.style.marginLeft = "15px"
 
 
-    dateBox.append(date_pub, reading_time, tag)
+    dateBox.append(date_pub, reading_time, by_8, tag)
     logoBox.append(icon)
     dateLogoBox.append(dateBox, logoBox)
-    imgAllText.append(img, name, name_title)
+    imgAllText.append(img, name, by, name_title)
     allText.append(imgAllText, title, description, dateLogoBox)
     blogCard.append(allText, img_src);
 
@@ -132,14 +130,14 @@ function createCard(data) {
     name.addEventListener("mouseenter", () => {
         let tooltipCard = document.createElement("div");
         tooltipCard.className = "tooltip-card";
-        tooltipCard.style.backgroundColor = "white"; // White background
+        tooltipCard.style.backgroundColor = "white";
         tooltipCard.style.position = "absolute";
         tooltipCard.style.left = `${name.offsetLeft + name.offsetWidth + 10}px`; // Position to the right of the name
         tooltipCard.style.top = `${name.offsetTop}px`;
 
-        let cardImage = document.createElement("img"); // Image for the detailed card
+        let cardImage = document.createElement("img");
         cardImage.src = data.profile_Img;
-        cardImage.style.width = "10%"; // Ensure the image fills the container
+        cardImage.style.width = "10%";
         cardImage.style.borderRadius = "5px"
         let userInfo = document.createElement("div");
         userInfo.className = "user-info";
@@ -154,12 +152,12 @@ function createCard(data) {
         occupation.style.fontFamily = "sohne, Helvetica Neue, Helvetica, Arial, sans-serif";
         occupation.style.fontSize = "15px"
 
-        let separator = document.createElement("hr"); // Separator line
+        let separator = document.createElement("hr");
         separator.style.color = "lightGray"
 
-        let followers = document.createElement("span"); // Use span instead of p for inline elements
+        let followers = document.createElement("span");
         followers.innerText = "72 Followers";
-        followers.style.marginRight = "125px"; // Add margin between followers and button
+        followers.style.marginRight = "125px";
         followers.style.fontFamily = "sohne, Helvetica Neue, Helvetica, Arial, sans-serif";
         followers.style.fontSize = "15px"
         let followButton = document.createElement("button");
@@ -172,7 +170,7 @@ function createCard(data) {
         followButton.style.fontWeight = "600"
         followButton.style.backgroundColor = "green"
 
-        userInfo.append(userName, occupation, separator, followers, followButton); // Append followers and button in the same line
+        userInfo.append(userName, occupation, separator, followers, followButton);
         tooltipCard.appendChild(cardImage); // Append image to the detailed card
         tooltipCard.appendChild(userInfo);
 
@@ -203,8 +201,8 @@ window.addEventListener("scroll", () => {
     let scrollHeight = document.documentElement.scrollHeight;
     let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
 
-    if (scrollTop + clientHeight >= scrollHeight * 0.4 && flag) {
-        console.log("Scrolled 40%");
+    if (scrollTop + clientHeight >= scrollHeight * 0.8 && flag) {
+        console.log("Scrolled 80%");
         page++;
         fetchData(page);
         flag = false;
@@ -212,9 +210,7 @@ window.addEventListener("scroll", () => {
 });
 
 
-
 /////////////  M  ///////////////
-
 const animatedMs = document.querySelectorAll('.animated');
 
 function animateMs() {
@@ -232,32 +228,30 @@ function animateMs() {
             if (Math.random() < 0.5) {
                 m.style.display = 'inline-block'; // Show the 'M'
             } else {
-                m.style.display = 'none'; // Hide the 'M'
+                m.style.display = 'none';
             }
         });
-    }, 800); // Adjust animation speed as needed (1000ms = 1 second)
+    }, 600);
 }
 
 // Start animation
 animateMs();
 
 
-////////////// Trending On Medium
-
-/////
+///// Trending On Medium
 
 let blog_posts = [
     {
         "id": "1",
         "profile_Img": "https://miro.medium.com/v2/resize:fill:40:40/1*KCdWeLHgIFfw5gv7fX97Eg.jpeg",
         "author_name": "Ryan Fan",
-        "by 2": "in",
+        "by2": "in",
         "name_title": "Invisible Illness",
         "title": "The Embrace of Sports Gambling Has Gone Too Far",
         "description": "Why young men, like myself, are particularly susceptible to sports gambling addiction",
         "date_pub": "Mar 13, 2024",
         "reading_time": "7 min read",
-        "by 8": "·",
+        "by8": "·",
         "tag": "Gambling",
         "img_src": "https://miro.medium.com/v2/da:true/resize:fill:250:168/0*axOYB0WNLkM2gS0q"
     },
@@ -265,13 +259,13 @@ let blog_posts = [
         "id": "2",
         "profile_Img": "https://miro.medium.com/v2/resize:fill:40:40/1*KRWzAtSc4v6NifDIZiBrUw.png",
         "author_name": "Jaime Martínez Bowness",
-        "by 2": "in",
+        "by2": "in",
         "name_title": "Work City",
         "title": "When Honesty Hurts: Between Authenticity and “Sincericide” at Work",
         "description": "A personal experience of how too much honesty can backfire, and a good way to navigate the thin line between being sincere and being…",
         "date_pub": "Mar 15, 2024",
         "reading_time": "5 min read",
-        "by 8": "·",
+        "by8": "·",
         "tag": "Leadership",
         "img_src": "https://miro.medium.com/v2/da:true/resize:fill:250:168/0*hZEpd7IuvYid9pUQ"
     },
@@ -279,13 +273,13 @@ let blog_posts = [
         "id": "3",
         "profile_Img": "https://miro.medium.com/v2/resize:fill:40:40/1*tlSJZopCPn4cndd9KrDLPg.png",
         "author_name": "Kathleen Murphy",
-        "by 2": "in",
+        "by2": "in",
         "name_title": "Wise & Well",
         "title": "The Brain Science Behind Aging and Forgetting",
         "description": "Are younger people smarter? Are older people wiser? Living longer affects the brain, but exactly how may surprise you",
         "date_pub": "Mar 8, 2024",
         "reading_time": "5 min read",
-        "by 8": "·",
+        "by8": "·",
         "tag": "Health",
         "img_src": "https://miro.medium.com/v2/resize:fill:250:168/1*TYNsHKGvELRsgalw4UwIdg.png"
     },
@@ -293,13 +287,13 @@ let blog_posts = [
         "id": "4",
         "profile_Img": "https://miro.medium.com/v2/resize:fill:40:40/1*NYalSuFa9XrlE-kog6De_Q.png",
         "author_name": "Shin Jie Yong, MSc (Res)",
-        "by 2": "in",
+        "by2": "in",
         "name_title": "Microbial Instincts",
         "title": "My Friend Won the US$100,000 Debate on the Origin of COVID-19",
         "description": "An achievement that we hope will make a greater impact.",
         "date_pub": "Mar 17, 2024",
         "reading_time": "16 min read",
-        "by 8": "·",
+        "by8": "·",
         "tag": "Covid-19",
         "img_src": "https://miro.medium.com/v2/resize:fill:250:168/1*7CxK9riK2X7oJDEWKdW7CQ.png"
     },
@@ -307,13 +301,13 @@ let blog_posts = [
         "id": "5",
         "profile_Img": "https://miro.medium.com/v2/resize:fill:40:40/1*sHhtYhaCe2Uc3IU0IgKwIQ.png",
         "author_name": "Medium Staff",
-        "by 2": "in",
+        "by2": "in",
         "name_title": "The Medium Blog",
         "title": "It happened on Medium: February roundup",
         "description": "Last month’s most-read stories, most-highlighted sentences, and stories by writers new to Medium",
         "date_pub": "Mar 15, 2024",
         "reading_time": "7 min read",
-        "by 8": "·",
+        "by8": "·",
         "tag": "Medium",
         "img_src": "https://miro.medium.com/v2/resize:fill:250:168/1*MnDr70SEowwqW2r_08-E_w.png"
     },
@@ -321,22 +315,21 @@ let blog_posts = [
         "id": "6",
         "profile_Img": "https://miro.medium.com/v2/resize:fill:40:40/1*_-1HvssC9IZ3OOgPIi3yfw.png",
         "author_name": "Maria Garcia",
-        "by 2": "in",
+        "by2": "in",
         "name_title": "A-Culturated",
         "title": "The Infinite Shades of Saudade Blue",
         "description": "Saudade isn’t just a word, it’s a color, and a feeling",
         "date_pub": "Feb 12, 2024",
         "reading_time": "4 min read",
-        "by 8": "·",
+        "by8": "·",
         "tag": "Portugal",
         "img_src": "https://miro.medium.com/v2/resize:fill:250:168/1*-FBZJNyicWLAvPc_vBm8og.jpeg"
     }
 ]
-// display the details on the browser.
-let trendingContainer = document.getElementById("trendingContainer");
 
+let trendingContainer = document.getElementById("trendingContainer");
+// display the details on the browser.
 function displayData(data) {
-    // trendingContainer.innerHTML = '';
     data.forEach(element => {
         let card = createTrendingCard(element);
         trendingContainer.append(card);
@@ -373,11 +366,15 @@ function createTrendingCard(data) {
 
     let name = document.createElement("span");
     name.innerText = data.author_name;
-    name.style.marginLeft = "10px"; // Add margin to separate image and name
+    name.style.marginLeft = "10px";
     name.style.fontFamily = "sohne, Helvetica Neue, Helvetica, Arial, sans-serif";
     name.style.fontSize = "15px"
-    // let by = document.createElement("p")
-    // by.innerText = data.by2;
+    let by = document.createElement("p")
+    by.innerText = data.by2;
+    by.style.marginLeft = "3px"
+    by.style.marginRight = "4px"
+    by.style.fontFamily = "sohne, Helvetica Neue, Helvetica, Arial, sans-serif";
+    by.style.fontSize = "15px"
 
     let name_title = document.createElement("span");
     name_title.innerText = data.name_title;
@@ -397,6 +394,11 @@ function createTrendingCard(data) {
     date_pub.style.marginTop = "-18px"
     date_pub.style.fontFamily = "sohne, Helvetica Neue, Helvetica, Arial, sans-serif";
 
+    let by_8 = document.createElement("span");
+    by_8.innerText = data.by8;
+    by_8.style.marginRight = "3px"
+    by_8.style.fontSize = "18px"
+    by_8.style.color = "Gray"
 
     let reading_time = document.createElement("span")
     reading_time.innerText = data.reading_time;
@@ -408,8 +410,8 @@ function createTrendingCard(data) {
 
 
     imgDiv.append(img);
-    imgName.append(imgDiv, name, name_title);
-    idText.append(imgName, title, date_pub, reading_time);
+    imgName.append(imgDiv, name, by, name_title);
+    idText.append(imgName, title, date_pub, by_8, reading_time);
     blogCard.append(id, idText);
 
     // Tooltip
