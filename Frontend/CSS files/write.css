@@ -1,0 +1,197 @@
+body {
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+}
+
+#head {
+    width: 100%;
+    background-color: white;
+    height: 90px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+
+.hlast {
+    gap: 10px;
+}
+
+.hbtn1 {
+    border-radius: 30px;
+    border: 0.5px solid black;
+    color: black;
+    width: 80px;
+    height: 40px;
+    background-color: white;
+    margin-right: 10px;
+    margin-top: 3px;
+    cursor: pointer;
+}
+
+.hbtn2 {
+    width: 80px;
+    height: 40px;
+    border-radius: 30px;
+    background-color: #242424;
+    margin-right: 25px;
+    border: 1px solid black;
+    margin-top: 3px;
+    cursor: pointer;
+    color: white;
+}
+
+.bodyimg {
+    height: 100vh;
+    background-color: #34aa45;
+    background-image: url(../piramid.png);
+    background-position: calc(40% + 50vh) center; 
+    background-size: 90%;
+    background-repeat: no-repeat;
+}
+
+.one
+{
+    display: flex;
+    flex-direction: column;
+}
+.inbox {
+    font-family: gt-super, Georgia, Cambria, "Times New Roman", Times, serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 7rem;
+    color:rgb(255, 255, 255);
+    size: 120px;
+    line-height: 120px;
+    position: relative;
+    width: 60%;
+    margin-left: 30px;
+    margin-top: 70px;
+}
+.inboxpara
+{
+    width: 20%;
+    margin-left: 30px;
+    color: rgb(255, 255, 255);
+    font-size: 1.1em;
+    margin-top: 60px;
+    font-family: "Times New Roman";
+}
+.btninbox
+{
+    width: 120px;
+    height: 40px;
+    border: none;
+    background-color:black;
+    border-radius: 25px;
+    color: white;
+    font-size: 1em;
+    margin-top: 25px;
+    margin-left: 25px;
+}
+
+/* content box 1 */
+.conentbox1
+{
+    display: flex;
+    height: 90vh;
+}
+.conentbox2
+{
+    height: 65vh;
+    border-bottom: 1px solid;
+}
+.ct1
+{
+    margin-left: 25px;
+    margin-top: 50px;
+    font-size: 5em;
+    width: 50%;
+    font-weight: normal;
+}
+
+.ct2
+{
+    margin-left: 25px;
+    font-size: 1.5em;
+    width: 50%;
+}
+.cto2in
+{
+    margin-top: 50px;
+    margin-left: -180px;
+    margin-right: 70px;
+}
+.copp1
+{
+    font-weight: bold;
+    width: 40%;
+    font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+}
+.copp2
+{
+    color: #7d7d7c;
+    width: 80%;
+    margin-top: -10px;
+    font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.cto2in22
+{
+    width: 60%;
+    margin-left: 370px;
+    margin-top: 50px;
+}
+.botbtn1:hover {
+    background-color: #242424;
+    color: white;
+}
+
+.botbtn1 {
+    background-color: white;
+    color: #242424;
+    cursor: pointer;
+    height: 250px;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    border-right: none;
+    border-left: none;
+    width: 100%;
+}
+
+.btnintext1 {
+    font-size: 4.5rem;
+    text-align: center;
+    margin-left: 30px;
+    font-family: gt-super, Georgia, Cambria, "Times New Roman", Times, serif;
+    font-weight: normal;
+    margin-top: 50px;
+}
+.blkarrow
+{
+    font-size: 100px !important; 
+    margin-top: 50px;
+    margin-right: 50px;
+}
+
+
+/* accordin part  */
+.accordin
+{
+    background-color: #242424;
+    margin-top: -53px;
+}
+.inacco
+{
+    width: 95%;
+    margin-left: 3%;
+}
+.acch1
+{
+    font-size: 5em;
+    font-family: gt-super, Georgia, Cambria, "Times New Roman", Times, serif;
+    color: white;
+    font-weight: normal;
+}
