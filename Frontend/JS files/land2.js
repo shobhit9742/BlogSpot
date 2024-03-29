@@ -36,8 +36,10 @@ let fetchData = async () => {
   try {
     if (isLoading) return;
     isLoading = true;
-    loadingContainer.innerHTML = `<div class="spinner-border" role="status">
+    loadingContainer.innerHTML = `<div class="d-flex justify-content-center">
+                                    <div class="spinner-grow text-secondary" role="status">
                                       <span class="visually-hidden">Loading...</span>
+                                    </div>
                                   </div>`;
 
     let res = await fetch(url);
@@ -160,4 +162,26 @@ function parseJwt(token) {
 function handleLogin(response) {
   signIn(parseJwt(response));
   console.log(response.credential);
+}
+
+//Debouncing for search input
+const searchInput = document.getElementById("searchInput");
+
+let id;
+function debounce(func, delay) {
+  if (id) {
+    clearTimeout(id);
+  }
+
+  id = setTimeout(() => {
+    func();
+  }, delay);
+}
+
+searchInput.addEventListener("input", () => {
+  debounce(fetchdata, 1000);
+});
+
+async function fetchdata() {
+  console.log(searchInput.value);
 }
