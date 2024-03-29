@@ -27,6 +27,7 @@ signUpSubmit.addEventListener("click", (e) => {
 // Fetch and populate articles
 let url = "https://tech-tatva-2345-1.onrender.com/blog_posts";
 let pageNum = 1;
+flag = true;
 let isLoading = false;
 let container = document.querySelector("#container");
 let resultContainer = document.querySelector(".card_section");
@@ -45,6 +46,7 @@ let fetchData = async () => {
     let res = await fetch(url);
     let data = await res.json();
     appendData(data);
+    flag = true;
     isLoading = false;
     loadingContainer.innerHTML = "";
   } catch (error) {
@@ -128,18 +130,6 @@ function createCard(data) {
   return blogCard;
 }
 
-container.onscroll = () => {
-  if (isLoading) return;
-
-  if (
-    Math.ceil(container.clientHeight + container.scrollTop) >=
-    container.scrollHeight
-  ) {
-    pageNum++;
-    fetchData();
-  }
-};
-
 fetchData();
 
 // Parsing the JWT
@@ -185,3 +175,16 @@ searchInput.addEventListener("input", () => {
 async function fetchdata() {
   console.log(searchInput.value);
 }
+
+window.addEventListener("scroll", () => {
+  let clientHeight = document.documentElement.clientHeight;
+  let scrollHeight = document.documentElement.scrollHeight;
+  let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+
+  if (scrollTop + clientHeight >= scrollHeight * 0.5 && flag) {
+    console.log("Scrolled 50%");
+    pageNum++;
+    fetchData(pageNum);
+    flag = false;
+  }
+});
