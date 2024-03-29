@@ -475,6 +475,52 @@ li a {
     right: 0px;
 }
 
+.fixed:nth-child(62) {
+    bottom: 20px;
+    right: 250px;
+}
+
+.fixed:nth-child(63) {
+    bottom: 3px;
+    right: 200px;
+}
+
+.fixed:nth-child(64) {
+    bottom: -5px;
+    right: 130px;
+}
+
+.fixed:nth-child(65) {
+    bottom: 80px;
+    right: 230px;
+}
+
+.fixed:nth-child(66) {
+    top: 150px;
+    right: 390px;
+}
+
+.fixed:nth-child(67) {
+    bottom: 350px;
+    right: 110px;
+}
+
+.fixed:nth-child(68) {
+    bottom: 120px;
+    right: 250px;
+
+}
+
+.fixed:nth-child(69) {
+    bottom: 60px;
+    right: 50px;
+}
+
+.fixed:nth-child(70) {
+    bottom: 150px;
+    right: 500px;
+}
+
 .animated {
     position: absolute;
     display: none;
