@@ -96,3 +96,85 @@ function appendData(data) {
     container.append(table);
   });
 }
+
+// Add pagination buttons and event listeners on those buttons */
+
+function paginate(totalPages) {
+  let pagWrapper = document.getElementById("pag-wrapper");
+  pagWrapper.innerHTML = "";
+
+  for (let i = 1; i <= totalPages; i++) {
+    let pagBtn = document.createElement("button");
+    pagBtn.innerText = `${i}`;
+    pagBtn.classList.add("btn", "btn-secondary");
+    pagWrapper.append(pagBtn);
+
+    pagBtn.addEventListener("click", () => {
+      getProductsData(
+        `https://tech-tatva-2345-1.onrender.com/blog_posts?_page=${i}&_limit=10`,
+        queryParam
+      );
+    });
+  }
+}
+
+/* Search User */
+
+let searchInput = document.getElementById("search-input");
+let searchButton = document.getElementById("search-button");
+
+searchButton.addEventListener("click", () => {
+  let searchQuery = searchInput.value;
+  getProductsData(
+    `https://tech-tatva-2345-1.onrender.com/blog_posts?q=${searchQuery}&_page=1&_limit=10`,
+    queryParam
+  );
+});
+
+let queryParam = null;
+
+/* Edit a Post */
+
+async function editProductFunc(obj, id) {
+  try {
+    let response = await fetch(
+      `https://tech-tatva-2345-1.onrender.com/blog_posts/${id}`,
+      {
+        method: "PATCH",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(obj),
+      }
+    );
+
+    getProductsData(
+      `https://tech-tatva-2345-1.onrender.com/blog_posts?_page=1&_limit=10`,
+      queryParam
+    );
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+/* Delete an item */
+
+async function deleteData(id) {
+  try {
+    let response = await fetch(
+      `https://tech-tatva-2345-1.onrender.com/blog_posts/${id}`,
+      {
+        method: "DELETE",
+      }
+    );
+
+    let data = await response.json();
+    console.log(data);
+    getProductsData(
+      `https://tech-tatva-2345-1.onrender.com/blog_posts?_page=1&_limit=10`,
+      queryParam
+    );
+  } catch (error) {
+    console.log(error);
+  }
+}
