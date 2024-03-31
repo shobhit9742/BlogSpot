@@ -1,12 +1,10 @@
 let firstCardsContainer = document.getElementById("container2");
 let saved = document.getElementById("saved");
 
-
-
-
 let flag = true;
 let page = 1;
 
+//fetch data
 async function fetchData() {
     try {
         let res = await fetch('https://tech-tatva-2345-1.onrender.com/blog_posts?_limit=8');
@@ -99,7 +97,9 @@ function createCard(data) {
     let logoBox = document.createElement("div")
     logoBox.className = "logoIcon"
     let icon = document.createElement("img");
-    icon.src = "/Tech-Tatva-2345/image/bookmark.svg";
+
+    icon.src = "/Tech-Tatva-2345/Frontend/bookmark.svg";
+
     icon.style.cursor = "pointer";
 
     icon.addEventListener("click", function () {
@@ -107,7 +107,9 @@ function createCard(data) {
         savedData.push(data);
         localStorage.setItem("savedData", JSON.stringify(savedData));
 
-        icon.src = "/Tech-Tatva-2345/image/saved.svg";
+
+        icon.src = "/Tech-Tatva-2345/Frontend/saved.svg";
+
         icon.style.width = "28px";
         icon.style.height = "28px";
         icon.removeEventListener("click", this);
