@@ -1,4 +1,226 @@
 {
+  "users": [
+    {
+      "id": "1",
+      "profile_Img": "https://miro.medium.com/v2/resize:fill:40:40/1*KRWzAtSc4v6NifDIZiBrUw.png",
+      "first_name": "Lockwood",
+      "last_name": "Corneil",
+      "email": "lcorneil0@vk.com",
+      "gender": "Male",
+      "contact_num": "39-073-1781",
+      "num_post": "42",
+      "tag": "Marlite Panels (FED)"
+    },
+    {
+      "id": "2",
+      "profile_Img": "https://miro.medium.com/v2/resize:fill:40:40/1*KCdWeLHgIFfw5gv7fX97Eg.jpeg",
+      "first_name": "Ad",
+      "last_name": "Corr",
+      "email": "acorr1@ask.com",
+      "gender": "Male",
+      "contact_num": "06-987-6159",
+      "num_post": "12",
+      "tag": "Roofing (Metal)"
+    },
+    {
+      "id": "3",
+      "profile_Img": "https://miro.medium.com/v2/resize:fill:40:40/1*tlSJZopCPn4cndd9KrDLPg.png",
+      "first_name": "Wilfred",
+      "last_name": "Perview",
+      "email": "wperview2@multiply.com",
+      "gender": "Male",
+      "contact_num": "75-363-3532",
+      "num_post": "24",
+      "tag": "Doors, Frames & Hardware"
+    },
+    {
+      "id": "4",
+      "profile_Img": "https://miro.medium.com/v2/resize:fill:40:40/1*NYalSuFa9XrlE-kog6De_Q.png",
+      "first_name": "Lissa",
+      "last_name": "Valente",
+      "email": "lvalente3@uiuc.edu",
+      "gender": "Female",
+      "contact_num": "04-986-2089",
+      "num_post": "51",
+      "tag": "Structural and Misc Steel (Fabrication)"
+    },
+    {
+      "id": "5",
+      "profile_Img": "https://miro.medium.com/v2/resize:fill:40:40/1*sHhtYhaCe2Uc3IU0IgKwIQ.png",
+      "first_name": "Chauncey",
+      "last_name": "Haily",
+      "email": "chaily4@cbslocal.com",
+      "gender": "Male",
+      "contact_num": "25-006-6633",
+      "num_post": "4",
+      "tag": "Structural & Misc Steel Erection"
+    },
+    {
+      "id": "6",
+      "profile_Img": "https://miro.medium.com/v2/resize:fill:40:40/1*_-1HvssC9IZ3OOgPIi3yfw.png",
+      "first_name": "Myriam",
+      "last_name": "Grisbrook",
+      "email": "mgrisbrook5@merriam-webster.com",
+      "gender": "Female",
+      "contact_num": "00-934-2332",
+      "num_post": "25",
+      "tag": "RF Shielding"
+    },
+    {
+      "id": "7",
+      "profile_Img": "https://miro.medium.com/v2/resize:fill:25:25/1*nzogy1uI36Py2Q7U3s4QYQ.png",
+      "first_name": "Ewell",
+      "last_name": "Towner",
+      "email": "etowner6@yahoo.com",
+      "gender": "Polygender",
+      "contact_num": "46-571-5732",
+      "num_post": "2",
+      "tag": "Epoxy Flooring"
+    },
+    {
+      "id": "8",
+      "profile_Img": "https://miro.medium.com/v2/resize:fill:25:25/1*4Sybq8pTkkfjqANAw9SiRA.jpeg",
+      "first_name": "Waldemar",
+      "last_name": "Malsher",
+      "email": "wmalsher7@walmart.com",
+      "gender": "Male",
+      "contact_num": "59-419-8993",
+      "num_post": "54",
+      "tag": "Marlite Panels (FED)"
+    },
+    {
+      "id": "9",
+      "profile_Img": "https://miro.medium.com/v2/resize:fill:25:25/1*J36i6wbjXjINfSp6negAYw.png",
+      "first_name": "Danny",
+      "last_name": "Surmon",
+      "email": "dsurmon8@mit.edu",
+      "gender": "Female",
+      "contact_num": "54-129-9963",
+      "num_post": "91",
+      "tag": "Casework"
+    },
+    {
+      "id": "10",
+      "profile_Img": "https://miro.medium.com/v2/resize:fill:25:25/1*TUmo6NoVMFYOJtFv6aVJKg.png",
+      "first_name": "Redd",
+      "last_name": "De Ambrosi",
+      "email": "rdeambrosi9@businessinsider.com",
+      "gender": "Male",
+      "contact_num": "96-567-2118",
+      "num_post": "9",
+      "tag": "Drilled Shafts"
+    },
+    {
+      "id": "11",
+      "profile_Img": "https://miro.medium.com/v2/resize:fill:25:25/1*sHhtYhaCe2Uc3IU0IgKwIQ.png",
+      "first_name": "Francis",
+      "last_name": "Muncie",
+      "email": "fmunciea@webmd.com",
+      "gender": "Male",
+      "contact_num": "92-055-2753",
+      "num_post": "81",
+      "tag": "Elevator"
+    },
+    {
+      "id": "12",
+      "profile_Img": "https://miro.medium.com/v2/resize:fill:25:25/1*kocS94BOAKNaJ6u5ZxE7lA.png",
+      "first_name": "Lydia",
+      "last_name": "MacAlpin",
+      "email": "lmacalpinb@pinterest.com",
+      "gender": "Female",
+      "contact_num": "49-550-4627",
+      "num_post": "71",
+      "tag": "Framing (Steel)"
+    },
+    {
+      "id": "13",
+      "profile_Img": "https://miro.medium.com/v2/resize:fill:25:25/1*iosNcL2ReR-JSS2TECYd9g.png",
+      "first_name": "Dianne",
+      "last_name": "Spilsbury",
+      "email": "dspilsburyc@usatoday.com",
+      "gender": "Female",
+      "contact_num": "21-315-3179",
+      "num_post": "8",
+      "tag": "Marlite Panels (FED)"
+    },
+    {
+      "id": "14",
+      "profile_Img": "https://miro.medium.com/v2/resize:fill:25:25/1*aPis1XKDqBxBUk6JoUiayA.png",
+      "first_name": "Natassia",
+      "last_name": "Daines",
+      "email": "ndainesd@huffingtonpost.com",
+      "gender": "Female",
+      "contact_num": "22-266-8912",
+      "num_post": "55",
+      "tag": "Masonry"
+    },
+    {
+      "id": "15",
+      "profile_Img": "https://miro.medium.com/v2/resize:fill:25:25/1*m_Iau4XU5s26Hlhb1jTIvw.png",
+      "first_name": "Noelyn",
+      "last_name": "Deverick",
+      "email": "ndevericke@icio.us",
+      "gender": "Female",
+      "contact_num": "16-973-6318",
+      "num_post": "6",
+      "tag": "Epoxy Flooring"
+    },
+    {
+      "id": "16",
+      "profile_Img": "https://miro.medium.com/v2/resize:fill:25:25/1*uqjcbe02fA_7VKgmTzOOzA.png",
+      "first_name": "Kyla",
+      "last_name": "Waliszek",
+      "email": "kwaliszekf@google.nl",
+      "gender": "Female",
+      "contact_num": "73-478-8489",
+      "num_post": "5",
+      "tag": "Wall Protection"
+    },
+    {
+      "id": "17",
+      "profile_Img": "https://miro.medium.com/v2/resize:fill:25:25/1*aPis1XKDqBxBUk6JoUiayA.png",
+      "first_name": "Philis",
+      "last_name": "Pickover",
+      "email": "ppickoverg@qq.com",
+      "gender": "Female",
+      "contact_num": "16-534-9136",
+      "num_post": "14",
+      "tag": "Fire Sprinkler System"
+    },
+    {
+      "id": "18",
+      "profile_Img": "https://miro.medium.com/v2/resize:fill:25:25/1*sHhtYhaCe2Uc3IU0IgKwIQ.png",
+      "first_name": "Hedvig",
+      "last_name": "Marchington",
+      "email": "hmarchingtonh@bbc.co.uk",
+      "gender": "Female",
+      "contact_num": "89-787-4748",
+      "num_post": "45",
+      "tag": "Structural and Misc Steel (Fabrication)"
+    },
+    {
+      "id": "19",
+      "profile_Img": "https://miro.medium.com/v2/resize:fill:25:25/1*sHhtYhaCe2Uc3IU0IgKwIQ.png",
+      "first_name": "Alana",
+      "last_name": "Haveline",
+      "email": "ahavelinei@meetup.com",
+      "gender": "Non-binary",
+      "contact_num": "92-417-0641",
+      "num_post": "85",
+      "tag": "Exterior Signage"
+    },
+    {
+      "id": "20",
+      "profile_Img": "https://miro.medium.com/v2/resize:fill:25:25/1*potxu4SCAZpTpltUGrXQ5A.png",
+      "first_name": "Fawne",
+      "last_name": "Markussen",
+      "email": "fmarkussenj@trellian.com",
+      "gender": "Female",
+      "contact_num": "68-561-2659",
+      "num_post": "52",
+      "tag": "Drywall & Acoustical (MOB)"
+    }
+  ],
   "blog_posts": [
     {
       "id": "1",
@@ -29,7 +251,6 @@
       "tag": "Leadership",
       "img_src": "https://miro.medium.com/v2/da:true/resize:fill:250:168/0*hZEpd7IuvYid9pUQ",
       "paragraph": "Do you know one of those annoying people? They decline the dessert not because they’re on a diet, but because sweet stuff doesn’t do anything for them. Oh really! you say, Good for you! when what you really think is Fuck off. Well, I’m that person, but with alcohol. I’m here to tell you, it’s as good for me, as it is hard for me. So, in case your dry January is going well and you think of extending it, read on.  Over a year ago, someone shared with me this informative, factual, yet thoroughly bleak podcast by Andrew Huberman about the effects of any amount of alcohol on your brain and body. \\n\\n Since I had just reached the wise age of thirty, otherwise known as the age when you have less fucks to give, I asked myself why I drank at all and what would happen if I stopped. And then I stopped. You know how it goes from there. I felt great, I saved money, ‘I often regretted drinking but I never regretted not drinking’ and so on. It’s all true. However, before that, since the first glass of wine that my parents gave me at 12, for the good 18 years of my life, I did regularly drink. Why? Because that’s what people do. So, let’s start by saying that when you stop drinking, people don’t know what to do with you. \\n\\n The first day I started sports betting, I was checking my phone and the ESPN app on my phone non-stop. I did not become a monster or a gambling addict, but I won’t deny that I stopped doing as much housework, paid less attention to my wife and my friends, and just got too consumed in the thrill of seeing whether bets would or would not hit all too often. I would be checking stats and watching sports games of games I had bets on, only to see that 10 to 15 minutes of time had passed. \\n\\n It wouldn’t be the time I spent checking on sports games that was the problem as much as the constant interruption and task switching. I understand that this is just normal human behavior, and your average American might spend much more time watching football on a Sunday. But it was what this checking would do to my mood and mental state that made me realize sports gambling was making me a worse person. When my bets were doing well and I was making $70 to $150 per day, I was somewhat happy, but then I was thinking of the next day and how I should tinker my strategy for the next day. When my bets were losing, however, the despair I felt was always significantly worse than the happiness I gained from winning. The problem wasn’t that there weren’t highs, but the lows were much lower than the highs. I am not advocating for the sudden re-criminalization of sports gambling, because I would be a hypocrite. As much as it makes me a worse person, I love it. I profit off of it. \\n\\n I’m a human being as much as anyone else is. And I am not even venturing into whether the integrity of sports itself is at risk now that sports gambling has become so accepted and embraced by sports leagues like the NBA or NFL themselves. I think this societal acceptance and embrace have been long desired, as people have wanted to bet on sports games. But it is happening so quickly that we have to consider whether this embrace has gone too far."
-
     },
     {
       "id": "3",
@@ -45,7 +266,6 @@
       "tag": "Health",
       "img_src": "https://miro.medium.com/v2/resize:fill:250:168/1*TYNsHKGvELRsgalw4UwIdg.png",
       "paragraph": "Let’s skip past the usual suspects like YouTube, WhatsApp and Instagram. I want to share with you some less familiar apps that have become just as essential in my daily life. They may not be household names, but they’re absolute game-changers for me. I start my day with Artifact, which is kind of like TikTok but for news. Kevin Systrom, who helped create Instagram, is behind this app. What I love about Artifact is how it uses AI to figure out the news I’m interested in and shows me more of that stuff.\\n\\n There’s also this neat feature where the AI can summarise articles. This way, I get the gist of a story without having to read the whole thing. The coolest part? If there’s a news headline that seems clickbaity, Artifact actually checks out the article and fixes the headline to be more accurate. No more falling for clickbait headlines! And there’s this new feature called ‘Links.’ It lets us share any web link, like cool things I bought or articles I find interesting, with others on Artifact. We can chat about these links, which is both fun and really handy.\\n\\n For me, Artifact is the number one app for keeping up with the news. So, let’s start by saying that when you stop drinking, people don’t know what to do with you. The first day I started sports betting, I was checking my phone and the ESPN app on my phone non-stop. I did not become a monster or a gambling addict, but I won’t deny that I stopped doing as much housework, paid less attention to my wife and my friends, and just got too consumed in the thrill of seeing whether bets would or would not hit all too often. \\n\\n I would be checking stats and watching sports games of games I had bets on, only to see that 10 to 15 minutes of time had passed. It wouldn’t be the time I spent checking on sports games that was the problem as much as the constant interruption and task switching. I understand that this is just normal human behavior, and your average American might spend much more time watching football on a Sunday.\\n\\n But it was what this checking would do to my mood and mental state that made me realize sports gambling was making me a worse person. When my bets were doing well and I was making $70 to $150 per day, I was somewhat happy, but then I was thinking of the next day and how I should tinker my strategy for the next day. When my bets were losing, however, the despair I felt was always significantly worse than the happiness I gained from winning. \\n\\n The problem wasn’t that there weren’t highs, but the lows were much lower than the highs. I am not advocating for the sudden re-criminalization of sports gambling, because I would be a hypocrite. As much as it makes me a worse person, I love it. I profit off of it. I’m a human being as much as anyone else is. And I am not even venturing into whether the integrity of sports itself is at risk now that sports gambling has become so accepted and embraced by sports leagues like the NBA or NFL themselves. \\n\\n I think this societal acceptance and embrace have been long desired, as people have wanted to bet on sports games. But it is happening so quickly that we have to consider whether this embrace has gone too far."
-
     },
     {
       "id": "4",

@@ -1,7 +1,6 @@
 let firstCardsContainer = document.getElementById("container2");
 let saved = document.getElementById("saved");
 
-
 let flag = true;
 let page = 1;
 
@@ -98,7 +97,9 @@ function createCard(data) {
     let logoBox = document.createElement("div")
     logoBox.className = "logoIcon"
     let icon = document.createElement("img");
+
     icon.src = "/Tech-Tatva-2345/Frontend/bookmark.svg";
+
     icon.style.cursor = "pointer";
 
     icon.addEventListener("click", function () {
@@ -106,7 +107,9 @@ function createCard(data) {
         savedData.push(data);
         localStorage.setItem("savedData", JSON.stringify(savedData));
 
+
         icon.src = "/Tech-Tatva-2345/Frontend/saved.svg";
+
         icon.style.width = "28px";
         icon.style.height = "28px";
         icon.removeEventListener("click", this);
