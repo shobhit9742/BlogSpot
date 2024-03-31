@@ -109,6 +109,11 @@ a.sidebar-link {
   width: 100vw;
 }
 
+.strongIMG img{
+  width: 130px;
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+}
 @media (min-width: 768px) {
   .content {
     max-width: auto;
