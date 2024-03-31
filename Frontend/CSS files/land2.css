@@ -1,0 +1,137 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#header {
+  height: 65px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0px 20px;
+}
+
+#h-left {
+  display: flex;
+  gap: 20px;
+}
+
+#h-right {
+  display: flex;
+  gap: 20px;
+}
+
+/* Modal CSS  */
+#modal_head {
+  text-align: center;
+}
+
+.signInBtns {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 30px 0px;
+}
+
+.button {
+  border: 1px solid black !important;
+  border-radius: 10% / 50% !important;
+}
+
+.vl {
+  border-left: 2px solid grey;
+  height: 200px;
+}
+
+.vl2 {
+  border-left: 2px solid grey;
+  height: 400px;
+}
+
+.grey {
+  color: grey;
+}
+
+#signUp {
+  color: green;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.modal_footer {
+  text-align: center;
+}
+
+#content_section {
+  display: flex;
+}
+
+.card_section,
+#sidebar_section {
+  padding: 15px;
+  background-color: #fff;
+}
+
+.card_section {
+  /* width: 70%; */
+  /* height: 250vh; */
+  border: 3px solid green;
+}
+
+#sidebar_section {
+  width: 40%;
+  height: 90vh;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  border: 3px solid red;
+}
+
+.staff_card {
+  display: grid;
+  grid-template-areas:
+    "a1 a2 a2"
+    "a3 a3 a3";
+}
+
+.card_img {
+  grid-area: a1;
+}
+
+.card_author {
+  grid-area: a2;
+}
+
+.card_desc {
+  grid-area: a3;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.link {
+  color: green;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.link:hover {
+  color: black;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  #sidebar_section {
+    display: none;
+  }
+}
+
+#container {
+  background-color: white;
+  width: 100%;
+  border: 2px solid black;
+  /* position: fixed; */
+  /* left: 50%; */
+  /* transform: translateX(-50%); */
+  padding: 30px;
+  /* overflow-y: scroll; */
+}
