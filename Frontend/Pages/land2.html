@@ -17,6 +17,11 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <meta
+      name="Cross-Origin-Opener-Policy"
+      content="same-origin-allow-popups"
+    />
   </head>
   <body>
     <!-- Navbar -->
@@ -30,14 +35,13 @@
           />
         </div>
         <div style="align-self: center">
-          <form role="search">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-          </form>
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+            id="searchInput"
+          />
         </div>
       </div>
       <div id="h-right">
@@ -117,10 +121,26 @@
           <div class="modal-body">
             <div class="signInBtns">
               <div id="google">
-                <button class="btn button">
-                  <i class="fa-brands fa-google me-3"></i> Sign in with Google
-                </button>
+                <div
+                  id="g_id_onload"
+                  data-client_id="117865134415-3r30fn4en6cq3orthqr42jrbisngmefj.apps.googleusercontent.com"
+                  data-context="signin"
+                  data-ux_mode="popup"
+                  data-login_uri="https://tech-tatva-2345-1.onrender.com/blog_posts"
+                  data-auto_prompt="false"
+                ></div>
+
+                <div
+                  class="g_id_signin"
+                  data-type="standard"
+                  data-shape="pill"
+                  data-theme="outline"
+                  data-text="signin_with"
+                  data-size="large"
+                  data-logo_alignment="left"
+                ></div>
               </div>
+
               <div class="vl"></div>
 
               <div id="signInForm">
@@ -160,7 +180,7 @@
                   No account ?
                   <a
                     href="#"
-                    id="signUp"
+                    class="signUp"
                     data-bs-toggle="modal"
                     data-bs-target="#signUpModal"
                     >Create One</a
@@ -211,9 +231,24 @@
           <div class="modal-body">
             <div class="signInBtns">
               <div>
-                <button class="btn button">
-                  <i class="fa-brands fa-google me-3"></i> Sign in with Google
-                </button>
+                <div
+                  id="g_id_onload"
+                  data-client_id="117865134415-3r30fn4en6cq3orthqr42jrbisngmefj.apps.googleusercontent.com"
+                  data-context="signin"
+                  data-ux_mode="popup"
+                  data-login_uri="https://tech-tatva-2345-1.onrender.com/blog_posts"
+                  data-auto_prompt="false"
+                ></div>
+
+                <div
+                  class="g_id_signin"
+                  data-type="standard"
+                  data-shape="pill"
+                  data-theme="outline"
+                  data-text="signin_with"
+                  data-size="large"
+                  data-logo_alignment="left"
+                ></div>
               </div>
               <div class="vl2"></div>
 
@@ -272,7 +307,7 @@
                   Already have an account?
                   <a
                     href="#"
-                    id="signUp"
+                    class="signUp"
                     data-bs-toggle="modal"
                     data-bs-target="#signInModal"
                     >Sign In</a
@@ -303,4 +338,5 @@
     src="https://kit.fontawesome.com/6e1cf5e47b.js"
     crossorigin="anonymous"
   ></script>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
 </html>
