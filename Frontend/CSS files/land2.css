@@ -52,7 +52,7 @@ body {
   color: grey;
 }
 
-#signUp {
+.signUp {
   color: green;
   text-decoration: none;
   font-weight: bold;
@@ -72,19 +72,13 @@ body {
   background-color: #fff;
 }
 
-.card_section {
-  /* width: 70%; */
-  /* height: 250vh; */
-  border: 3px solid green;
-}
-
 #sidebar_section {
   width: 40%;
   height: 90vh;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  border: 3px solid red;
+  /* border: 3px solid red; */
 }
 
 .staff_card {
@@ -109,7 +103,7 @@ body {
 }
 
 .link {
-  color: green;
+  /* color: green; */
   cursor: pointer;
   font-size: 12px;
 }
@@ -126,12 +120,74 @@ body {
 }
 
 #container {
-  background-color: white;
+  width: 68%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.card {
+  width: 90%;
+  margin-left: 70px;
+  padding: 10px;
+  /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+  margin-top: 20px;
+  flex-direction: row !important;
+}
+
+.ProImgText {
+  width: 70%;
+  /* border: 1px solid skyblue; */
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.imageAllText {
   width: 100%;
-  border: 2px solid black;
-  /* position: fixed; */
-  /* left: 50%; */
-  /* transform: translateX(-50%); */
-  padding: 30px;
-  /* overflow-y: scroll; */
+  /* border: 1px solid rgb(0, 255, 13); */
+  display: flex;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  gap: 5px;
+}
+
+.tooltip-card {
+  width: 300px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin-top: -30px;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.subject {
+  /* width: 150px; */
+  height: 38px;
+  border-radius: 20px;
+  border: none;
+  background-color: #eeeeee;
+  margin-right: 10px;
+  padding: 10px 15px 10px 15px;
+}
+
+.subject a {
+  text-decoration: none;
+  color: rgb(71, 70, 70);
+  font-size: 15px;
+}
+
+.sub2 {
+  margin-top: 20px;
+}
+
+#seeMore {
+  color: green;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.footer {
+  text-decoration: none;
+  color: #424242;
+  font-size: 15px;
+  margin-right: 25px;
+  font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }

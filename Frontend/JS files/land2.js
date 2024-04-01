@@ -26,25 +26,42 @@ signUpSubmit.addEventListener("click", (e) => {
 
 // Fetch and populate articles
 let url = "https://tech-tatva-2345-1.onrender.com/blog_posts";
-let pageNum = 1;
+let page = 1;
+let flag = true;
 let isLoading = false;
+let isFetching = false;
 let container = document.querySelector("#container");
 let resultContainer = document.querySelector(".card_section");
 let loadingContainer = document.querySelector(".loading-container");
+const searchInput = document.getElementById("searchInput");
 
 let fetchData = async () => {
+  console.log(searchInput.value);
   try {
     if (isLoading) return;
     isLoading = true;
-    loadingContainer.innerHTML = `<div class="spinner-border" role="status">
+    isFetching = true;
+    loadingContainer.innerHTML = `<div class="d-flex justify-content-center align-items-center">
+                                    <div class="spinner-grow text-secondary" role="status">
                                       <span class="visually-hidden">Loading...</span>
+                                    </div>
                                   </div>`;
 
-    let res = await fetch(url);
+    let res = await fetch(
+      `https://tech-tatva-2345-1.onrender.com/blog_posts?_page=${page}&&q=${searchInput.value}`
+    );
     let data = await res.json();
-    appendData(data);
+    console.log(data);
+    isFetching = false;
     isLoading = false;
     loadingContainer.innerHTML = "";
+    appendData(data);
+    if (data.length === 0) {
+      flag = false;
+      return;
+    }
+    page++;
+    flag = true;
   } catch (error) {
     isLoading = false;
     console.log(error);
@@ -53,36 +70,270 @@ let fetchData = async () => {
 
 let appendData = (data) => {
   data.forEach((el) => {
-    console.log(el);
-    const { name_title, author_name, profile_Img } = el;
-    card(name_title, author_name, profile_Img);
+    let card = createCard(el);
+    const { id } = el;
+    card.addEventListener("click", () => {
+      descModal(id);
+    });
+    resultContainer.append(card);
   });
 };
 
-let card = (name_title, author_name, profile_Img) => {
-  let card = document.createElement("div");
-  let title = document.createElement("h1");
-  let author = document.createElement("p");
-  let profile_img = document.createElement("img");
-
-  title.textContent = name_title;
-  author.textContent = author_name;
-  profile_img.src = profile_Img;
-
-  card.append(title, author, profile_img);
-  resultContainer.append(card);
-};
-
-container.onscroll = () => {
-  if (isLoading) return;
-
-  if (
-    Math.ceil(container.clientHeight + container.scrollTop) >=
-    container.scrollHeight
-  ) {
-    pageNum++;
-    fetchData();
+const descModal = async (id) => {
+  console.log(id);
+  try {
+    let res = await fetch(
+      `https://tech-tatva-2345-1.onrender.com/blog_posts/${id}`
+    );
+    let data = await res.json();
+    appendModal(data);
+  } catch (error) {
+    console.log(error);
   }
 };
 
+const appendModal = (data) => {
+  let modal = `<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>`;
+  let articleModal = document.getElementById("articleModal");
+  let modalBody = document.createElement("div");
+  modalBody.innerHTML = modal;
+  console.log(data);
+
+  articleModal.append(modalBody);
+};
+
+function createCard(data) {
+  let blogCard = document.createElement("div");
+  blogCard.className = "card";
+
+  let allText = document.createElement("div");
+  allText.className = "ProImgText";
+  let imgAllText = document.createElement("div");
+  imgAllText.className = "imageAllText";
+
+  let img = document.createElement("img");
+  img.src = data.profile_Img;
+  img.style.width = "30px";
+  img.style.height = "30px";
+  img.style.marginRight = "10px";
+  img.style.borderRadius = "6px";
+
+  let name = document.createElement("p");
+  name.innerText = data.author_name;
+  name.style.fontFamily = "sohne, Helvetica Neue, Helvetica, Arial, sans-serif";
+  name.style.fontSize = "15px";
+  let by = document.createElement("p");
+  by.innerText = data.by2;
+
+  let name_title = document.createElement("p");
+  name_title.innerText = data.name_title;
+  name_title.style.fontSize = "15px";
+
+  let title = document.createElement("h3");
+  title.innerText = data.title;
+  title.style.marginTop = "-2px";
+  title.style.fontFamily =
+    "sohne, Helvetica Neue, Helvetica, Arial, sans-serif";
+  title.style.fontSize = "18px";
+
+  let description = document.createElement("p");
+  description.innerText = data.description;
+  description.style.marginTop = "-10px";
+  description.style.color = "Gray";
+  description.style.fontSize = "15.5px";
+
+  let dateLogoBox = document.createElement("div");
+  dateLogoBox.className = "dateTimelogo";
+
+  let dateBox = document.createElement("div");
+  dateBox.className = "dataTimeTag";
+  let date_pub = document.createElement("span");
+  date_pub.innerText = data.date_pub;
+  date_pub.style.color = "Gray";
+  date_pub.style.marginRight = "10px";
+  date_pub.style.fontSize = "14px";
+
+  let reading_time = document.createElement("span");
+  reading_time.innerText = data.reading_time;
+  reading_time.style.color = "Gray";
+  reading_time.style.marginRight = "10px";
+  reading_time.style.fontSize = "14px";
+
+  let by_8 = document.createElement("span");
+  by_8.innerText = data.by8;
+
+  let tag = document.createElement("button");
+  tag.innerText = data.tag;
+  tag.style.color = "Gray";
+  tag.style.marginRight = "10px";
+  tag.style.marginLeft = "5px";
+  tag.style.fontSize = "14px";
+  tag.style.paddingLeft = "10px";
+  tag.style.paddingRight = "10px";
+  tag.style.height = "27px";
+  tag.style.border = "none";
+  tag.style.borderRadius = "20px";
+  tag.style.backgroundColor = "ligthGray";
+
+  let logoBox = document.createElement("div");
+  logoBox.className = "logoIcon";
+  let icon = document.createElement("img");
+  icon.src = "/Tech-Tatva-2345/image/bookmark.svg";
+  icon.style.cursor = "pointer";
+
+  icon.addEventListener("click", function () {
+    let savedData = JSON.parse(localStorage.getItem("savedData")) || [];
+    savedData.push(data);
+    localStorage.setItem("savedData", JSON.stringify(savedData));
+
+    icon.src = "/Tech-Tatva-2345/image/saved.svg";
+    icon.style.width = "28px";
+    icon.style.height = "28px";
+    icon.removeEventListener("click", this);
+  });
+
+  let img_src = document.createElement("img");
+  img_src.src = data.img_src;
+  img_src.style.width = "220px";
+  img_src.style.marginLeft = "15px";
+  let imgDiv = document.createElement("div");
+  imgDiv.append(img_src);
+
+  dateBox.append(date_pub, reading_time, by_8, tag);
+  logoBox.append(icon);
+  dateLogoBox.append(dateBox, logoBox);
+  imgAllText.append(img, name, by, name_title);
+  allText.append(imgAllText, title, description, dateLogoBox);
+  blogCard.append(allText, imgDiv);
+
+  // Tooltip
+  name.addEventListener("mouseenter", () => {
+    let tooltipCard = document.createElement("div");
+    tooltipCard.className = "tooltip-card";
+    tooltipCard.style.backgroundColor = "white";
+    tooltipCard.style.position = "absolute";
+    tooltipCard.style.left = `${name.offsetLeft + name.offsetWidth + 10}px`; // Position to the right of the name
+    tooltipCard.style.top = `${name.offsetTop}px`;
+
+    let cardImage = document.createElement("img");
+    cardImage.src = data.profile_Img;
+    cardImage.style.width = "10%";
+    cardImage.style.borderRadius = "5px";
+    let userInfo = document.createElement("div");
+    userInfo.className = "user-info";
+
+    let userName = document.createElement("h3");
+    userName.innerText = data.author_name;
+    userName.style.fontFamily =
+      "sohne, Helvetica Neue, Helvetica, Arial, sans-serif";
+
+    let occupation = document.createElement("p");
+    occupation.innerText = data.description;
+    occupation.style.fontFamily =
+      "sohne, Helvetica Neue, Helvetica, Arial, sans-serif";
+    occupation.style.fontSize = "15px";
+
+    let separator = document.createElement("hr");
+    separator.style.color = "lightGray";
+
+    let followers = document.createElement("span");
+    followers.innerText = "72 Followers";
+    followers.style.marginRight = "125px";
+    followers.style.fontFamily =
+      "sohne, Helvetica Neue, Helvetica, Arial, sans-serif";
+    followers.style.fontSize = "15px";
+    let followButton = document.createElement("button");
+    followButton.innerText = "Follow";
+    followButton.style.color = "white";
+    followButton.style.border = "none";
+    followButton.style.borderRadius = "5px";
+    followButton.style.height = "30px";
+    followButton.style.width = "75px";
+    followButton.style.fontWeight = "600";
+    followButton.style.backgroundColor = "green";
+
+    userInfo.append(userName, occupation, separator, followers, followButton);
+    tooltipCard.appendChild(cardImage); // Append image to the detailed card
+    tooltipCard.appendChild(userInfo);
+
+    blogCard.appendChild(tooltipCard);
+  });
+
+  name.addEventListener("mouseleave", () => {
+    let tooltipCard = blogCard.querySelector(".tooltip-card");
+    if (tooltipCard) {
+      tooltipCard.remove();
+    }
+  });
+
+  return blogCard;
+}
+
 fetchData();
+
+// Parsing the JWT
+function parseJwt(token) {
+  var base64Url = token.split(".")[1];
+  var base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
+  var jsonPayload = decodeURIComponent(
+    window
+      .atob(base64)
+      .split("")
+      .map(function (c) {
+        return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
+      })
+      .join("")
+  );
+
+  return JSON.parse(jsonPayload);
+}
+
+function handleLogin(response) {
+  signIn(parseJwt(response));
+  console.log(response.credential);
+}
+
+//Debouncing for search input
+
+let id;
+function debounce(func, delay) {
+  if (id) {
+    clearTimeout(id);
+  }
+
+  id = setTimeout(() => {
+    func();
+  }, delay);
+}
+
+searchInput.addEventListener("input", (e) => {
+  debounce(fetchData, 1000);
+});
+
+
+window.addEventListener("scroll", () => {
+  if (isFetching || !flag) {
+    return;
+  }
+  if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+    fetchData();
+  }
+});
