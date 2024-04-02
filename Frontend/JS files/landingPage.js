@@ -1,17 +1,25 @@
 let firstCardsContainer = document.getElementById("container2");
 let saved = document.getElementById("saved");
+let container2 = document.getElementById("container2");
+
 
 let flag = true;
 let page = 1;
-
+let isFetching = false
 //fetch data
 async function fetchData() {
     try {
-        let res = await fetch('https://tech-tatva-2345-1.onrender.com/blog_posts?_limit=8');
+        isFetching = true;
+        let res = await fetch(`https://tech-tatva-2345-1.onrender.com/blog_posts?_page=${page}`);
         let data = await res.json();
         console.log(data);
+        isFetching = false;
         appendData(data)
-        flag = true;
+        if (data.length === 0) {
+            flag = false;
+            return;
+        }
+        page++;
     }
     catch (error) {
         console.log(error);
@@ -31,36 +39,46 @@ function createCard(data) {
     let imgAllText = document.createElement("div");
     imgAllText.className = "imageAllText"
 
+
     let img = document.createElement("img");
-    img.src = data.profile_Img;
+    img.className = "profileImg";
+    // img.src = data.profile_Img;
+    img.src = (data.profile_Img == "" ? "https://img.freepik.com/free-vector/isolated-young-handsome-man-different-poses-white-background-illustration_632498-859.jpg?w=740&t=st=1711880702~exp=1711881302~hmac=55bf17deceea9dac34197c009d68b5d3b845efc75619582df72d67b6ba31b280" : data.profile_Img);
+
     img.style.width = "30px"
     img.style.height = "30px"
     img.style.marginRight = "10px"
+    img.style.marginBottom = "15px"
     img.style.borderRadius = "6px"
 
     let name = document.createElement("p")
+    name.className = "name";
     name.innerText = data.author_name;
     name.style.fontFamily = "sohne, Helvetica Neue, Helvetica, Arial, sans-serif";
     name.style.fontSize = "15px"
     let by = document.createElement("p")
+    by.className = "byIn"
     by.innerText = data.by2;
 
     let name_title = document.createElement("p");
+    name_title.className = "nameTitle"
     name_title.innerText = data.name_title;
     name_title.style.fontSize = "15px"
 
-    let title = document.createElement("h3");
+    let title = document.createElement("h4");
+    title.className = "cardTitle"
     title.innerText = data.title;
-    title.style.marginTop = "-2px"
+    title.style.marginTop = "-10px"
     title.style.fontFamily = "sohne, Helvetica Neue, Helvetica, Arial, sans-serif";
     title.style.fontSize = "18px"
+    title.style.fontWeight = "600"
 
     let description = document.createElement("p");
+    description.className = "details"
     description.innerText = data.description;
-    description.style.marginTop = "-10px"
+    description.style.marginTop = "-3px"
     description.style.color = "Gray"
-    description.style.fontSize = "15.5px"
-
+    description.style.fontSize = "15px"
     let dateLogoBox = document.createElement("div")
     dateLogoBox.className = "dateTimelogo";
 
@@ -82,6 +100,7 @@ function createCard(data) {
     by_8.innerText = data.by8;
 
     let tag = document.createElement("button");
+    tag.className = "tagBtn"
     tag.innerText = data.tag;
     tag.style.color = "Gray"
     tag.style.marginRight = "10px"
@@ -97,26 +116,48 @@ function createCard(data) {
     let logoBox = document.createElement("div")
     logoBox.className = "logoIcon"
     let icon = document.createElement("img");
-
-    icon.src = "/Tech-Tatva-2345/Frontend/bookmark.svg";
-
+    icon.src = "./bookmark.svg";
     icon.style.cursor = "pointer";
+
+    document.addEventListener("DOMContentLoaded", function () {
+        // Check if there is any saved data
+        let savedData = JSON.parse(localStorage.getItem("savedData")) || [];
+        savedData.forEach(savedItem => {
+            // Find the corresponding card for each saved item
+            let card = document.querySelector(`.card[data-id="${savedItem.id}"]`);
+            if (card) {
+                // Find the bookmark icon within the card
+                let icon = card.querySelector(".logoIcon img");
+                if (icon) {
+                    // Change the icon to the saved icon
+                    icon.src = "./saved.svg";
+                }
+            }
+        });
+    });
 
     icon.addEventListener("click", function () {
         let savedData = JSON.parse(localStorage.getItem("savedData")) || [];
-        savedData.push(data);
-        localStorage.setItem("savedData", JSON.stringify(savedData));
+        let dataIndex = savedData.findIndex(item => item.id === data.id);
 
-
-        icon.src = "/Tech-Tatva-2345/Frontend/saved.svg";
-
-        icon.style.width = "28px";
-        icon.style.height = "28px";
-        icon.removeEventListener("click", this);
+        if (dataIndex === -1) {
+            // If data is not saved, save it and change the icon
+            savedData.push(data);
+            localStorage.setItem("savedData", JSON.stringify(savedData));
+            icon.src = "./saved.svg";
+        } else {
+            // If data is already saved, remove it and change the icon
+            savedData.splice(dataIndex, 1);
+            localStorage.setItem("savedData", JSON.stringify(savedData));
+            icon.src = "./bookmark.svg";
+        }
     });
 
+
     let img_src = document.createElement("img");
-    img_src.src = data.img_src;
+    img_src.className = "bigImage"
+    // img_src.src = data.img_src;
+    img_src.src = (data.img_src == "" ? "https://images.unsplash.com/photo-1529909746513-b540c1680fdb?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" : data.img_src);
     img_src.style.width = "220px";
     img_src.style.marginLeft = "15px"
 
@@ -132,6 +173,7 @@ function createCard(data) {
     name.addEventListener("mouseenter", () => {
         let tooltipCard = document.createElement("div");
         tooltipCard.className = "tooltip-card";
+
         tooltipCard.style.backgroundColor = "white";
         tooltipCard.style.position = "absolute";
         tooltipCard.style.left = `${name.offsetLeft + name.offsetWidth + 10}px`; // Position to the right of the name
@@ -144,22 +186,23 @@ function createCard(data) {
         let userInfo = document.createElement("div");
         userInfo.className = "user-info";
 
-        let userName = document.createElement("h3");
+        let userName = document.createElement("h6");
         userName.innerText = data.author_name;
         userName.style.fontFamily = "sohne, Helvetica Neue, Helvetica, Arial, sans-serif";
-
+        userName.style.fontWeight = "600"
 
         let occupation = document.createElement("p");
         occupation.innerText = data.description;
         occupation.style.fontFamily = "sohne, Helvetica Neue, Helvetica, Arial, sans-serif";
-        occupation.style.fontSize = "15px"
+        occupation.style.fontSize = "14px"
 
         let separator = document.createElement("hr");
         separator.style.color = "lightGray"
+        separator.className = "hrSeparator"
 
         let followers = document.createElement("span");
         followers.innerText = "72 Followers";
-        followers.style.marginRight = "125px";
+        followers.style.marginRight = "120px";
         followers.style.fontFamily = "sohne, Helvetica Neue, Helvetica, Arial, sans-serif";
         followers.style.fontSize = "15px"
         let followButton = document.createElement("button");
@@ -199,15 +242,11 @@ function appendData(data) {
 
 
 window.addEventListener("scroll", () => {
-    let clientHeight = document.documentElement.clientHeight;
-    let scrollHeight = document.documentElement.scrollHeight;
-    let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-
-    if (scrollTop + clientHeight >= scrollHeight * 0.8 && flag) {
-        console.log("Scrolled 80%");
-        page++;
-        fetchData(page);
-        flag = false;
+    if (isFetching || !flag) {
+        return;
+    }
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+        fetchData()
     }
 });
 
@@ -287,17 +326,17 @@ let blog_posts = [
     },
     {
         "id": "4",
-        "profile_Img": "https://miro.medium.com/v2/resize:fill:40:40/1*NYalSuFa9XrlE-kog6De_Q.png",
-        "author_name": "Shin Jie Yong, MSc (Res)",
+        "profile_Img": "https://miro.medium.com/v2/resize:fill:25:25/1*iosNcL2ReR-JSS2TECYd9g.png",
+        "author_name": "Robert Roy Britt",
         "by2": "in",
-        "name_title": "Microbial Instincts",
-        "title": "My Friend Won the US$100,000 Debate on the Origin of COVID-19",
-        "description": "An achievement that we hope will make a greater impact.",
-        "date_pub": "Mar 17, 2024",
-        "reading_time": "16 min read",
+        "name_title": "Aha!",
+        "title": "Does Anybody Really Know What Time It Is?",
+        "description": "A brief history of timekeeping reveals the need for leap day, leap seconds, and the neverending challenge of synchronizing clocks around…",
+        "date_pub": "Feb 26, 2024",
+        "reading_time": "10 min read",
         "by8": "·",
-        "tag": "Covid-19",
-        "img_src": "https://miro.medium.com/v2/resize:fill:250:168/1*7CxK9riK2X7oJDEWKdW7CQ.png"
+        "tag": "Leap Year",
+        "img_src": "https://miro.medium.com/v2/da:true/resize:fill:250:168/0*c21LMdW8xH1652GP"
     },
     {
         "id": "5",
@@ -348,10 +387,12 @@ function createTrendingCard(data) {
     let idText = document.createElement("div");
     idText.className = "idImgText";
 
-    let id = document.createElement("h1");
+    let id = document.createElement("h4");
     id.innerText = data.id;
-    id.style.marginLeft = "10px";
+    id.style.marginLeft = "5px";
+    id.style.marginTop = "10px";
     id.style.color = "lightGray";
+    id.style.marginRight = "10px";
 
     let imgName = document.createElement("div");
     imgName.className = "imageName";
@@ -368,46 +409,50 @@ function createTrendingCard(data) {
 
     let name = document.createElement("span");
     name.innerText = data.author_name;
-    name.style.marginLeft = "10px";
+    name.style.marginLeft = "8px";
     name.style.fontFamily = "sohne, Helvetica Neue, Helvetica, Arial, sans-serif";
-    name.style.fontSize = "15px"
-    let by = document.createElement("p")
+    name.style.fontSize = "14px"
+    let by = document.createElement("span")
     by.innerText = data.by2;
     by.style.marginLeft = "3px"
     by.style.marginRight = "4px"
     by.style.fontFamily = "sohne, Helvetica Neue, Helvetica, Arial, sans-serif";
-    by.style.fontSize = "15px"
+    by.style.fontSize = "14px"
 
     let name_title = document.createElement("span");
     name_title.innerText = data.name_title;
-    name_title.style.fontSize = "15px"
+    name_title.style.fontSize = "14px"
     name_title.style.fontFamily = "sohne, Helvetica Neue, Helvetica, Arial, sans-serif";
 
-    let title = document.createElement("h4");
+    let title = document.createElement("h6");
+    title.className = "TrendingTitle"
     title.innerText = data.title;
+    title.style.fontWeight = "600"
+    title.style.fontSize = "18px"
     title.style.marginTop = "2px"
     title.style.fontFamily = "sohne, Helvetica Neue, Helvetica, Arial, sans-serif";
-
+    title.style.marginBottom = "8px"
     let date_pub = document.createElement("span");
     date_pub.innerText = data.date_pub;
     date_pub.style.color = "Gray"
     date_pub.style.marginRight = "10px"
-    date_pub.style.fontSize = "15px"
-    date_pub.style.marginTop = "-18px"
+    date_pub.style.fontSize = "14px"
+    // date_pub.style.marginTop = "-30px"
     date_pub.style.fontFamily = "sohne, Helvetica Neue, Helvetica, Arial, sans-serif";
-
+    date_pub.style.marginBottom = "10px"
     let by_8 = document.createElement("span");
     by_8.innerText = data.by8;
     by_8.style.marginRight = "3px"
-    by_8.style.fontSize = "18px"
+    by_8.style.fontSize = "14px"
     by_8.style.color = "Gray"
+    // by_8.style.marginTop = "-30px"
 
     let reading_time = document.createElement("span")
     reading_time.innerText = data.reading_time;
     reading_time.style.color = "Gray"
     reading_time.style.marginRight = "10px"
-    reading_time.style.fontSize = "15px"
-    reading_time.style.marginTop = "-18px"
+    reading_time.style.fontSize = "14px"
+    // reading_time.style.marginTop = "-30px"
     reading_time.style.fontFamily = "sohne, Helvetica Neue, Helvetica, Arial, sans-serif";
 
 
@@ -429,25 +474,28 @@ function createTrendingCard(data) {
         cardImage.src = data.profile_Img;
         cardImage.style.width = "10%"; // Ensure the image fills the container
         cardImage.style.borderRadius = "5px"
+        // cardImage.style.display = "inlineBlock"
         let userInfo = document.createElement("div");
         userInfo.className = "user-info";
 
-        let userName = document.createElement("h3");
+        let userName = document.createElement("h6");
         userName.innerText = data.author_name;
         userName.style.fontFamily = "sohne, Helvetica Neue, Helvetica, Arial, sans-serif";
-
+        userName.style.fontWeight = "600"
+        // userName.style.display = "inlineBlock"
 
         let occupation = document.createElement("p");
         occupation.innerText = data.description;
         occupation.style.fontFamily = "sohne, Helvetica Neue, Helvetica, Arial, sans-serif";
         occupation.style.fontSize = "15px"
 
-        let separator = document.createElement("hr"); // Separator line
+        let separator = document.createElement("hr");
+        separator.className = "hrSeparator"
         separator.style.color = "lightGray"
 
         let followers = document.createElement("span"); // Use span instead of p for inline elements
         followers.innerText = "72 Followers";
-        followers.style.marginRight = "125px"; // Add margin between followers and button
+        followers.style.marginRight = "120px"; // Add margin between followers and button
         followers.style.fontFamily = "sohne, Helvetica Neue, Helvetica, Arial, sans-serif";
         followers.style.fontSize = "15px"
         let followButton = document.createElement("button");
@@ -476,3 +524,15 @@ function createTrendingCard(data) {
 
     return blogCard;
 }
+
+
+// menu
+document.addEventListener('DOMContentLoaded', function () {
+    const hamburgerIcon = document.getElementById('hamburger-icon');
+    const menuLinks = document.getElementById('menu-links');
+
+    hamburgerIcon.addEventListener('click', function () {
+        menuLinks.style.display = menuLinks.style.display === 'none' ? 'block' : 'none';
+    });
+});
+
