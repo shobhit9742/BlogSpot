@@ -26,6 +26,10 @@ body {
   text-align: center;
 }
 
+#mag_glass {
+  display: none;
+}
+
 .signInBtns {
   display: flex;
   justify-content: space-evenly;
@@ -66,7 +70,7 @@ body {
   display: flex;
 }
 
-.card_section,
+/* .card_section, */
 #sidebar_section {
   padding: 15px;
   background-color: #fff;
@@ -78,7 +82,6 @@ body {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  /* border: 3px solid red; */
 }
 
 .staff_card {
@@ -119,21 +122,13 @@ body {
   }
 }
 
-#container {
-  background-color: white;
-  width: 100%;
-  /* border: 2px solid black; */
-  padding: 30px;
-}
-
 .card {
-  width: 90%;
-  /* height: 200px; */
-  margin-left: 70px;
-  padding: 10px;
+  /* width: 90%; */
+  margin-left: 70px !important;
+  padding: 10px !important;
   /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
-  display: flex;
-  margin-top: 20px;
+  margin-top: 20px !important;
+  flex-direction: row !important;
 }
 
 .ProImgText {
@@ -143,10 +138,191 @@ body {
 }
 
 .imageAllText {
-  width: 100%;
+  width: 100% !important;
   /* border: 1px solid rgb(0, 255, 13); */
   display: flex;
   align-items: center;
   font-family: Arial, Helvetica, sans-serif;
   gap: 5px;
+}
+
+.tooltip-card {
+  width: 300px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin-top: -30px;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.subject {
+  /* width: 150px; */
+  height: 38px;
+  border-radius: 20px;
+  border: none;
+  background-color: #eeeeee;
+  margin-right: 10px;
+  padding: 10px 15px 10px 15px;
+}
+
+.subject a {
+  text-decoration: none;
+  color: rgb(71, 70, 70);
+  font-size: 15px;
+}
+
+.sub2 {
+  margin-top: 20px;
+}
+
+#seeMore {
+  color: green;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.footer {
+  text-decoration: none;
+  color: #424242;
+  font-size: 15px;
+  margin-right: 25px;
+  font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+@media (max-width: 550px) {
+  #write {
+    display: none;
+  }
+
+  .card {
+    margin-left: 70px !important;
+    padding: 10px !important;
+    margin-top: 20px !important;
+    flex-direction: column !important;
+  }
+}
+
+@media (max-width: 450px) {
+  #mag_glass {
+    display: block;
+    align-items: center;
+    display: flex;
+  }
+
+  #searchInput {
+    display: none;
+  }
+}
+
+@media (max-width: 375px) {
+  .card {
+    margin-left: 20px !important;
+    padding: 10px;
+    margin-top: 20px;
+    flex-direction: column !important;
+  }
+
+  #container {
+    /* width: 20%; */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 1440px) {
+  .con {
+    max-width: 1320px;
+    margin: auto;
+  }
+}
+
+/* Modal CSS */
+
+.modalSelf {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* gap: 0.4rem; */
+  width: 70%;
+  padding: 1.3rem;
+  min-height: calc(100vh - 210px);
+  overflow-y: scroll;
+  margin-top: 50px;
+  position: absolute;
+  z-index: 2;
+  /* top: 20%; */
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+}
+
+.modalSelf .flex {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  z-index: 1;
+}
+
+.hidden {
+  display: none;
+}
+
+#self_modal {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+}
+
+/* Model Content */
+
+@media (min-width: 1320px) {
+  .middle {
+    max-width: 320px;
+    margin: auto;
+  }
+}
+
+#info {
+  display: grid;
+  /* justify-items: center; */
+  align-items: center;
+}
+
+#desc {
+  display: flex;
+  /* justify-content: space-between; */
+  gap: 20px;
+}
+
+#profile_Img {
+  border-radius: 50%;
+}
+
+#author {
+  text-decoration: underline;
+}
+
+#tag {
+  color: #6b6b6b;
+}
+
+#description {
+  color: #6b6b6b;
+}
+
+#articleImg {
+  width: 50%;
+  height: 80%;
 }
