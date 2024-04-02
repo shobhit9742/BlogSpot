@@ -109,11 +109,29 @@ a.sidebar-link {
   width: 100vw;
 }
 
-.strongIMG img{
+.strongIMG img {
   width: 130px;
   margin-left: 2rem;
   margin-bottom: 2rem;
 }
+
+.numPost {
+  font-weight: 600;
+}
+
+.profileName{
+  display: flex;
+  height: 50px;
+}
+.profileName img{
+  padding-right: 10px;
+  border-radius: 50%;
+}
+
+/* #btnTable{
+  width: 100%;
+  display: flex;
+} */
 @media (min-width: 768px) {
   .content {
     max-width: auto;
