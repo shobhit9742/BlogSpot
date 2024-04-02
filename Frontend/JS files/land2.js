@@ -48,13 +48,16 @@ let fetchData = async () => {
                                   </div>`;
 
     let res = await fetch(
-      `https://tech-tatva-2345-1.onrender.com/blog_posts?_page=${page}&&q=${searchInput.value}`
+      `https://tech-tatva-2345-1.onrender.com/blog_posts?_page=${page}&&q=${
+        searchInput.value ? searchInput.value : ""
+      }`
     );
     let data = await res.json();
     console.log(data);
     isFetching = false;
     isLoading = false;
     loadingContainer.innerHTML = "";
+    resultContainer.innerHTML = "";
     appendData(data);
     if (data.length === 0) {
       flag = false;
@@ -87,7 +90,10 @@ function createCard(data) {
   imgAllText.className = "imageAllText";
 
   let img = document.createElement("img");
-  img.src = data.profile_Img;
+  img.src =
+    data.profile_Img == ""
+      ? "https://img.freepik.com/free-vector/isolated-young-handsome-man-different-poses-white-background-illustration_632498-859.jpg?w=740&t=st=1711880702~exp=1711881302~hmac=55bf17deceea9dac34197c009d68b5d3b845efc75619582df72d67b6ba31b280"
+      : data.profile_Img;
   img.style.width = "30px";
   img.style.height = "30px";
   img.style.marginRight = "10px";
@@ -153,7 +159,7 @@ function createCard(data) {
   let logoBox = document.createElement("div");
   logoBox.className = "logoIcon";
   let icon = document.createElement("img");
-  icon.src = "/Tech-Tatva-2345/image/bookmark.svg";
+  icon.src = "../../image/bookmark.svg";
   icon.style.cursor = "pointer";
 
   icon.addEventListener("click", function () {
@@ -161,14 +167,17 @@ function createCard(data) {
     savedData.push(data);
     localStorage.setItem("savedData", JSON.stringify(savedData));
 
-    icon.src = "/Tech-Tatva-2345/image/saved.svg";
+    icon.src = "../../image/saved.svg";
     icon.style.width = "28px";
     icon.style.height = "28px";
     icon.removeEventListener("click", this);
   });
 
   let img_src = document.createElement("img");
-  img_src.src = data.img_src;
+  img_src.src =
+    data.img_src == ""
+      ? "https://images.unsplash.com/photo-1529909746513-b540c1680fdb?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      : data.img_src;
   img_src.style.width = "220px";
   img_src.style.marginLeft = "15px";
   let imgDiv = document.createElement("div");
@@ -244,29 +253,10 @@ function createCard(data) {
   return blogCard;
 }
 
-fetchData();
-
-// Parsing the JWT
-function parseJwt(token) {
-  var base64Url = token.split(".")[1];
-  var base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
-  var jsonPayload = decodeURIComponent(
-    window
-      .atob(base64)
-      .split("")
-      .map(function (c) {
-        return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
-      })
-      .join("")
-  );
-
-  return JSON.parse(jsonPayload);
-}
-
-function handleLogin(response) {
-  signIn(parseJwt(response));
-  console.log(response.credential);
-}
+// fetchData();
+window.onload = () => {
+  fetchData();
+};
 
 //Debouncing for search input
 
@@ -281,7 +271,7 @@ function debounce(func, delay) {
   }, delay);
 }
 
-searchInput.addEventListener("input", (e) => {
+searchInput.addEventListener("input", () => {
   debounce(fetchData, 1000);
 });
 
@@ -363,7 +353,10 @@ const fetchSingleData = async (id) => {
 
   // article - desc
   let profileImg = document.getElementById("profile_Img");
-  profileImg.src = profile_Img;
+  profileImg.src =
+    profile_Img == ""
+      ? "https://img.freepik.com/free-vector/isolated-young-handsome-man-different-poses-white-background-illustration_632498-859.jpg?w=50&t=st=1711880702~exp=1711881302~hmac=55bf17deceea9dac34197c009d68b5d3b845efc75619582df72d67b6ba31b280"
+      : profile_Img;
 
   let authorName = document.getElementById("author");
   authorName.innerText = author_name;
@@ -376,5 +369,7 @@ const fetchSingleData = async (id) => {
   pubDate.innerHTML = `<strong>Published on : </strong> ${date_pub}`;
 
   // paragraph
-  model_content.innerText = paragraph;
+  model_content.innerText = paragraph
+    ? paragraph
+    : "Do you know one of those annoying people? They decline the dessert not because they’re on a diet, but because sweet stuff doesn’t do anything for them. Oh really! you say, Good for you! when what you really think is Fuck off. Well, I’m that person, but with alcohol. I’m here to tell you, it’s as good for me, as it is hard for me. So, in case your dry January is going well and you think of extending it, read on.  Over a year ago, someone shared with me this informative, factual, yet thoroughly bleak podcast by Andrew Huberman about the effects of any amount of alcohol on your brain and body. \n\n Since I had just reached the wise age of thirty, otherwise known as the age when you have less fucks to give, I asked myself why I drank at all and what would happen if I stopped. And then I stopped. You know how it goes from there. I felt great, I saved money, ‘I often regretted drinking but I never regretted not drinking’ and so on. It’s all true. However, before that, since the first glass of wine that my parents gave me at 12, for the good 18 years of my life, I did regularly drink. Why? Because that’s what people do. So, let’s start by saying that when you stop drinking, people don’t know what to do with you. \n\n The first day I started sports betting, I was checking my phone and the ESPN app on my phone non-stop. I did not become a monster or a gambling addict, but I won’t deny that I stopped doing as much housework, paid less attention to my wife and my friends, and just got too consumed in the thrill of seeing whether bets would or would not hit all too often. I would be checking stats and watching sports games of games I had bets on, only to see that 10 to 15 minutes of time had passed. \n\n It wouldn’t be the time I spent checking on sports games that was the problem as much as the constant interruption and task switching. I understand that this is just normal human behavior, and your average American might spend much more time watching football on a Sunday. But it was what this checking would do to my mood and mental state that made me realize sports gambling was making me a worse person. When my bets were doing well and I was making $70 to $150 per day, I was somewhat happy, but then I was thinking of the next day and how I should tinker my strategy for the next day. When my bets were losing, however, the despair I felt was always significantly worse than the happiness I gained from winning. The problem wasn’t that there weren’t highs, but the lows were much lower than the highs. I am not advocating for the sudden re-criminalization of sports gambling, because I would be a hypocrite. As much as it makes me a worse person, I love it. I profit off of it. \n\n I’m a human being as much as anyone else is. And I am not even venturing into whether the integrity of sports itself is at risk now that sports gambling has become so accepted and embraced by sports leagues like the NBA or NFL themselves. I think this societal acceptance and embrace have been long desired, as people have wanted to bet on sports games. But it is happening so quickly that we have to consider whether this embrace has gone too far.";
 };
