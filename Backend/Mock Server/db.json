@@ -1,11 +1,10 @@
 {
-  
-  "admin":[
+  "admin": [
     {
       "id": 1,
       "name": "Shobhit",
       "email": "user1@example.com",
-      "password": "",
+      "password": "12345678",
       "role": "Admin",
       "isAdmin": true
     },
@@ -13,7 +12,7 @@
       "id": 1,
       "name": "Rishwant",
       "email": "user2@example.com",
-      "password": "",
+      "password": "12345678",
       "role": "Junior Admin",
       "isAdmin": false
     }
@@ -39,7 +38,7 @@
       "email": "acorr1@ask.com",
       "gender": "Male",
       "contact_num": "06-987-6159",
-      "num_post":  12,
+      "num_post": 12,
       "tag": "Roofing (Metal)"
     },
     {
@@ -50,7 +49,7 @@
       "email": "wperview2@multiply.com",
       "gender": "Male",
       "contact_num": "75-363-3532",
-      "num_post":  24,
+      "num_post": 24,
       "tag": "Doors, Frames & Hardware"
     },
     {
@@ -83,7 +82,7 @@
       "email": "mgrisbrook5@merriam-webster.com",
       "gender": "Female",
       "contact_num": "00-934-2332",
-      "num_post":  25,
+      "num_post": 25,
       "tag": "RF Shielding"
     },
     {
@@ -105,7 +104,7 @@
       "email": "wmalsher7@walmart.com",
       "gender": "Male",
       "contact_num": "59-419-8993",
-      "num_post":  54,
+      "num_post": 54,
       "tag": "Marlite Panels (FED)"
     },
     {
