@@ -14,6 +14,12 @@
 
         }
 
+        .inimglogo {
+            width: 370px;
+            height: 100px;
+            margin-top: 10px;
+        }
+
         .hlast {
             gap: 10px;
         }
@@ -138,4 +144,68 @@
 
         .ullist li {
             font-size: 0.60em;
+        }
+
+        @media all and (max-width: 376px) {
+            #head {
+                display: flex;
+                flex-direction: row;
+            }
+
+            .hlast {
+                display: flex;
+                flex-direction: row;
+            }
+
+            .ftext {
+                margin-top: 10px;
+            }
+
+            .abovefoot {
+                margin-top: 10px;
+            }
+
+            .inimglogo {
+                width: 100px;
+                height: 50px;
+                margin-top: 10px;
+                margin-left: 10px;
+            }
+
+            #middle {
+                width: 100%;
+                display: flex;
+            }
+
+            #midfirst {
+                width: 100%;
+            }
+
+            #midsecond {
+                width: 50%;
+                display: none;
+            }
+
+            .inall {
+                margin-left: 25px;
+
+            }
+
+            .ftext {
+                font-size: 40px;
+            }
+
+            .botbtn1 {
+                height: 10vh;
+            }
+
+            .btnintext1 {
+                font-size: 1.2em;
+                margin-top: 20px;
+            }
+
+            .blkarrow {
+                font-size: 30px !important;
+                margin-top: 16px;
+            }
         }
