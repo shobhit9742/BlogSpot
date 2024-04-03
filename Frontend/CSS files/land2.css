@@ -21,50 +21,6 @@ body {
   gap: 20px;
 }
 
-/* Modal CSS  */
-#modal_head {
-  text-align: center;
-}
-
-#mag_glass {
-  display: none;
-}
-
-.signInBtns {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  margin: 30px 0px;
-}
-
-.button {
-  border: 1px solid black !important;
-  border-radius: 10% / 50% !important;
-}
-
-.vl {
-  border-left: 2px solid grey;
-  height: 200px;
-}
-
-.vl2 {
-  border-left: 2px solid grey;
-  height: 400px;
-}
-
-.grey {
-  color: grey;
-}
-
-.signUp {
-  color: green;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.modal_footer {
-  text-align: center;
-}
 
 #content_section {
   display: flex;
@@ -129,6 +85,7 @@ body {
   /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
   margin-top: 20px !important;
   flex-direction: row !important;
+  border: none !important;
 }
 
 .ProImgText {
@@ -245,12 +202,12 @@ body {
   /* gap: 0.4rem; */
   width: 70%;
   padding: 1.3rem;
-  min-height: calc(100vh - 210px);
-  overflow-y: scroll;
+  min-height: calc(100vh - 310px);
+  /* overflow-y: scroll; */
   margin-top: 50px;
   position: absolute;
   z-index: 2;
-  /* top: 20%; */
+  top: calc(100vh - 80%);
   background-color: white;
   border: 1px solid #ddd;
   border-radius: 15px;
@@ -323,6 +280,19 @@ body {
 }
 
 #articleImg {
-  width: 50%;
-  height: 80%;
+  width: 100%;
+  height: 100%;
+}
+
+#model_content {
+  overflow-y: scroll;
+  height: 300px;
+  margin-top: 20px;
+}
+
+.dateTimelogo {
+  width: 100%;
+  /* border: 1px solid rgb(0, 255, 13); */
+  display: flex;
+  justify-content: space-between;
 }
