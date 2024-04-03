@@ -17,6 +17,11 @@ body {
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid black;
+    background-color: #ffc017;
+}
+.inimglogo
+{
+    width: 200px;
 }
 
 .hlast {
