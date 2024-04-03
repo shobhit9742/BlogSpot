@@ -42,6 +42,7 @@ function createCard(data) {
 
     let img = document.createElement("img");
     img.className = "profileImg";
+
     // img.src = data.profile_Img;
     img.src = (data.profile_Img == "" ? "https://img.freepik.com/free-vector/isolated-young-handsome-man-different-poses-white-background-illustration_632498-859.jpg?w=740&t=st=1711880702~exp=1711881302~hmac=55bf17deceea9dac34197c009d68b5d3b845efc75619582df72d67b6ba31b280" : data.profile_Img);
 
@@ -156,6 +157,7 @@ function createCard(data) {
 
     let img_src = document.createElement("img");
     img_src.className = "bigImage"
+
     // img_src.src = data.img_src;
     img_src.src = (data.img_src == "" ? "https://images.unsplash.com/photo-1529909746513-b540c1680fdb?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" : data.img_src);
     img_src.style.width = "220px";
@@ -390,9 +392,11 @@ function createTrendingCard(data) {
     let id = document.createElement("h4");
     id.innerText = data.id;
     id.style.marginLeft = "5px";
+
     id.style.marginTop = "10px";
     id.style.color = "lightGray";
     id.style.marginRight = "10px";
+
 
     let imgName = document.createElement("div");
     imgName.className = "imageName";

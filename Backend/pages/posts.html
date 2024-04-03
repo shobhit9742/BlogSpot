@@ -26,7 +26,8 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="admin.css" />
-    <script src="./admin.js" defer></script>
+    <script src="./posts.js" defer></script>
+    <link rel="stylesheet" href="./posts.css" />
   </head>
   <body>
     <div class="wrapper">
@@ -34,14 +35,14 @@
         <!-- Content for the SideBar -->
         <div class="h-100">
           <div class="sidebar-logo">
-            <a href="#"
+            <a href="./admin.html"
               ><img src="../Mock Server/logo/Transparent.png" alt="logo"
             /></a>
           </div>
           <div class="sidebar-nav">
             <li class="sidebar-header">Admin Elements</li>
             <li class="sidebar-item">
-              <a href="#" class="sidebar-link">
+              <a href="./admin.html" class="sidebar-link">
                 <i class="fa-solid fa-list pe-2"></i>
                 Dashboard
               </a>
@@ -62,7 +63,7 @@
                 data-bs-parent="#sidebar"
               >
                 <li class="sidebar-item">
-                  <a href="./posts.html" class="sidebar-link">Posts</a>
+                  <a href="#" class="sidebar-link">Posts</a>
                 </li>
                 <li class="sidebar-item">
                   <a href="#" class="sidebar-link">Details</a>
@@ -189,48 +190,72 @@
         </nav>
         <main class="content px-3 py-2">
           <div class="container-fluid">
-            <div class="mb-3">
-              <h4>Admin Dashboard</h4>
-            </div>
-            <div class="row">
-              <div class="col-12 col-md-6 d-flex">
-                <div class="card flex-fill border-0 illustration">
-                  <div class="card-body p-0 d-flex flex-fill">
-                    <div class="row g-0 w-100">
-                      <div class="col-6">
-                        <div class="p-3 m-1">
-                          <h4>Welcome Back, Admin</h4>
-                          <p class="mb-0">Admin Dashboard, BlogSpot</p>
-                        </div>
-                      </div>
-                      <div class="col-6 align-self-end text-end">
-                        <img
-                          src="../Mock Server/logo/customer-support.jpg"
-                          class="img-fluid illustration-img"
-                          alt=""
-                        />
-                      </div>
-                    </div>
+            <tr id="edit-product-row" style="display: none">
+              <td colspan="7">
+                <h5>Edit Post User, Details, and Description</h5>
+                <form id="edit-product-form">
+                  <input type="hidden" id="product-id-input" />
+                  <div class="form-group">
+                    <label for="product-name-input">User ID</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="id"
+                      placeholder="ID"
+                    />
                   </div>
-                </div>
-              </div>
-              <div class="col-12 col-md-6 d-flex">
-                <div class="card flex-fill border-0">
-                  <div class="card-body py-4">
-                    <div class="d-flex align-items-start">
-                      <div class="flex-grow-1">
-                        <h4 class="mb-2">99+</h4>
-                        <p class="mb-2">Total Blogs</p>
-                        <div class="mb-0">
-                          <span class="badge text-success me-2"> +9.0% </span>
-                          <span class="text-muted"> Since Last week </span>
-                        </div>
-                      </div>
-                    </div>
+                  <div class="form-group">
+                    <label for="product-price-input">Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="name"
+                      placeholder="Name"
+                    />
                   </div>
-                </div>
-              </div>
-            </div>
+                  <div class="form-group">
+                    <label for="product-price-input">Title</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="title"
+                      placeholder="Title"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="product-price-input">Tag</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="tag"
+                      placeholder="Tag/Genre"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="product-price-input">Image URL</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="imgURL"
+                      placeholder="Image URL"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="product-description-input">Description</label>
+                    <textarea
+                      class="form-control"
+                      id="description"
+                      rows="3"
+                      placeholder="Enter description"
+                    ></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-primary" id="updateBtn">Update</button>
+                </form>
+              </td>
+            </tr>
+          </div>
+          <div>
             <!-- Table Element -->
             <div class="card border-0">
               <div class="card-header">
@@ -244,37 +269,24 @@
                 <table class="table">
                   <thead>
                     <tr>
-                      <th scope="col">Rank</th>
+                      <th scope="col">Sr. no.</th>
+                      <th scope="col">Profile Image</th>
                       <th scope="col">Full Name</th>
-                      <th scope="col">Email</th>
-                      <th scope="col">Gender</th>
-                      <th scope="col">Phone</th>
                       <th scope="col">Topic/Tag</th>
-                      <th scope="col">Number of Posts</th>
+                      <th scope="col">Title</th>
+                      <th scope="col">Image</th>
+                      <th scope="col">Description</th>
+                      <!-- <th scope="col">Number of Posts</th> -->
                     </tr>
                   </thead>
                   <tbody id="contain">
-                    <!-- Dynamic content -->
-                    <!-- <tr>
-                      <th scope="row">1</th>
-                      <td>Mark</td>
-                      <td>Otto</td>
-                      <td>@mdo</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">2</th>
-                      <td>Jacob</td>
-                      <td>Thornton</td>
-                      <td>@fat</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">3</th>
-                      <td colspan="2">Larry the Bird</td>
-                      <td>@twitter</td>
-                    </tr> -->
+                    <!-- Dynamic Content -->
                   </tbody>
-                  <tr id="btnTable"></tr>
+                  <tbody id="btnPagi"></tbody>
                 </table>
+                <div id="btnTable">
+                  <!-- Pagination Buttons -->
+                </div>
               </div>
             </div>
           </div>
@@ -289,7 +301,9 @@
               <div class="col-6 text-start">
                 <p class="mb-0">
                   <a href="#" class="text-muted strongIMG">
-                    <strong><img src="../Mock Server/logo/Transparent.png" alt=""></strong>
+                    <strong
+                      ><img src="../Mock Server/logo/Transparent.png" alt=""
+                    /></strong>
                   </a>
                 </p>
               </div>

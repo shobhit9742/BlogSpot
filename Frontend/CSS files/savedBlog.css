@@ -4,6 +4,7 @@ body {
 }
 
 #imgLogo {
+
     width: 200px;
     height: 50px;
     margin-left: 20px;
@@ -11,6 +12,7 @@ body {
     margin-top: -4px;
     /* border: 1px solid; */
 }
+
 
 
 .logo:hover {
@@ -59,14 +61,16 @@ li a {
     width: 100%;
     display: flex;
     gap: 5px;
-    border: 1px solid yellow;
+
+    /* border: 1px solid yellow; */
     padding-top: 60px;
 }
 
 #container2 {
     width: 68%;
 
-    border: 1px solid red;
+
+    /* border: 1px solid red; */
     display: flex;
     flex-wrap: wrap;
     gap: 40px;

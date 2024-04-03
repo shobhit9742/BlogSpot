@@ -730,6 +730,7 @@ li a {
 
 .modal_footer {
     text-align: center;
+
 }
 
 #modal_head {
@@ -1240,6 +1241,4 @@ li a {
         border-bottom: none;
         cursor: pointer;
     }
-
-
 }

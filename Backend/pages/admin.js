@@ -33,12 +33,16 @@ if (isLight()) {
 // data fetching
 
 let container = document.getElementById("contain");
-let data = "https://tech-tatva-2345-1.onrender.com/users?_sort=num_post&_order=desc";
+let data =
+  "https://tech-tatva-2345-1.onrender.com/users?_sort=num_post&_order=desc&_page=1&_limit=10";
 
 async function fetchData(url) {
   try {
     let res = await fetch(url);
     let data = await res.json();
+    let totalCount = res.headers.get(`X-Total-Count`);
+    let totalPages = Math.ceil(totalCount / 10);
+    paginate(totalPages);
     appendData(data);
     console.log(data);
   } catch (err) {
@@ -89,10 +93,6 @@ fetchData(data);
 //   //
 // }
 
-
-
-
-
 // "id": "1",
 // "profile_Img": "https://miro.medium.com/v2/resize:fill:40:40/1*KRWzAtSc4v6NifDIZiBrUw.png",
 // "first_name": "Lockwood",
@@ -103,8 +103,8 @@ fetchData(data);
 // "num_post": "42",
 // "tag": "Marlite Panels (FED)"
 
-
 function createTable(data, index) {
+  // Creating Elements
   let tr = document.createElement("tr");
   let profile = document.createElement("img");
   let rank = document.createElement("td");
@@ -115,7 +115,10 @@ function createTable(data, index) {
   let num = document.createElement("td");
   let tag = document.createElement("td");
   let name = document.createElement("td");
+  // let edit = document.createElement("button");
+  // let del = document.createElement("button");
 
+  // assigning Values
   rank.innerText = index + 1;
   profile.src = data.profile_Img;
   name.innerText = data.first_name + data.last_name;
@@ -125,12 +128,19 @@ function createTable(data, index) {
   tag.innerText = data.tag;
   num.innerText = data.num_post;
 
-  cont.append(profile, name)
+  // edit.innerText = "Edit";
+  // del.innerText = "Delete";
+
+  // Assiging Classes 
+  num.setAttribute("class", "numPost");
+  cont.setAttribute("class", "profileName")
+
+  // Assigning Values
+
+  cont.append(profile, name);
   tr.append(rank, cont, email, gender, contact, tag, num);
   return tr;
 }
-
-
 
 function appendData(data) {
   container.innerHTML = "";
@@ -138,27 +148,6 @@ function appendData(data) {
     let table = createTable(item, index);
     container.append(table);
   });
-}
-
-// Add pagination buttons and event listeners on those buttons */
-
-function paginate(totalPages) {
-  let pagWrapper = document.getElementById("pag-wrapper");
-  pagWrapper.innerHTML = "";
-
-  for (let i = 1; i <= totalPages; i++) {
-    let pagBtn = document.createElement("button");
-    pagBtn.innerText = `${i}`;
-    pagBtn.classList.add("btn", "btn-secondary");
-    pagWrapper.append(pagBtn);
-
-    pagBtn.addEventListener("click", () => {
-      getProductsData(
-        `https://tech-tatva-2345-1.onrender.com/blog_posts?_page=${i}&_limit=10`,
-        queryParam
-      );
-    });
-  }
 }
 
 /* Search User */
@@ -175,6 +164,25 @@ function paginate(totalPages) {
 // });
 
 let queryParam = null;
+
+// Add pagination buttons and event listeners on those buttons */
+
+function paginate(totalPages) {
+  let tableBtn = document.getElementById("btnTable");
+  tableBtn.innerHTML = "";
+  for (let i = 1; i <= totalPages; i++) {
+    let pagBtn = document.createElement("button");
+    pagBtn.innerText = `${i}`;
+    pagBtn.classList.add("btn", "btn-secondary");
+    tableBtn.append(pagBtn);
+
+    pagBtn.addEventListener("click", () => {
+      fetchData(
+        `https://tech-tatva-2345-1.onrender.com/users?_sort=num_post&_order=desc&_page=${i}&_limit=10`
+      );
+    });
+  }
+}
 
 /* Edit a Post */
 
