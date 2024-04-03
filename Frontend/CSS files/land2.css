@@ -21,50 +21,6 @@ body {
   gap: 20px;
 }
 
-/* Modal CSS  */
-#modal_head {
-  text-align: center;
-}
-
-#mag_glass {
-  display: none;
-}
-
-.signInBtns {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  margin: 30px 0px;
-}
-
-.button {
-  border: 1px solid black !important;
-  border-radius: 10% / 50% !important;
-}
-
-.vl {
-  border-left: 2px solid grey;
-  height: 200px;
-}
-
-.vl2 {
-  border-left: 2px solid grey;
-  height: 400px;
-}
-
-.grey {
-  color: grey;
-}
-
-.signUp {
-  color: green;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.modal_footer {
-  text-align: center;
-}
 
 #content_section {
   display: flex;
@@ -251,7 +207,7 @@ body {
   margin-top: 50px;
   position: absolute;
   z-index: 2;
-  /* top: 20%; */
+  top: calc(100vh - 80%);
   background-color: white;
   border: 1px solid #ddd;
   border-radius: 15px;
@@ -330,7 +286,8 @@ body {
 
 #model_content {
   overflow-y: scroll;
-  height: 200px;
+  height: 300px;
+  margin-top: 20px;
 }
 
 .dateTimelogo {

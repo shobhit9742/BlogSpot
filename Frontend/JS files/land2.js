@@ -1,29 +1,3 @@
-// SignIn Form Details
-let signInEmail = document.getElementById("user_email");
-let signInPass = document.getElementById("user_pwd");
-let signInSubmit = document.getElementById("submit_btn");
-
-signInSubmit.addEventListener("click", (e) => {
-  e.preventDefault();
-  console.log(signInEmail.value);
-  console.log(signInPass.value);
-});
-
-// SignUp Form Details
-let signUpFName = document.getElementById("fName");
-let signUpLName = document.getElementById("lName");
-let signUpEmail = document.getElementById("signUp_email");
-let signUpPass = document.getElementById("signUp_pwd");
-let signUpSubmit = document.getElementById("signUp_submit_btn");
-
-signUpSubmit.addEventListener("click", (e) => {
-  e.preventDefault();
-  console.log(signUpFName.value);
-  console.log(signUpLName.value);
-  console.log(signUpEmail.value);
-  console.log(signUpPass.value);
-});
-
 // Fetch and populate articles
 let url = "https://tech-tatva-2345-1.onrender.com/blog_posts";
 let page = 1;
@@ -31,13 +5,48 @@ let flag = true;
 let isLoading = false;
 let isFetching = false;
 let container = document.querySelector("#container");
-let resultContainer = document.querySelector(".card_section");
 let loadingContainer = document.querySelector(".loading-container");
 const searchInput = document.getElementById("searchInput");
+const modal = document.querySelector(".modalSelf");
+const overlay = document.querySelector(".overlay");
+const openModalBtn = document.querySelector(".btn-open");
+const closeModalBtn = document.querySelector(".btn-close");
+const model_content = document.getElementById("model_content");
 
 let fetchData = async () => {
-  console.log(searchInput.value);
   try {
+    console.log("fetchData");
+    if (isLoading) return;
+    isLoading = true;
+    isFetching = true;
+    loadingContainer.innerHTML = `<div class="d-flex justify-content-center align-items-center">
+                                    <div class="spinner-grow text-secondary" role="status">
+                                      <span class="visually-hidden">Loading...</span>
+                                    </div>
+                                  </div>`;
+
+    let res = await fetch(`${url}?_page=${page}`);
+    let data = await res.json();
+    isFetching = false;
+    isLoading = false;
+    loadingContainer.innerHTML = "";
+    appendData(data);
+    if (data.length === 0) {
+      flag = false;
+      return;
+    }
+    page++;
+    flag = true;
+  } catch (error) {
+    isLoading = false;
+    console.log(error);
+  }
+};
+
+let fetchDataOnInput = async () => {
+  try {
+    console.log("fetchDataOnInput");
+
     if (isLoading) return;
     isLoading = true;
     isFetching = true;
@@ -48,16 +57,12 @@ let fetchData = async () => {
                                   </div>`;
 
     let res = await fetch(
-      `https://tech-tatva-2345-1.onrender.com/blog_posts?_page=${page}&&q=${
-        searchInput.value ? searchInput.value : ""
-      }`
+      `${url}?_page=${page}&&q=${searchInput.value ? searchInput.value : ""}`
     );
     let data = await res.json();
-    console.log(data);
     isFetching = false;
     isLoading = false;
     loadingContainer.innerHTML = "";
-    resultContainer.innerHTML = "";
     appendData(data);
     if (data.length === 0) {
       flag = false;
@@ -73,6 +78,8 @@ let fetchData = async () => {
 
 let appendData = (data) => {
   data.forEach((el) => {
+    let resultContainer = document.querySelector(".card_section");
+
     let card = createCard(el);
     const { id } = el;
     card.addEventListener("click", () => openModal(id));
@@ -259,7 +266,6 @@ window.onload = () => {
 };
 
 //Debouncing for search input
-
 let id;
 function debounce(func, delay) {
   if (id) {
@@ -272,8 +278,10 @@ function debounce(func, delay) {
 }
 
 searchInput.addEventListener("input", () => {
-  debounce(fetchData, 1000);
+  debounce(searchInput.value ? fetchDataOnInput : fetchData, 1000);
 });
+
+/////////////// Infinite Scroll ////////////////
 
 window.addEventListener("scroll", () => {
   if (isFetching || !flag) {
@@ -285,12 +293,6 @@ window.addEventListener("scroll", () => {
 });
 
 //////////// Modal JS //////////////
-
-const modal = document.querySelector(".modalSelf");
-const overlay = document.querySelector(".overlay");
-const openModalBtn = document.querySelector(".btn-open");
-const closeModalBtn = document.querySelector(".btn-close");
-const model_content = document.getElementById("model_content");
 
 // close modal function
 const closeModal = function () {
@@ -319,57 +321,60 @@ const openModal = function (id) {
 };
 
 const fetchSingleData = async (id) => {
-  const res = await fetch(
-    `https://tech-tatva-2345-1.onrender.com/blog_posts/${id}`
-  );
-  let data = await res.json();
-  console.log(data);
-  const {
-    paragraph,
-    author_name,
-    date_pub,
-    img_src,
-    profile_Img,
-    reading_time,
-    title,
-    tag,
-    description,
-  } = data;
-  // article - tag
-  let articleTag = document.getElementById("tag");
-  articleTag.innerText = tag.toUpperCase();
+  try {
+    const res = await fetch(
+      `https://tech-tatva-2345-1.onrender.com/blog_posts/${id}`
+    );
+    let data = await res.json();
+    const {
+      paragraph,
+      author_name,
+      date_pub,
+      img_src,
+      profile_Img,
+      reading_time,
+      title,
+      tag,
+      description,
+    } = data;
+    // article - tag
+    let articleTag = document.getElementById("tag");
+    articleTag.innerText = tag.toUpperCase();
 
-  //article - image
-  let articleImg = document.getElementById("articleImg");
-  articleImg.src = img_src;
+    //article - image
+    let articleImg = document.getElementById("articleImg");
+    articleImg.src = img_src;
 
-  // article - title
-  let articleTitle = document.getElementById("title");
-  articleTitle.innerText = title;
+    // article - title
+    let articleTitle = document.getElementById("title");
+    articleTitle.innerText = title;
 
-  // article-description
-  let articleDesc = document.getElementById("description");
-  articleDesc.innerText = description;
+    // article-description
+    let articleDesc = document.getElementById("description");
+    articleDesc.innerText = description;
 
-  // article - desc
-  let profileImg = document.getElementById("profile_Img");
-  profileImg.src =
-    profile_Img == ""
-      ? "https://img.freepik.com/free-vector/isolated-young-handsome-man-different-poses-white-background-illustration_632498-859.jpg?w=50&t=st=1711880702~exp=1711881302~hmac=55bf17deceea9dac34197c009d68b5d3b845efc75619582df72d67b6ba31b280"
-      : profile_Img;
+    // article - desc
+    let profileImg = document.getElementById("profile_Img");
+    profileImg.src =
+      profile_Img == ""
+        ? "https://img.freepik.com/free-vector/isolated-young-handsome-man-different-poses-white-background-illustration_632498-859.jpg?w=50&t=st=1711880702~exp=1711881302~hmac=55bf17deceea9dac34197c009d68b5d3b845efc75619582df72d67b6ba31b280"
+        : profile_Img;
 
-  let authorName = document.getElementById("author");
-  authorName.innerText = author_name;
+    let authorName = document.getElementById("author");
+    authorName.innerText = author_name;
 
-  let readTime = document.getElementById("read_time");
-  readTime.innerText = reading_time;
+    let readTime = document.getElementById("read_time");
+    readTime.innerText = reading_time;
 
-  //article - date
-  let pubDate = document.getElementById("date");
-  pubDate.innerHTML = `<strong>Published on : </strong> ${date_pub}`;
+    //article - date
+    let pubDate = document.getElementById("date");
+    pubDate.innerHTML = `<strong>Published on : </strong> ${date_pub}`;
 
-  // paragraph
-  model_content.innerText = paragraph
-    ? paragraph
-    : "Do you know one of those annoying people? They decline the dessert not because they’re on a diet, but because sweet stuff doesn’t do anything for them. Oh really! you say, Good for you! when what you really think is Fuck off. Well, I’m that person, but with alcohol. I’m here to tell you, it’s as good for me, as it is hard for me. So, in case your dry January is going well and you think of extending it, read on.  Over a year ago, someone shared with me this informative, factual, yet thoroughly bleak podcast by Andrew Huberman about the effects of any amount of alcohol on your brain and body. \n\n Since I had just reached the wise age of thirty, otherwise known as the age when you have less fucks to give, I asked myself why I drank at all and what would happen if I stopped. And then I stopped. You know how it goes from there. I felt great, I saved money, ‘I often regretted drinking but I never regretted not drinking’ and so on. It’s all true. However, before that, since the first glass of wine that my parents gave me at 12, for the good 18 years of my life, I did regularly drink. Why? Because that’s what people do. So, let’s start by saying that when you stop drinking, people don’t know what to do with you. \n\n The first day I started sports betting, I was checking my phone and the ESPN app on my phone non-stop. I did not become a monster or a gambling addict, but I won’t deny that I stopped doing as much housework, paid less attention to my wife and my friends, and just got too consumed in the thrill of seeing whether bets would or would not hit all too often. I would be checking stats and watching sports games of games I had bets on, only to see that 10 to 15 minutes of time had passed. \n\n It wouldn’t be the time I spent checking on sports games that was the problem as much as the constant interruption and task switching. I understand that this is just normal human behavior, and your average American might spend much more time watching football on a Sunday. But it was what this checking would do to my mood and mental state that made me realize sports gambling was making me a worse person. When my bets were doing well and I was making $70 to $150 per day, I was somewhat happy, but then I was thinking of the next day and how I should tinker my strategy for the next day. When my bets were losing, however, the despair I felt was always significantly worse than the happiness I gained from winning. The problem wasn’t that there weren’t highs, but the lows were much lower than the highs. I am not advocating for the sudden re-criminalization of sports gambling, because I would be a hypocrite. As much as it makes me a worse person, I love it. I profit off of it. \n\n I’m a human being as much as anyone else is. And I am not even venturing into whether the integrity of sports itself is at risk now that sports gambling has become so accepted and embraced by sports leagues like the NBA or NFL themselves. I think this societal acceptance and embrace have been long desired, as people have wanted to bet on sports games. But it is happening so quickly that we have to consider whether this embrace has gone too far.";
+    // paragraph
+    model_content.innerText = paragraph
+      ? paragraph
+      : "Do you know one of those annoying people? They decline the dessert not because they’re on a diet, but because sweet stuff doesn’t do anything for them. Oh really! you say, Good for you! when what you really think is Fuck off. Well, I’m that person, but with alcohol. I’m here to tell you, it’s as good for me, as it is hard for me. So, in case your dry January is going well and you think of extending it, read on.  Over a year ago, someone shared with me this informative, factual, yet thoroughly bleak podcast by Andrew Huberman about the effects of any amount of alcohol on your brain and body. \n\n Since I had just reached the wise age of thirty, otherwise known as the age when you have less fucks to give, I asked myself why I drank at all and what would happen if I stopped. And then I stopped. You know how it goes from there. I felt great, I saved money, ‘I often regretted drinking but I never regretted not drinking’ and so on. It’s all true. However, before that, since the first glass of wine that my parents gave me at 12, for the good 18 years of my life, I did regularly drink. Why? Because that’s what people do. So, let’s start by saying that when you stop drinking, people don’t know what to do with you. \n\n The first day I started sports betting, I was checking my phone and the ESPN app on my phone non-stop. I did not become a monster or a gambling addict, but I won’t deny that I stopped doing as much housework, paid less attention to my wife and my friends, and just got too consumed in the thrill of seeing whether bets would or would not hit all too often. I would be checking stats and watching sports games of games I had bets on, only to see that 10 to 15 minutes of time had passed. \n\n It wouldn’t be the time I spent checking on sports games that was the problem as much as the constant interruption and task switching. I understand that this is just normal human behavior, and your average American might spend much more time watching football on a Sunday. But it was what this checking would do to my mood and mental state that made me realize sports gambling was making me a worse person. When my bets were doing well and I was making $70 to $150 per day, I was somewhat happy, but then I was thinking of the next day and how I should tinker my strategy for the next day. When my bets were losing, however, the despair I felt was always significantly worse than the happiness I gained from winning. The problem wasn’t that there weren’t highs, but the lows were much lower than the highs. I am not advocating for the sudden re-criminalization of sports gambling, because I would be a hypocrite. As much as it makes me a worse person, I love it. I profit off of it. \n\n I’m a human being as much as anyone else is. And I am not even venturing into whether the integrity of sports itself is at risk now that sports gambling has become so accepted and embraced by sports leagues like the NBA or NFL themselves. I think this societal acceptance and embrace have been long desired, as people have wanted to bet on sports games. But it is happening so quickly that we have to consider whether this embrace has gone too far.";
+  } catch (error) {
+    console.log(error);
+  }
 };
