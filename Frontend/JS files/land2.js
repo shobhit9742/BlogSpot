@@ -57,7 +57,7 @@ let fetchDataOnInput = async () => {
                                   </div>`;
 
     let res = await fetch(
-      `${url}?_page=${page}&&q=${searchInput.value ? searchInput.value : ""}`
+      `${url}?q=${searchInput.value ? searchInput.value : ""}`
     );
     let data = await res.json();
     isFetching = false;
@@ -77,9 +77,10 @@ let fetchDataOnInput = async () => {
 };
 
 let appendData = (data) => {
+  let resultContainer = document.querySelector(".card_section");
+  resultContainer.innerHTML = "";
+  console.log(data);
   data.forEach((el) => {
-    let resultContainer = document.querySelector(".card_section");
-
     let card = createCard(el);
     const { id } = el;
     card.addEventListener("click", () => openModal(id));
