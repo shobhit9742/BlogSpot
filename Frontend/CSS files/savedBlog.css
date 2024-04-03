@@ -4,11 +4,16 @@ body {
 }
 
 #imgLogo {
-    width: 150px;
-    height: 60px;
-    margin-left: 40px;
+
+    width: 200px;
+    height: 50px;
+    margin-left: 20px;
     margin-bottom: 20px;
+    margin-top: -4px;
+    /* border: 1px solid; */
 }
+
+
 
 .logo:hover {
     cursor: pointer;
@@ -56,12 +61,14 @@ li a {
     width: 100%;
     display: flex;
     gap: 5px;
+
     /* border: 1px solid yellow; */
     padding-top: 60px;
 }
 
 #container2 {
     width: 68%;
+
 
     /* border: 1px solid red; */
     display: flex;
