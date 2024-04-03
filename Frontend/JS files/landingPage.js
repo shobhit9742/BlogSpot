@@ -119,6 +119,71 @@ function createCard(data) {
     icon.src = "./bookmark.svg";
     icon.style.cursor = "pointer";
 
+
+    // signUpModal
+
+    icon.addEventListener("click", function () {
+        // Get a reference to the sign-up modal
+        let signUpModal = new bootstrap.Modal(document.getElementById('signUpModal'));
+        signUpModal.show();
+    });
+
+    // Function to check if the user is signed in
+    function isUserSignedIn() {
+        return localStorage.getItem('userAuthenticated') === 'true';
+    }
+
+    // Bookmark icon click event listener
+    icon.addEventListener("click", function () {
+        // Check if the user is signed in
+        if (isUserSignedIn()) {
+            saveCardData();
+        } else {
+            $('#signUpModal').modal('show');
+        }
+    });
+
+    // Function to save card data
+    function saveCardData() {
+        let savedData = JSON.parse(localStorage.getItem("savedData")) || [];
+        let dataIndex = savedData.findIndex(item => item.id === data.id);
+
+        if (dataIndex === -1) {
+            // If data is not saved, save it and change the icon
+            savedData.push(data);
+            localStorage.setItem("savedData", JSON.stringify(savedData));
+            icon.src = "./saved.svg";
+        } else {
+            // If data is already saved, remove it and change the icon
+            savedData.splice(dataIndex, 1);
+            localStorage.setItem("savedData", JSON.stringify(savedData));
+            icon.src = "./bookmark.svg";
+        }
+    }
+
+    // Function to handle sign-up submission
+    document.getElementById("signUp_submit_btn").addEventListener("click", function (event) {
+        event.preventDefault(); // Prevent form submission
+
+        // Perform sign-up process
+        signUpUser()
+            .then(() => {
+                // If sign-up successful, set flag indicating user is authenticated
+                localStorage.setItem('userAuthenticated', 'true');
+                // Close sign-up modal
+                $('#signUpModal').modal('hide');
+                // Save card data
+                saveCardData();
+            })
+            .catch(error => {
+                // Handle sign-up error
+                console.error("Sign-up failed:", error);
+                // Optionally display an error message to the user
+            });
+    });
+
+
+    ///////////////////
     document.addEventListener("DOMContentLoaded", function () {
         // Check if there is any saved data
         let savedData = JSON.parse(localStorage.getItem("savedData")) || [];
@@ -152,6 +217,7 @@ function createCard(data) {
             icon.src = "./bookmark.svg";
         }
     });
+
 
 
     let img_src = document.createElement("img");
