@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css
+    "
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js
+    "
+      defer
+    ></script>
+
+    <script
+      src="https://kit.fontawesome.com/8c5e0504e5.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="admin.css" />
+    <script src="./posts.js" defer></script>
+    <link rel="stylesheet" href="./posts.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <aside id="sidebar">
+        <!-- Content for the SideBar -->
+        <div class="h-100">
+          <div class="sidebar-logo">
+            <a href="./admin.html"
+              ><img src="../Mock Server/logo/Transparent.png" alt="logo"
+            /></a>
+          </div>
+          <div class="sidebar-nav">
+            <li class="sidebar-header">Admin Elements</li>
+            <li class="sidebar-item">
+              <a href="./admin.html" class="sidebar-link">
+                <i class="fa-solid fa-list pe-2"></i>
+                Dashboard
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a
+                href="#"
+                class="sidebar-link collapsed"
+                data-bs-target="#pages"
+                data-bs-toggle="collapse"
+                aria-expanded="false"
+                ><i class="fa-solid fa-file-lines pe-2"></i>
+                User Details
+              </a>
+              <ul
+                id="pages"
+                class="sidebar-dropdown list-unstyled collapse"
+                data-bs-parent="#sidebar"
+              >
+                <li class="sidebar-item">
+                  <a href="#" class="sidebar-link">Posts</a>
+                </li>
+                <li class="sidebar-item">
+                  <a href="#" class="sidebar-link">Details</a>
+                </li>
+              </ul>
+            </li>
+            <li class="sidebar-item">
+              <a
+                href="#"
+                class="sidebar-link collapsed"
+                data-bs-target="#posts"
+                data-bs-toggle="collapse"
+                aria-expanded="false"
+                ><i class="fa-solid fa-sliders pe-2"></i>
+                Premium
+              </a>
+              <ul
+                id="posts"
+                class="sidebar-dropdown list-unstyled collapse"
+                data-bs-parent="#sidebar"
+              >
+                <li class="sidebar-item">
+                  <a href="#" class="sidebar-link">Post 1</a>
+                </li>
+                <li class="sidebar-item">
+                  <a href="#" class="sidebar-link">Post 2</a>
+                </li>
+                <li class="sidebar-item">
+                  <a href="#" class="sidebar-link">Post 3</a>
+                </li>
+              </ul>
+            </li>
+            <li class="sidebar-item">
+              <a
+                href="#"
+                class="sidebar-link collapsed"
+                data-bs-target="#auth"
+                data-bs-toggle="collapse"
+                aria-expanded="false"
+                ><i class="fa-regular fa-user pe-2"></i>
+                Auth
+              </a>
+              <ul
+                id="auth"
+                class="sidebar-dropdown list-unstyled collapse"
+                data-bs-parent="#sidebar"
+              >
+                <li class="sidebar-item">
+                  <a href="#" class="sidebar-link">Login</a>
+                </li>
+                <li class="sidebar-item">
+                  <a href="#" class="sidebar-link">Register</a>
+                </li>
+                <li class="sidebar-item">
+                  <a href="#" class="sidebar-link">Forgot Password</a>
+                </li>
+              </ul>
+            </li>
+            <li class="sidebar-header">Multi Level Menu</li>
+            <li class="sidebar-item">
+              <a
+                href="#"
+                class="sidebar-link collapsed"
+                data-bs-target="#multi"
+                data-bs-toggle="collapse"
+                aria-expanded="false"
+                ><i class="fa-solid fa-share-nodes pe-2"></i>
+                Multi Dropdown
+              </a>
+              <ul
+                id="multi"
+                class="sidebar-dropdown list-unstyled collapse"
+                data-bs-parent="#sidebar"
+              >
+                <li class="sidebar-item">
+                  <a
+                    href="#"
+                    class="sidebar-link collapsed"
+                    data-bs-target="#level-1"
+                    data-bs-toggle="collapse"
+                    aria-expanded="false"
+                    >Level 1</a
+                  >
+                  <ul
+                    id="level-1"
+                    class="sidebar-dropdown list-unstyled collapse"
+                  >
+                    <li class="sidebar-item">
+                      <a href="#" class="sidebar-link">Level 1.1</a>
+                    </li>
+                    <li class="sidebar-item">
+                      <a href="#" class="sidebar-link">Level 1.2</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </div>
+        </div>
+      </aside>
+      <div class="main">
+        <nav class="navbar navbar-expand px-3 border-bottom">
+          <button class="btn" id="sidebar-toggle" type="button">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="navbar-collapse navbar">
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <a href="#" data-bs-toggle="dropdown" class="nav-icon pe-md-0">
+                  <img
+                    src="../Mock Server/logo/60111.jpg"
+                    class="avatar img-fluid rounded"
+                    alt=""
+                  />
+                </a>
+                <div class="dropdown-menu dropdown-menu-end">
+                  <a href="#" class="dropdown-item">Profile</a>
+                  <a href="#" class="dropdown-item">Setting</a>
+                  <a href="#" class="dropdown-item">Logout</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <main class="content px-3 py-2">
+          <div class="container-fluid">
+            <tr id="edit-product-row" style="display: none">
+              <td colspan="7">
+                <h5>Edit Post User, Details, and Description</h5>
+                <form id="edit-product-form">
+                  <input type="hidden" id="product-id-input" />
+                  <div class="form-group">
+                    <label for="product-name-input">User ID</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="id"
+                      placeholder="ID"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="product-price-input">Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="name"
+                      placeholder="Name"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="product-price-input">Title</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="title"
+                      placeholder="Title"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="product-price-input">Tag</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="tag"
+                      placeholder="Tag/Genre"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="product-price-input">Image URL</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="imgURL"
+                      placeholder="Image URL"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="product-description-input">Description</label>
+                    <textarea
+                      class="form-control"
+                      id="description"
+                      rows="3"
+                      placeholder="Enter description"
+                    ></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-primary" id="updateBtn">Update</button>
+                </form>
+              </td>
+            </tr>
+          </div>
+          <div>
+            <!-- Table Element -->
+            <div class="card border-0">
+              <div class="card-header">
+                <h5 class="card-title">Basic Table</h5>
+                <h6 class="card-subtitle text-muted">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Voluptatum ducimus, necessitatibus reprehenderit itaque!
+                </h6>
+              </div>
+              <div class="card-body">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Sr. no.</th>
+                      <th scope="col">Profile Image</th>
+                      <th scope="col">Full Name</th>
+                      <th scope="col">Topic/Tag</th>
+                      <th scope="col">Title</th>
+                      <th scope="col">Image</th>
+                      <th scope="col">Description</th>
+                      <!-- <th scope="col">Number of Posts</th> -->
+                    </tr>
+                  </thead>
+                  <tbody id="contain">
+                    <!-- Dynamic Content -->
+                  </tbody>
+                  <tbody id="btnPagi"></tbody>
+                </table>
+                <div id="btnTable">
+                  <!-- Pagination Buttons -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+        <a href="#" class="theme-toggle">
+          <i class="fa-regular fa-moon"></i>
+          <i class="fa-regular fa-sun"></i>
+        </a>
+        <footer class="footer">
+          <div class="container-fluid">
+            <div class="row text-muted">
+              <div class="col-6 text-start">
+                <p class="mb-0">
+                  <a href="#" class="text-muted strongIMG">
+                    <strong
+                      ><img src="../Mock Server/logo/Transparent.png" alt=""
+                    /></strong>
+                  </a>
+                </p>
+              </div>
+              <div class="col-6 text-end">
+                <ul class="list-inline">
+                  <li class="list-inline-item">
+                    <a href="#" class="text-muted">Contact</a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="#" class="text-muted">About Us</a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="#" class="text-muted">Terms</a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="#" class="text-muted">Booking</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>
