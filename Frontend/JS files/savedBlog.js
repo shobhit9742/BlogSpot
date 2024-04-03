@@ -9,35 +9,39 @@ function createCard(data) {
     imgAllText.className = "imageAllText"
 
     let img = document.createElement("img");
+    img.className = "ProImgText"
     img.src = (data.profile_Img == "" ? "https://img.freepik.com/free-vector/isolated-young-handsome-man-different-poses-white-background-illustration_632498-859.jpg?w=740&t=st=1711880702~exp=1711881302~hmac=55bf17deceea9dac34197c009d68b5d3b845efc75619582df72d67b6ba31b280" : data.profile_Img);
-
     img.style.width = "30px"
     img.style.height = "30px"
     img.style.marginRight = "10px"
     img.style.borderRadius = "6px"
 
     let name = document.createElement("p")
+    name.className = "name"
     name.innerText = data.author_name;
     name.style.fontFamily = "sohne, Helvetica Neue, Helvetica, Arial, sans-serif";
     name.style.fontSize = "15px"
     let by = document.createElement("p")
+    by.className = "byIn"
     by.innerText = data.by2;
 
     let name_title = document.createElement("p");
+    name_title.className = "nameTitle"
     name_title.innerText = data.name_title;
     name_title.style.fontSize = "15px"
 
     let title = document.createElement("h3");
+    title.className = "cardTitle"
     title.innerText = data.title;
     title.style.marginTop = "-2px"
     title.style.fontFamily = "sohne, Helvetica Neue, Helvetica, Arial, sans-serif";
     title.style.fontSize = "18px"
 
     let description = document.createElement("p");
+    description.className = "details"
     description.innerText = data.description;
     description.style.marginTop = "-10px"
     description.style.color = "Gray"
-
     description.style.fontSize = "15px"
 
 
@@ -62,6 +66,7 @@ function createCard(data) {
     by_8.innerText = data.by8;
 
     let tag = document.createElement("button");
+    tag.className = "tagBtn"
     tag.innerText = data.tag;
     tag.style.color = "Gray"
     tag.style.marginRight = "10px"
@@ -90,15 +95,13 @@ function createCard(data) {
             savedData.splice(index, 1);
             localStorage.setItem("savedData", JSON.stringify(savedData));
             // Remove the card from the container
-
             blogCard.remove();
         }
     });
 
     let img_src = document.createElement("img");
-
+    img_src.className = "bigImage"
     img_src.src = (data.img_src == "" ? "https://images.unsplash.com/photo-1529909746513-b540c1680fdb?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" : data.img_src);
-
     img_src.style.width = "220px";
     img_src.style.marginLeft = "15px"
 
@@ -123,13 +126,11 @@ function createCard(data) {
         let cardImage = document.createElement("img");
         cardImage.src = data.profile_Img;
         cardImage.style.width = "30px";
-
         cardImage.style.borderRadius = "5px"
         let userInfo = document.createElement("div");
         userInfo.className = "user-info";
 
         let userName = document.createElement("h4");
-
         userName.innerText = data.author_name;
         userName.style.fontFamily = "sohne, Helvetica Neue, Helvetica, Arial, sans-serif";
 
@@ -159,7 +160,6 @@ function createCard(data) {
 
         userInfo.append(userName, occupation, separator, followers, followButton);
         tooltipCard.appendChild(cardImage); // Append image to the detailed card
-
         tooltipCard.appendChild(userInfo);
 
         blogCard.appendChild(tooltipCard);
@@ -194,5 +194,4 @@ function displaySavedData() {
 }
 
 // Call the displaySavedData function when the page loads
-
 window.addEventListener("load", displaySavedData);
