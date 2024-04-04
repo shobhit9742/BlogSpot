@@ -83,7 +83,7 @@ let appendData = (data) => {
   data.forEach((el) => {
     let card = createCard(el);
     const { id } = el;
-    card.addEventListener("click", () => openModal(id));
+    card.firstChild.childNodes[1].addEventListener("click", () => openModal(id));
     resultContainer.append(card);
   });
 };
