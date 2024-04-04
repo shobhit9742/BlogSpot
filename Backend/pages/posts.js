@@ -99,6 +99,7 @@ function createTable(item, index) {
   del.setAttribute("data-id", item.id);
   tag.setAttribute("class", "tagging");
   index;
+  tr.setAttribute("id", "tableCard");
   // Edit Button Functionality
 
   edit.addEventListener("click", (e) => {
@@ -137,21 +138,20 @@ function createTable(item, index) {
   //  appending the Elements
   buttonedit.append(edit);
   buttonDel.append(del);
-  tr.append(id, profile, name, tag, title, image, description, buttonedit, buttonDel);
+  tr.append(
+    id,
+    profile,
+    name,
+    tag,
+    title,
+    image,
+    description,
+    buttonedit,
+    buttonDel
+  );
   return tr;
   //
 }
-
-// Append Data Function
-
-// function appendData(data) {
-//   container.innerHTML = "";
-//   data.forEach((item, index) => {
-//     let table = createTable(item, index);
-//     container.append(table);
-//   });
-// }
-
 function appendData(data) {
   container.innerHTML = "";
   if (Array.isArray(data)) {
@@ -163,19 +163,6 @@ function appendData(data) {
     console.error("Data is not an array:", data);
   }
 }
-
-/* Search User */
-
-// let searchInput = document.getElementById("search-input");
-// let searchButton = document.getElementById("search-button");
-
-// searchButton.addEventListener("click", () => {
-//   let searchQuery = searchInput.value;
-//   getProductsData(
-//     `https://tech-tatva-2345-1.onrender.com/blog_posts?q=${searchQuery}&_page=1&_limit=10`,
-//     queryParam
-//   );
-// });
 
 let queryParam = null;
 

@@ -189,10 +189,10 @@
           </div>
         </nav>
         <main class="content px-3 py-2">
-          <div class="container-fluid">
+          <div class="container-fluid" id="editForm">
             <tr id="edit-product-row" style="display: none">
               <td colspan="7">
-                <h5>Edit Post User, Details, and Description</h5>
+                <h5>Edit User's Post, Details, and Description</h5>
                 <form id="edit-product-form">
                   <input type="hidden" id="product-id-input" />
                   <div class="form-group">
@@ -250,15 +250,21 @@
                       placeholder="Enter description"
                     ></textarea>
                   </div>
-                  <button type="submit" class="btn btn-primary" id="updateBtn">Update</button>
+                  <button type="submit" class="btn btn-primary" id="updateBtn">
+                    Update
+                  </button>
                 </form>
               </td>
             </tr>
           </div>
           <div>
             <!-- Table Element -->
-            <div class="card border-0">
-              <div class="card-header">
+            <div
+              class="card border-0"
+              style="margin-top: 25px"
+              id="dynamicTable"
+            >
+              <div class="card-header" id="tableTop">
                 <h5 class="card-title">Basic Table</h5>
                 <h6 class="card-subtitle text-muted">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.

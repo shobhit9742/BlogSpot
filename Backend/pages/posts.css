@@ -1,3 +1,7 @@
+* {
+  background-color: #fff;
+}
+
 .title {
   width: 200px;
   text-wrap: wrap;
@@ -31,7 +35,69 @@
 .delete {
   padding: 5px 10px !important;
   margin: 25px 10px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  border: none;
+  border-radius: 10px;
+}
+.edit {
+  background-color: cadetblue;
+  color: #fff;
+}
+.delete {
+  background-color: red;
+  color: white;
+  font-weight: 600;
 }
 /* .tagging {
   width: 0px;
 } */
+#id,
+#name,
+#title,
+#tag,
+#imgURL,
+#description {
+  border-radius: 15px;
+}
+#editForm
+/* #id,
+#name,
+#title,
+#tag,
+#imgURL,
+#description 
+*/ {
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  /* box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px; */
+  /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
+  padding: 10px;
+  border-radius: 15px;
+}
+#updateBtn {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+#dynamicTable {
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+
+  padding: 10px;
+  border-radius: 15px;
+  background-color: #fff;
+}
+
+#tableTop {
+  background-color: #fff;
+}
+#tableCard {
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  border-radius: 5px;
+  background-color: #fff;
+  overflow: hidden;
+  margin-top: 5px;
+}
