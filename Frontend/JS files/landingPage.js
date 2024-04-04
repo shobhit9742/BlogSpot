@@ -120,7 +120,7 @@ function createCard(data) {
     icon.style.cursor = "pointer";
 
 
-    // signUpModal
+    // // signUpModal
 
     icon.addEventListener("click", function () {
         // Get a reference to the sign-up modal
@@ -170,10 +170,7 @@ function createCard(data) {
             .then(() => {
                 // If sign-up successful, set flag indicating user is authenticated
                 localStorage.setItem('userAuthenticated', 'true');
-                // Close sign-up modal
-                $('#signUpModal').modal('hide');
-                // Save card data
-                saveCardData();
+                window.location.href = "/Tech-Tatva-2345/Frontend/Pages/land2.html";
             })
             .catch(error => {
                 // Handle sign-up error
@@ -183,18 +180,30 @@ function createCard(data) {
     });
 
 
+    function signUpUser() {
+        // Implement your sign-up process here
+        return new Promise((resolve, reject) => {
+            // Simulate a successful sign-up process (replace this with your actual sign-up logic)
+            setTimeout(() => {
+                resolve(); // Resolve the promise to indicate successful sign-up
+            }, 1000); // Simulate a delay of 1 second
+        });
+    }
+
+
+    //pre
     ///////////////////
     document.addEventListener("DOMContentLoaded", function () {
-        // Check if there is any saved data
+
         let savedData = JSON.parse(localStorage.getItem("savedData")) || [];
         savedData.forEach(savedItem => {
-            // Find the corresponding card for each saved item
+
             let card = document.querySelector(`.card[data-id="${savedItem.id}"]`);
             if (card) {
-                // Find the bookmark icon within the card
+
                 let icon = card.querySelector(".logoIcon img");
                 if (icon) {
-                    // Change the icon to the saved icon
+
                     icon.src = "./saved.svg";
                 }
             }
@@ -206,12 +215,12 @@ function createCard(data) {
         let dataIndex = savedData.findIndex(item => item.id === data.id);
 
         if (dataIndex === -1) {
-            // If data is not saved, save it and change the icon
+
             savedData.push(data);
             localStorage.setItem("savedData", JSON.stringify(savedData));
             icon.src = "./saved.svg";
         } else {
-            // If data is already saved, remove it and change the icon
+
             savedData.splice(dataIndex, 1);
             localStorage.setItem("savedData", JSON.stringify(savedData));
             icon.src = "./bookmark.svg";
