@@ -4,83 +4,83 @@ page.style.display="flex"
 page.style.flexDirection="column"
 
 let uploattext=document.createElement("h1");
-uploattext.innerHTML="Upload a Post";
+uploattext.innerHTML="Post a Blog";
 uploattext.style.textAlign="center";
 uploattext.style.marginLeft="-80px"
 
 
 // id
-let iddiv=document.createElement("div");
-iddiv.style.display="flex";
-iddiv.style.gap="20px";
-iddiv.style.marginLeft="16%";
+// let iddiv=document.createElement("div");
+// iddiv.style.display="flex";
+// iddiv.style.gap="20px";
+// iddiv.style.marginLeft="16%";
 
-let id=document.createElement("p")
-id.innerHTML="id";
-id.style.fontWeight="bold";
+// let id=document.createElement("p")
+// id.innerHTML="id";
+// id.style.fontWeight="bold";
 
 
-let idinput=document.createElement("input");
-idinput.style.width="71%";
-idinput.style.height="10%";
-idinput.style.marginTop="15px"
+// let idinput=document.createElement("input");
+// idinput.style.width="71%";
+// idinput.style.height="10%";
+// idinput.style.marginTop="15px"
 
-iddiv.append(id,idinput);
+// iddiv.append(id,idinput);
 
 
 //profile_Img
-let profile_Imgdiv=document.createElement("div");
-profile_Imgdiv.style.display="flex";
-profile_Imgdiv.style.gap="20px";
-profile_Imgdiv.style.marginLeft="11.4%";
+// let profile_Imgdiv=document.createElement("div");
+// profile_Imgdiv.style.display="flex";
+// profile_Imgdiv.style.gap="20px";
+// profile_Imgdiv.style.marginLeft="11.4%";
 
-let profile_Img=document.createElement("p")
-profile_Img.innerHTML="profile_Img";
-profile_Img.style.fontWeight="bold";
+// let profile_Img=document.createElement("p")
+// profile_Img.innerHTML="profile_Img";
+// profile_Img.style.fontWeight="bold";
 
-let profile_Imginput=document.createElement("input");
-profile_Imginput.style.width="67%";
-profile_Imginput.style.height="10%";
-profile_Imginput.style.marginTop="15px"
+// let profile_Imginput=document.createElement("input");
+// profile_Imginput.style.width="67%";
+// profile_Imginput.style.height="10%";
+// profile_Imginput.style.marginTop="15px"
 
-profile_Imgdiv.append(profile_Img,profile_Imginput);
+// profile_Imgdiv.append(profile_Img,profile_Imginput);
 
 
 // author name 
-let autodiv=document.createElement("div");
-autodiv.style.display="flex";
-autodiv.style.gap="20px";
-autodiv.style.marginLeft="11%";
+// let autodiv=document.createElement("div");
+// autodiv.style.display="flex";
+// autodiv.style.gap="20px";
+// autodiv.style.marginLeft="11%";
 
-let author=document.createElement("p")
-author.innerHTML="author_name";
-author.style.fontWeight="bold";
+// let author=document.createElement("p")
+// author.innerHTML="author_name";
+// author.style.fontWeight="bold";
 
 
-let authorinput=document.createElement("input");
-authorinput.style.width="67%";
-authorinput.style.height="10%";
-authorinput.style.marginTop="15px"
+// let authorinput=document.createElement("input");
+// authorinput.style.width="67%";
+// authorinput.style.height="10%";
+// authorinput.style.marginTop="15px"
 
-autodiv.append(author,authorinput);
+// autodiv.append(author,authorinput);
 
 // by2 
-let by2div=document.createElement("div");
-by2div.style.display="flex";
-by2div.style.gap="20px";
-by2div.style.marginLeft="15.2%";
+// let by2div=document.createElement("div");
+// by2div.style.display="flex";
+// by2div.style.gap="20px";
+// by2div.style.marginLeft="15.2%";
 
-let by2=document.createElement("p")
-by2.innerHTML="by2";
-by2.style.fontWeight="bold";
+// let by2=document.createElement("p")
+// by2.innerHTML="by2";
+// by2.style.fontWeight="bold";
 
 
-let by2input=document.createElement("input");
-by2input.style.width="70%";
-by2input.style.height="10%";
-by2input.style.marginTop="15px"
+// let by2input=document.createElement("input");
+// by2input.style.width="70%";
+// by2input.style.height="10%";
+// by2input.style.marginTop="15px"
 
-by2div.append(by2,by2input);
+// by2div.append(by2,by2input);
 
 // name_title
 let ntdiv=document.createElement("div");
@@ -89,12 +89,12 @@ ntdiv.style.gap="20px";
 ntdiv.style.marginLeft="12%";
 
 let nt=document.createElement("p")
-nt.innerHTML="name_title";
+nt.innerHTML="Category";
 nt.style.fontWeight="bold";
 
 
 let ntinput=document.createElement("input");
-ntinput.style.width="68%";
+ntinput.style.width="70%";
 ntinput.style.height="10%";
 ntinput.style.marginTop="15px"
 
@@ -107,12 +107,12 @@ titlediv.style.gap="20px";
 titlediv.style.marginLeft="15%";
 
 let title=document.createElement("p")
-title.innerHTML="title";
+title.innerHTML="Title";
 title.style.fontWeight="bold";
 
 
 let tinput=document.createElement("input");
-tinput.style.width="70%";
+tinput.style.width="72.5%";
 tinput.style.height="10%";
 tinput.style.marginTop="15px"
 
@@ -126,51 +126,52 @@ briefdiv.style.marginLeft="12%";
 
 
 let brief=document.createElement("p")
-brief.innerHTML="description";
+brief.innerHTML="Description";
 brief.style.fontWeight="bold";
 
 let binput=document.createElement("input");
-binput.style.width="67%";
+binput.style.width="70%";
 binput.style.height="10%";
 binput.style.marginTop="15px"
+binput.style.marginLeft="-5px"
 
 briefdiv.append(brief,binput);
 
 // reading_time 
-let reading_timediv=document.createElement("div");
-reading_timediv.style.display="flex";
-reading_timediv.style.gap="20px";
-reading_timediv.style.marginLeft="11%";
+// let reading_timediv=document.createElement("div");
+// reading_timediv.style.display="flex";
+// reading_timediv.style.gap="20px";
+// reading_timediv.style.marginLeft="11%";
 
 
-let reading_time=document.createElement("p")
-reading_time.innerHTML="reading_time";
-reading_time.style.fontWeight="bold";
+// let reading_time=document.createElement("p")
+// reading_time.innerHTML="reading_time";
+// reading_time.style.fontWeight="bold";
 
-let reading_timeinput=document.createElement("input");
-reading_timeinput.style.width="67%";
-reading_timeinput.style.height="10%";
-reading_timeinput.style.marginTop="15px"
+// let reading_timeinput=document.createElement("input");
+// reading_timeinput.style.width="67%";
+// reading_timeinput.style.height="10%";
+// reading_timeinput.style.marginTop="15px"
 
-reading_timediv.append(reading_time,reading_timeinput);
+// reading_timediv.append(reading_time,reading_timeinput);
 
 //by8
-let by8div=document.createElement("div");
-by8div.style.display="flex";
-by8div.style.gap="20px";
-by8div.style.marginLeft="15.2%";
+// let by8div=document.createElement("div");
+// by8div.style.display="flex";
+// by8div.style.gap="20px";
+// by8div.style.marginLeft="15.2%";
 
-let by8=document.createElement("p")
-by8.innerHTML="by8";
-by8.style.fontWeight="bold";
+// let by8=document.createElement("p")
+// by8.innerHTML="by8";
+// by8.style.fontWeight="bold";
 
 
-let by8input=document.createElement("input");
-by8input.style.width="70%";
-by8input.style.height="10%";
-by8input.style.marginTop="15px"
+// let by8input=document.createElement("input");
+// by8input.style.width="70%";
+// by8input.style.height="10%";
+// by8input.style.marginTop="15px"
 
-by8div.append(by8,by8input);
+// by8div.append(by8,by8input);
 // Banner image URL 
 
 let urldiv=document.createElement("div");
@@ -179,14 +180,13 @@ urldiv.style.gap="20px";
 urldiv.style.marginLeft="13%";
 
 let url=document.createElement("p")
-url.innerHTML="img_src";
+url.innerHTML="Image URL";
 url.style.fontWeight="bold";
 
 let urlinput=document.createElement("input");
-urlinput.style.width="69%";
+urlinput.style.width="71%";
 urlinput.style.height="10%";
 urlinput.style.marginTop="15px"
-
 urldiv.append(url,urlinput);
 
 // Category 
@@ -197,33 +197,34 @@ categorydiv.style.gap="20px";
 categorydiv.style.marginLeft="16%";
 
 let category=document.createElement("p")
-category.innerHTML="tag";
+category.innerHTML="Tag";
 category.style.fontWeight="bold";
 
 
 let catinput=document.createElement("input");
-catinput.style.width="69%";
+catinput.style.width="73.4%";
 catinput.style.height="10%";
 catinput.style.marginTop="15px"
+catinput.style.marginLeft="-10px"
 
 categorydiv.append(category,catinput);
 
 // date_pub
-let readdiv=document.createElement("div");
-readdiv.style.display="flex";
-readdiv.style.gap="20px";
-readdiv.style.marginLeft="13.1%";
+// let readdiv=document.createElement("div");
+// readdiv.style.display="flex";
+// readdiv.style.gap="20px";
+// readdiv.style.marginLeft="13.1%";
 
-let time=document.createElement("p");
-time.innerHTML="date_pub";
-time.style.fontWeight="bold";
+// let time=document.createElement("p");
+// time.innerHTML="date_pub";
+// time.style.fontWeight="bold";
 
-let timeinput=document.createElement("input");
-timeinput.style.width="69.3%";
-timeinput.style.height="10%";
-timeinput.style.marginTop="15px"
+// let timeinput=document.createElement("input");
+// timeinput.style.width="69.3%";
+// timeinput.style.height="10%";
+// timeinput.style.marginTop="15px"
 
-readdiv.append(time,timeinput);
+// readdiv.append(time,timeinput);
 
 
 // paragraph 
@@ -233,13 +234,14 @@ articaldiv.style.gap="20px";
 articaldiv.style.marginLeft="12%";
 
 let artical=document.createElement("p")
-artical.innerHTML="paragraph";
+artical.innerHTML="Paragraph";
 artical.style.fontWeight="bold";
 
 let artinput=document.createElement("textarea");
-artinput.style.width = "68.2%"; 
+artinput.style.width = "70.5%"; 
 artinput.style.height = "35vh"; 
 artinput.style.marginTop = "15px";
+artical.style.marginLeft="-4px"
 
 articaldiv.append(artical,artinput);
 
@@ -256,30 +258,30 @@ sbtn.style.marginLeft="43%";
 sbtn.style.marginTop="10px"
 sbtn.style.cursor="pointer";
 
-page.append(uploattext,iddiv,profile_Imgdiv,autodiv, by2div,ntdiv, titlediv ,briefdiv,readdiv,reading_timediv,by8div,categorydiv,urldiv,articaldiv,sbtn);
+page.append(uploattext,ntdiv, titlediv ,briefdiv,categorydiv,urldiv,articaldiv,sbtn);
 
 
 
 
 function sendDataToBackend() {
     // Fetch input values
-    const idValue = idinput.value;
-    const profileImgValue = profile_Imginput.value;
-    const authorNameValue = authorinput.value;
-    const by2Value = by2input.value;
+    // const idValue = idinput.value; 
+    const profileImgValue = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCBjV4av9GcaBXUuXx7iPos-INxLsQY74Bvw&s";
+    const authorNameValue = "jayant";
+    const by2Value = "-";
     const nameTitleValue = ntinput.value;
     const titleValue = tinput.value;
     const briefValue = binput.value;
-    const readingTimeValue = reading_timeinput.value;
-    const by8Value = by8input.value;
-    const urlValue = urlinput.value;
+    const readingTimeValue = "7 min Read";
+    const by8Value =".";
+    const urlValue = urlinput.value; 
     const categoryValue = catinput.value;
-    const timeValue = timeinput.value;
+    const timeValue = "April 5 2024";
     const articleValue = artinput.value;
 
     // Data object to send to backend
     const postData = {
-        id: idValue,
+        // id: idValue,
         profile_Img: profileImgValue,
         author_name: authorNameValue,
         by2: by2Value,
@@ -290,7 +292,7 @@ function sendDataToBackend() {
         reading_time: readingTimeValue,
         by8: by8Value,
         tag: categoryValue,
-        bannerImageURL: urlValue,
+        img_src: urlValue,
         paragraph: articleValue
     };
 
