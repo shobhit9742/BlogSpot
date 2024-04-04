@@ -1,271 +1,666 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Write</title>
-    <link rel="stylesheet" href="../CSS files/write.css">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-</head>
+    <link rel="stylesheet" href="../CSS files/write.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head>
 
-<body>
+  <body>
     <!-- header part  -->
     <header id="head">
-        <div class="hfirst">
-            <a class="imgtag" href="../index.html"><img class="inimglogo" src="../BlogSpot.svg" alt=""></a>
-        </div>
-        <div class="hlast">
-            <button class="hbtn1">Sign in</button>
-            <button class="hbtn2">Sign up</button>
-        </div>
+      <div class="hfirst">
+        <a class="imgtag" href="../index.html"
+          ><img class="inimglogo" src="../BlogSpot.svg" alt=""
+        /></a>
+      </div>
+      <div class="hlast">
+        <button
+          class="hbtn1"
+          data-bs-toggle="modal"
+          data-bs-target="#signInModal"
+        >
+          Sign in
+        </button>
+        <button
+          class="hbtn2"
+          data-bs-toggle="modal"
+          data-bs-target="#signUpModal"
+        >
+          Sign up
+        </button>
+      </div>
     </header>
     <!-- header end -->
     <!-- imgpart start  -->
     <div class="bodyimg">
-        <div class="one">
-            <h1 class="inbox">Medium Partner Program</h1>
-            <p class="inboxpara">Medium’s Partner Program is for people who are interested in helping us fulfill our
-                mission of deepening the collective wisdom of the world through personal expression, knowledge-sharing,
-                and storytelling.</p>
-            <button class="btninbox">Apply now</button>
-        </div>
+      <div class="one">
+        <h1 class="inbox">Medium Partner Program</h1>
+        <p class="inboxpara">
+          Medium’s Partner Program is for people who are interested in helping
+          us fulfill our mission of deepening the collective wisdom of the world
+          through personal expression, knowledge-sharing, and storytelling.
+        </p>
+        <button class="btninbox">Apply now</button>
+      </div>
     </div>
 
     <!-- content for first box  -->
 
-    <div class="conentbox1" style="border: none; border-bottom: 1px solid;">
-        <div class="contento1">
-            <h1 class="ct1">Quality over clickbait</h1>
-            <br>
-            <p class="ct2">In a creator economy ruled by clickbait and ad impressions, Medium’s Partner Program is
-                taking a stand for quality. As a partner, when your best stories are read by Medium members, a portion
-                of their membership dues will be shared with you. Here are a few factors we consider in order to
-                determine quality.</p>
+    <div class="conentbox1" style="border: none; border-bottom: 1px solid">
+      <div class="contento1">
+        <h1 class="ct1">Quality over clickbait</h1>
+        <br />
+        <p class="ct2">
+          In a creator economy ruled by clickbait and ad impressions, Medium’s
+          Partner Program is taking a stand for quality. As a partner, when your
+          best stories are read by Medium members, a portion of their membership
+          dues will be shared with you. Here are a few factors we consider in
+          order to determine quality.
+        </p>
+      </div>
+      <div class="cotento2">
+        <div class="cto2in">
+          <div class="cto11">
+            <p class="copp1">Member read time</p>
+            <p class="copp2">
+              Members-only stories will earn money when a member reads your
+              story for 30 seconds or more, and will continue to earn more the
+              longer they keep reading. Long, thoughtful, reads are encouraged!
+            </p>
+          </div>
+          <hr
+            style="
+              border: none;
+              border-top: 1px solid rgb(181, 146, 146);
+              margin-top: 20px;
+            "
+          />
+          <div class="cto11" id="aaa" style="margin-top: 20px">
+            <p class="copp1">Positive interactions</p>
+            <p class="copp2">
+              You’ll also earn more when members clap, highlight, reply, or
+              engage with your story in other ways.
+            </p>
+          </div>
+          <hr
+            style="
+              border: none;
+              border-top: 1px solid rgb(181, 146, 146);
+              margin-top: 20px;
+            "
+          />
+          <div class="cto11" id="aaa2" style="margin-top: 20px">
+            <p class="copp1">Follower bonus</p>
+            <p class="copp2">
+              When members follow you and continue to read and interact with
+              your stories, you will be given a follower bonus. We encourage
+              writers to share their stories with readers in a way that promotes
+              community and audience building.
+            </p>
+          </div>
+          <hr
+            style="
+              border: none;
+              border-top: 1px solid rgb(181, 146, 146);
+              margin-top: 20px;
+            "
+          />
+          <div class="cto11" id="aaa3" style="margin-top: 20px">
+            <p class="copp1">Boost bonus</p>
+            <p class="copp2">
+              Stories that are Boosted will also earn more for each read and
+              interaction. We recommend that writers spend more time on fewer,
+              high-quality stories to reach this bar.
+            </p>
+          </div>
         </div>
-        <div class="cotento2">
-            <div class="cto2in">
-                <div class="cto11">
-                    <p class="copp1">Member read time</p>
-                    <p class="copp2">Members-only stories will earn money when a member reads your story for 30 seconds
-                        or more, and will continue to earn more the longer they keep reading. Long, thoughtful, reads
-                        are encouraged!</p>
-                </div>
-                <hr style="border: none; border-top: 1px solid rgb(181, 146, 146); margin-top: 20px;">
-                <div class="cto11" id="aaa" style="margin-top: 20px;">
-                    <p class="copp1">Positive interactions</p>
-                    <p class="copp2">You’ll also earn more when members clap, highlight, reply, or engage with your
-                        story in other ways.</p>
-                </div>
-                <hr style="border: none; border-top: 1px solid rgb(181, 146, 146); margin-top: 20px;">
-                <div class="cto11" id="aaa2" style="margin-top: 20px;">
-                    <p class="copp1">Follower bonus</p>
-                    <p class="copp2">When members follow you and continue to read and interact with your stories, you
-                        will be given a follower bonus. We encourage writers to share their stories with readers in a
-                        way that promotes community and audience building.
-                    </p>
-                </div>
-                <hr style="border: none; border-top: 1px solid rgb(181, 146, 146); margin-top: 20px;">
-                <div class="cto11" id="aaa3" style="margin-top: 20px; ">
-                    <p class="copp1">Boost bonus</p>
-                    <p class="copp2">Stories that are Boosted will also earn more for each read and interaction. We
-                        recommend that writers spend more time on fewer, high-quality stories to reach this bar.</p>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
 
     <!-- content second  -->
 
-    <div class="conentbox2" style="border: none; display: flex;">
-        <div class="contento1">
-            <h1 class="ct1">Eligibility criteria</h1>
+    <div class="conentbox2" style="border: none; display: flex">
+      <div class="contento1">
+        <h1 class="ct1">Eligibility criteria</h1>
+      </div>
+      <div class="cotento22">
+        <div class="cto2in22">
+          <div class="cto1122">
+            <p class="copp1" style="font-size: 1em">You’re a member.</p>
+            <p class="copp2">
+              The best way to succeed as a Partner Program author is to also
+              participate as a reader of stories on Medium.
+            </p>
+          </div>
+          <hr
+            style="
+              border: none;
+              border-top: 1px solid rgb(181, 146, 146);
+              margin-top: 40px;
+            "
+          />
+          <div class="cto11" style="margin-top: 20px">
+            <p class="copp1" style="width: 70%">
+              You’ve published a story in the last 6 months.
+            </p>
+            <p class="copp2">
+              Staying active, publishing regularly, and being engaged with the
+              community are important ways to help our platform flourish.
+            </p>
+          </div>
+          <hr
+            style="
+              border: none;
+              border-top: 1px solid rgb(181, 146, 146);
+              margin-top: 40px;
+            "
+          />
+          <div class="cto11" style="margin-top: 20px">
+            <p class="copp1" style="width: 70%">
+              You’re located in an eligible country.
+            </p>
+            <p class="copp2">
+              We recently expanded the number of supported countries, so now
+              more people than ever are able to join the Partner Program.
+            </p>
+          </div>
         </div>
-        <div class="cotento22">
-            <div class="cto2in22">
-                <div class="cto1122">
-                    <p class="copp1" style="font-size: 1em;">You’re a member.</p>
-                    <p class="copp2">The best way to succeed as a Partner Program author is to also participate as a
-                        reader of stories on Medium.</p>
-                </div>
-                <hr style="border: none; border-top: 1px solid rgb(181, 146, 146); margin-top: 40px;">
-                <div class="cto11" style="margin-top: 20px;">
-                    <p class="copp1" style="width: 70%;">You’ve published a story in the last 6 months.</p>
-                    <p class="copp2">Staying active, publishing regularly, and being engaged with the community are
-                        important ways to help our platform flourish.</p>
-                </div>
-                <hr style="border: none; border-top: 1px solid rgb(181, 146, 146); margin-top: 40px;">
-                <div class="cto11" style="margin-top: 20px;">
-                    <p class="copp1" style="width: 70%;">You’re located in an eligible country.</p>
-                    <p class="copp2">We recently expanded the number of supported countries, so now more people than
-                        ever are able to join the Partner Program.
-                    </p>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
 
     <!-- button  -->
-    <button class="botbtn1" style="display: flex; justify-content: space-between;">
-        <div>
-            <h3 class="btnintext1">Apply now</h3>
-        </div>
-        <div class="arrowbtn">
-            <span class="material-symbols-outlined blkarrow">
-                arrow_right_alt
-            </span>
-        </div>
+    <button
+      class="botbtn1"
+      style="display: flex; justify-content: space-between"
+    >
+      <div>
+        <h3 class="btnintext1">Apply now</h3>
+      </div>
+      <div class="arrowbtn">
+        <span class="material-symbols-outlined blkarrow">
+          arrow_right_alt
+        </span>
+      </div>
     </button>
 
     <!-- Accordin part  -->
     <div class="accordin">
-        <div class="inacco">
-            <h1 class="acch1">FAQ</h1>
-            <div class="accordion accordion-flush" id="accordionFlushExample">
-                <!-- first  -->
-                <div style="border-bottom: 1px solid white;" class="accordion-item">
-                    <h2 class="accordion-header" style="background-color:  #242424; color: white;">
-                        <button style="background-color:  #242424; color: white;" class="accordion-button collapsed"
-                            type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
-                            aria-expanded="false" aria-controls="flush-collapseOne">
-                            What are the new changes for the Partner Program?
-                        </button>
-                    </h2>
-                    <div style="background-color: #242424; color: white;" id="flush-collapseOne"
-                        class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                        <div style="width: 60%;" class="accordion-body">We've updated the Partner Program to incentivize
-                            high-quality human
-                            writing. Here's a quick summary: we've opened up the Partner Program to more locations,
-                            removed the 100 follower requirement, and require Medium membership to join. Earnings will
-                            be higher for stories that have repeat readers, have been Boosted, and that have a high read
-                            ratio. All stories will also earn more based on engagement signals like claps, highlights,
-                            and replies. Referral bonuses are being deprecated and new story stats will be added in so
-                            writers can better understand their story earnings breakdown.
-                            <br>
-                            <br>
-                            <p style="text-decoration: underline;">Read more about all of the changes and our vision for
-                                the Partner Program</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- second  -->
-                <div style="border-bottom: 1px solid white;" class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button style="background-color:  #242424; color: white;" class="accordion-button collapsed"
-                            type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
-                            aria-expanded="false" aria-controls="flush-collapseTwo">
-                            What are the eligibility requirements to join the Partner Program?
-                        </button>
-                    </h2>
-                    <div style="background-color:  #242424; color: white;" id="flush-collapseTwo"
-                        class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                        <div style="width: 60%;" class="accordion-body">To join the Partner Program, you will need to
-                            meet the following
-                            eligibility requirements:<br>
-                            1. Be a Medium member<br>
-                            2. Have published at least one story on Medium in the past 6 months<br>
-                            3. Are located in a supported country<br>
-                            4. Are 18 years of age or older
-                            <br>
-                            <br>
-                            <p style="text-decoration: underline;">Check out the eligibility requirements and details
-                                about the Partner Program.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- third  -->
-                <div style="border-bottom: 1px solid white;" class="accordion-item">
-                    <h2 class="accordion-header" style="background-color:  #242424; color: white;">
-                        <button style="background-color:  #242424; color: white;" class="accordion-button collapsed"
-                            type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree"
-                            aria-expanded="false" aria-controls="flush-collapseThree">
-                            How are earnings calculated?
-                        </button>
-                    </h2>
-                    <div style="background-color: #242424; color: white;" id="flush-collapseThree"
-                        class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                        <div style="width: 60%;" class="accordion-body">Earnings will be based on member read and listen
-                            time as well as
-                            member engagement signals. This includes claps, highlights, replies, and new follows. Reads
-                            and read ratios will be defined as people who read your story for 30 seconds or more divided
-                            by total views. More information on how earnings are calculated can be found here with
-                            examples featured here.
-                            <br>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- fourth  -->
-                <div style="border-bottom: 1px solid white;" class="accordion-item">
-                    <h2 class="accordion-header" style="background-color:  #242424; color: white;">
-                        <button style="background-color:  #242424; color: white;" class="accordion-button collapsed"
-                            type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsefour"
-                            aria-expanded="false" aria-controls="flush-collapsefour">
-                            What is happening with referred memberships?
-                        </button>
-                    </h2>
-                    <div style="background-color: #242424; color: white;" id="flush-collapsefour"
-                        class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                        <div style="width: 60%;" class="accordion-body">We're deprecating the Membership Referral
-                            Program and replacing it
-                            with a Follower Bonus. Stories that are read by and have engagement with existing followers
-                            will get an extra bonus in earnings.
-                            <br>
-                            All member referrals made up until September 1, 2023 will continue to be honored
-                            indefinitely. We will keep your custom referral pages up so that they don't break your links
-                            in stories, but we will stop generating new referrals for members who sign up after
-                            September 1st.
-                        </div>
-                    </div>
-                </div>
-
-                <!-- fifth  -->
-                <div style="border-bottom: 1px solid white;" class="accordion-item">
-                    <h2 class="accordion-header" style="background-color:  #242424; color: white;">
-                        <button style="background-color:  #242424; color: white;" class="accordion-button collapsed"
-                            type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsefive"
-                            aria-expanded="false" aria-controls="flush-collapsefive">
-                            Do existing Partner Program writers need to re-apply or update anything at this time?
-                        </button>
-                    </h2>
-                    <div style="background-color: #242424; color: white;" id="flush-collapsefive"
-                        class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                        <div style="width: 60%;" class="accordion-body">Nope, if you're already in the Partner Program,
-                            you won't have to do anything new to stay in the program.
-                            <br>
-                            <br>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- six  -->
-                <div style="border-bottom: 1px solid white;" class="accordion-item">
-                    <h2 class="accordion-header" style="background-color:  #242424; color: white;">
-                        <button style="background-color:  #242424; color: white;" class="accordion-button collapsed"
-                            type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsesix"
-                            aria-expanded="false" aria-controls="flush-collapsesix">
-                            Where can I go if I have more questions about the Partner Program?
-                        </button>
-                    </h2>
-                    <div style="background-color: #242424; color: white;" id="flush-collapsesix"
-                        class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                        <div style="width: 60%;" class="accordion-body">Check out the Partner Program Guide! If you have
-                            any other questions, submit a Help Desk request and we'll get back to you as soon as
-                            possible
-                            <br>
-                        </div>
-                    </div>
-                </div>
+      <div class="inacco">
+        <h1 class="acch1">FAQ</h1>
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+          <!-- first  -->
+          <div style="border-bottom: 1px solid white" class="accordion-item">
+            <h2
+              class="accordion-header"
+              style="background-color: #242424; color: white"
+            >
+              <button
+                style="background-color: #242424; color: white"
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseOne"
+                aria-expanded="false"
+                aria-controls="flush-collapseOne"
+              >
+                What are the new changes for the Partner Program?
+              </button>
+            </h2>
+            <div
+              style="background-color: #242424; color: white"
+              id="flush-collapseOne"
+              class="accordion-collapse collapse"
+              data-bs-parent="#accordionFlushExample"
+            >
+              <div style="width: 60%" class="accordion-body">
+                We've updated the Partner Program to incentivize high-quality
+                human writing. Here's a quick summary: we've opened up the
+                Partner Program to more locations, removed the 100 follower
+                requirement, and require Medium membership to join. Earnings
+                will be higher for stories that have repeat readers, have been
+                Boosted, and that have a high read ratio. All stories will also
+                earn more based on engagement signals like claps, highlights,
+                and replies. Referral bonuses are being deprecated and new story
+                stats will be added in so writers can better understand their
+                story earnings breakdown.
+                <br />
+                <br />
+                <p style="text-decoration: underline">
+                  Read more about all of the changes and our vision for the
+                  Partner Program
+                </p>
+              </div>
             </div>
-        </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-</body>
+          </div>
+          <!-- second  -->
+          <div style="border-bottom: 1px solid white" class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                style="background-color: #242424; color: white"
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseTwo"
+                aria-expanded="false"
+                aria-controls="flush-collapseTwo"
+              >
+                What are the eligibility requirements to join the Partner
+                Program?
+              </button>
+            </h2>
+            <div
+              style="background-color: #242424; color: white"
+              id="flush-collapseTwo"
+              class="accordion-collapse collapse"
+              data-bs-parent="#accordionFlushExample"
+            >
+              <div style="width: 60%" class="accordion-body">
+                To join the Partner Program, you will need to meet the following
+                eligibility requirements:<br />
+                1. Be a Medium member<br />
+                2. Have published at least one story on Medium in the past 6
+                months<br />
+                3. Are located in a supported country<br />
+                4. Are 18 years of age or older
+                <br />
+                <br />
+                <p style="text-decoration: underline">
+                  Check out the eligibility requirements and details about the
+                  Partner Program.
+                </p>
+              </div>
+            </div>
+          </div>
 
+          <!-- third  -->
+          <div style="border-bottom: 1px solid white" class="accordion-item">
+            <h2
+              class="accordion-header"
+              style="background-color: #242424; color: white"
+            >
+              <button
+                style="background-color: #242424; color: white"
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseThree"
+                aria-expanded="false"
+                aria-controls="flush-collapseThree"
+              >
+                How are earnings calculated?
+              </button>
+            </h2>
+            <div
+              style="background-color: #242424; color: white"
+              id="flush-collapseThree"
+              class="accordion-collapse collapse"
+              data-bs-parent="#accordionFlushExample"
+            >
+              <div style="width: 60%" class="accordion-body">
+                Earnings will be based on member read and listen time as well as
+                member engagement signals. This includes claps, highlights,
+                replies, and new follows. Reads and read ratios will be defined
+                as people who read your story for 30 seconds or more divided by
+                total views. More information on how earnings are calculated can
+                be found here with examples featured here.
+                <br />
+              </div>
+            </div>
+          </div>
+
+          <!-- fourth  -->
+          <div style="border-bottom: 1px solid white" class="accordion-item">
+            <h2
+              class="accordion-header"
+              style="background-color: #242424; color: white"
+            >
+              <button
+                style="background-color: #242424; color: white"
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#flush-collapsefour"
+                aria-expanded="false"
+                aria-controls="flush-collapsefour"
+              >
+                What is happening with referred memberships?
+              </button>
+            </h2>
+            <div
+              style="background-color: #242424; color: white"
+              id="flush-collapsefour"
+              class="accordion-collapse collapse"
+              data-bs-parent="#accordionFlushExample"
+            >
+              <div style="width: 60%" class="accordion-body">
+                We're deprecating the Membership Referral Program and replacing
+                it with a Follower Bonus. Stories that are read by and have
+                engagement with existing followers will get an extra bonus in
+                earnings.
+                <br />
+                All member referrals made up until September 1, 2023 will
+                continue to be honored indefinitely. We will keep your custom
+                referral pages up so that they don't break your links in
+                stories, but we will stop generating new referrals for members
+                who sign up after September 1st.
+              </div>
+            </div>
+          </div>
+
+          <!-- fifth  -->
+          <div style="border-bottom: 1px solid white" class="accordion-item">
+            <h2
+              class="accordion-header"
+              style="background-color: #242424; color: white"
+            >
+              <button
+                style="background-color: #242424; color: white"
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#flush-collapsefive"
+                aria-expanded="false"
+                aria-controls="flush-collapsefive"
+              >
+                Do existing Partner Program writers need to re-apply or update
+                anything at this time?
+              </button>
+            </h2>
+            <div
+              style="background-color: #242424; color: white"
+              id="flush-collapsefive"
+              class="accordion-collapse collapse"
+              data-bs-parent="#accordionFlushExample"
+            >
+              <div style="width: 60%" class="accordion-body">
+                Nope, if you're already in the Partner Program, you won't have
+                to do anything new to stay in the program.
+                <br />
+                <br />
+              </div>
+            </div>
+          </div>
+
+          <!-- six  -->
+          <div style="border-bottom: 1px solid white" class="accordion-item">
+            <h2
+              class="accordion-header"
+              style="background-color: #242424; color: white"
+            >
+              <button
+                style="background-color: #242424; color: white"
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#flush-collapsesix"
+                aria-expanded="false"
+                aria-controls="flush-collapsesix"
+              >
+                Where can I go if I have more questions about the Partner
+                Program?
+              </button>
+            </h2>
+            <div
+              style="background-color: #242424; color: white"
+              id="flush-collapsesix"
+              class="accordion-collapse collapse"
+              data-bs-parent="#accordionFlushExample"
+            >
+              <div style="width: 60%" class="accordion-body">
+                Check out the Partner Program Guide! If you have any other
+                questions, submit a Help Desk request and we'll get back to you
+                as soon as possible
+                <br />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- // Signin Form Details -->
+    <div
+      class="modal fade"
+      id="signInModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5 modal_head" id="exampleModalLabel">
+              Welcome back.
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="signInBtns">
+              <div id="google">
+                <div
+                  id="g_id_onload"
+                  data-client_id="117865134415-3r30fn4en6cq3orthqr42jrbisngmefj.apps.googleusercontent.com"
+                  data-context="signin"
+                  data-ux_mode="popup"
+                  data-login_uri="https://tech-tatva-2345-1.onrender.com/blog_posts"
+                  data-auto_prompt="false"
+                ></div>
+
+                <div
+                  class="g_id_signin"
+                  data-type="standard"
+                  data-shape="pill"
+                  data-theme="outline"
+                  data-text="signin_with"
+                  data-size="large"
+                  data-logo_alignment="left"
+                ></div>
+              </div>
+
+              <div class="vl"></div>
+
+              <div id="signInForm">
+                <form>
+                  <div class="mb-3">
+                    <label for="user_email" class="form-label"
+                      >Email address</label
+                    >
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="signin-username"
+                      aria-describedby="emailHelp"
+                    />
+                    <div id="emailHelp" class="form-text">
+                      We'll never share your email with anyone else.
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="user_pwd" class="form-label">Password</label>
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="signin-userPwd"
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    class="btn btn-outline-secondary"
+                    id="signin-submitBtn"
+                  >
+                    Submit
+                  </button>
+                </form>
+              </div>
+            </div>
+            <div class="modal_footer">
+              <div>
+                <p>
+                  No account ?
+                  <a
+                    href="#"
+                    class="signUp"
+                    data-bs-toggle="modal"
+                    data-bs-target="#signUpModal"
+                    >Create One</a
+                  >
+                </p>
+              </div>
+              <div>
+                <p class="grey">
+                  Forgot email or trouble signing in?
+                  <a href="#" class="grey">Get help.</a>
+                </p>
+              </div>
+              <div class="grey">
+                Click “Sign in” to agree to Medium’s
+                <a href="#" class="grey">Terms of Service</a> and acknowledge
+                that <br />
+                Medium’s
+                <a href="#" class="grey">Privacy Policy</a>
+                applies to you.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- // SignUp Form Details -->
+    <div
+      class="modal fade"
+      id="signUpModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5 modal_head" id="signUpModalLabel">
+              Join BlogSpot.
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="signInBtns">
+              <div>
+                <div
+                  id="g_id_onload"
+                  data-client_id="117865134415-3r30fn4en6cq3orthqr42jrbisngmefj.apps.googleusercontent.com"
+                  data-context="signin"
+                  data-ux_mode="popup"
+                  data-login_uri="https://tech-tatva-2345-1.onrender.com/blog_posts"
+                  data-auto_prompt="false"
+                ></div>
+
+                <div
+                  class="g_id_signin"
+                  data-type="standard"
+                  data-shape="pill"
+                  data-theme="outline"
+                  data-text="signin_with"
+                  data-size="large"
+                  data-logo_alignment="left"
+                ></div>
+              </div>
+              <div class="vl2"></div>
+
+              <div id="signUpForm">
+                <form>
+                  <div class="mb-3">
+                    <label for="signUp_email" class="form-label"
+                      >Email address</label
+                    >
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="signUp_email"
+                      aria-describedby="emailHelp"
+                    />
+                    <div id="emailhelp" class="form-text">
+                      We'll never share your email with anyone else.
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="signUp_pwd" class="form-label">Password</label>
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="signUp_pwd"
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    class="btn btn-outline-secondary"
+                    id="signUp_submit_btn"
+                  >
+                    Submit
+                  </button>
+                </form>
+              </div>
+            </div>
+            <div class="modal_footer">
+              <div>
+                <p>
+                  Already have an account?
+                  <a
+                    href="#"
+                    class="signUp"
+                    data-bs-toggle="modal"
+                    data-bs-target="#signInModal"
+                    >Sign In</a
+                  >
+                </p>
+              </div>
+              <div class="grey">
+                Click “Sign up” to agree to Medium’s
+                <a href="#" class="grey">Terms of Service</a> and acknowledge
+                that <br />
+                Medium’s
+                <a href="#" class="grey">Privacy Policy</a>
+                applies to you.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+          
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/6e1cf5e47b.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="../JS files/ft30_067_Day4.js"></script>
+  </body>
 </html>

@@ -83,7 +83,7 @@ let appendData = (data) => {
   data.forEach((el) => {
     let card = createCard(el);
     const { id } = el;
-    card.addEventListener("click", () => openModal(id));
+    card.firstChild.childNodes[1].addEventListener("click", () => openModal(id));
     resultContainer.append(card);
   });
 };
@@ -379,3 +379,40 @@ const fetchSingleData = async (id) => {
     console.log(error);
   }
 };
+
+///////// LogOut ToolTip //////////
+const logOut = document.getElementById("logout_option");
+let logoutTooltip = document.getElementById("logout_tooltip");
+
+logOut.addEventListener("mouseenter", () => {
+  let tooltipCard = document.createElement("div");
+  tooltipCard.className = "logout-tooltip-card";
+  tooltipCard.style.backgroundColor = "lightgrey";
+  tooltipCard.style.position = "absolute";
+  tooltipCard.style.top = `80px`;
+  tooltipCard.style.left = "85%";
+  tooltipCard.style.zIndex = "1";
+
+  tooltipCard.innerHTML = `
+  <div id="logout_div">
+  <div><i class="fa-solid fa-arrow-right-from-bracket"></i></div>
+            <a id="logout_tag">Logout</a>
+  </div>
+  `;
+
+  logoutTooltip.appendChild(tooltipCard);
+
+  let logOut = document.getElementById("logout_div");
+  logOut.addEventListener("click", (e) => {
+    console.log("clicked");
+    e.preventDefault();
+    window.location.href = "../index.html";
+  });
+});
+
+logoutTooltip.addEventListener("mouseleave", () => {
+  let tooltipCard = logoutTooltip.querySelector(".logout-tooltip-card");
+  if (tooltipCard) {
+    tooltipCard.remove();
+  }
+});

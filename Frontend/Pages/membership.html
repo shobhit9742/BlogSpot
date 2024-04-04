@@ -1,285 +1,741 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Membership</title>
-    <link rel="stylesheet" href="../CSS files/ft30_067_Day_3.css">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-</head>
-<body>
-
+    <!-- Bootstrap  -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../CSS files/ft30_067_Day_3.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+  </head>
+  <body>
     <!-- header part here  -->
     <header id="head">
-        <div class="hfirst">
-            <a class="imgtag" href="../index.html"><img class="inimglogo" src="../BLogo.svg" alt=""></a>
-        </div>
-        <div class="hlast">
-            <button class="hbtn1">Sign in</button>
-            <button class="hbtn2">Sign up</button>
-        </div>
+      <div class="hfirst">
+        <a class="imgtag" href="../index.html"
+          ><img class="inimglogo" src="../BLogo.svg" alt=""
+        /></a>
+      </div>
+      <div class="hlast">
+        <button
+          class="hbtn1"
+          data-bs-toggle="modal"
+          data-bs-target="#signInModal"
+        >
+          Sign in
+        </button>
+        <button
+          class="hbtn2"
+          data-bs-toggle="modal"
+          data-bs-target="#signUpModal"
+        >
+          Sign up
+        </button>
+      </div>
     </header>
     <!-- content part here  -->
 
     <!-- body part start -->
     <div class="secbox">
-        <div class="sbone">
-            <h1 class="sbh">Support human stories</h1>
-            <p class="sbpara">Become a member to read without limits or ads, fund great writers, and join a global
-                community of people who care about high-quality storytelling.</p>
-            <div class="btnbox">
-                <button class="btn1">Get started</button>
-                <button class="btn2">View plans</button>
-            </div>
+      <div class="sbone">
+        <h1 class="sbh">Support human stories</h1>
+        <p class="sbpara">
+          Become a member to read without limits or ads, fund great writers, and
+          join a global community of people who care about high-quality
+          storytelling.
+        </p>
+        <div class="btnbox">
+          <button class="btn1">Get started</button>
+          <button class="btn2">View plans</button>
         </div>
-        <div class="sbsecond">
-            <div class="sbimgg">
-                <button class="sbbtn" style=" display: flex; gap: 3px;">
-                    <svg width="18" height="18" viewBox="0 0 64 64" fill="none" class="rt">
-                        <path
-                            d="M39.64 40.83L33.87 56.7a1.99 1.99 0 0 1-3.74 0l-5.77-15.87a2.02 2.02 0 0 0-1.2-1.2L7.3 33.88a1.99 1.99 0 0 1 0-3.74l15.87-5.77a2.02 2.02 0 0 0 1.2-1.2L30.12 7.3a1.99 1.99 0 0 1 3.74 0l5.77 15.87a2.02 2.02 0 0 0 1.2 1.2l15.86 5.76a1.99 1.99 0 0 1 0 3.74l-15.87 5.77a2.02 2.02 0 0 0-1.2 1.2z"
-                            fill="#FFC017"></path>
-                    </svg>
-                    <p style="margin-left: 10px; margin-top: 9px;">Member-only story</p>
-                </button>
-            </div>
-            <div class="sbbcontent">
-                <div class="sbba">
-                    <h3 class="setgoal">Storytelling with Design: How to persuade your team with narrative</h3>
-                </div>
-                <div class="sbbb" style="display: flex; flex-direction: row;">
-                    <div class="sbbbinim">
-                        <img class="sbbbi" src="../person1.png" alt="">
-                    </div>
-                    <div class="incont" style="display: flex; flex-direction: column;margin-left: 30px; ">
-                        <div>
-                            <p style="margin-top: 30px;" class="sbname">Robert Roy Britt</p>
-                        </div>
-                        <div>
-                            <p style="margin-top: -5px;" class="sbcon">Author of Make Sleep Your Superpower</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      </div>
+      <div class="sbsecond">
+        <div class="sbimgg">
+          <button class="sbbtn" style="display: flex; gap: 3px">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 64 64"
+              fill="none"
+              class="rt"
+            >
+              <path
+                d="M39.64 40.83L33.87 56.7a1.99 1.99 0 0 1-3.74 0l-5.77-15.87a2.02 2.02 0 0 0-1.2-1.2L7.3 33.88a1.99 1.99 0 0 1 0-3.74l15.87-5.77a2.02 2.02 0 0 0 1.2-1.2L30.12 7.3a1.99 1.99 0 0 1 3.74 0l5.77 15.87a2.02 2.02 0 0 0 1.2 1.2l15.86 5.76a1.99 1.99 0 0 1 0 3.74l-15.87 5.77a2.02 2.02 0 0 0-1.2 1.2z"
+                fill="#FFC017"
+              ></path>
+            </svg>
+            <p style="margin-left: 10px; margin-top: 9px">Member-only story</p>
+          </button>
         </div>
+        <div class="sbbcontent">
+          <div class="sbba">
+            <h3 class="setgoal">
+              Storytelling with Design: How to persuade your team with narrative
+            </h3>
+          </div>
+          <div class="sbbb" style="display: flex; flex-direction: row">
+            <div class="sbbbinim">
+              <img class="sbbbi" src="../person1.png" alt="" />
+            </div>
+            <div
+              class="incont"
+              style="display: flex; flex-direction: column; margin-left: 30px"
+            >
+              <div>
+                <p style="margin-top: 30px" class="sbname">Robert Roy Britt</p>
+              </div>
+              <div>
+                <p style="margin-top: -5px" class="sbcon">
+                  Author of Make Sleep Your Superpower
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- first scroll  -->
     <div class="scrolfirst">
-        <div class="scrollfone">
-            <h1 class="positionst" style="margin-top: 40px; margin-left: 30px; font-size: 4.7em; font-weight:lighter;">
-                Why membership?</h1>
-        </div>
-        <div class="scrollfsec">
-            <h4 class="scrollhhh">Reward writers</h4>
-            <p class="scrolppp">Your membership directly supports the writers, editors, curators, and teams who make
-                Medium a vibrant, inclusive home for human stories. A portion of your membership is allocated to the
-                writers of the stories you read and interact with.</p>
+      <div class="scrollfone">
+        <h1
+          class="positionst"
+          style="
+            margin-top: 40px;
+            margin-left: 30px;
+            font-size: 4.7em;
+            font-weight: lighter;
+          "
+        >
+          Why membership?
+        </h1>
+      </div>
+      <div class="scrollfsec">
+        <h4 class="scrollhhh">Reward writers</h4>
+        <p class="scrolppp">
+          Your membership directly supports the writers, editors, curators, and
+          teams who make Medium a vibrant, inclusive home for human stories. A
+          portion of your membership is allocated to the writers of the stories
+          you read and interact with.
+        </p>
 
-            <h4 class="scrollhhh" style="margin-top: 100px;">Unlock every story</h4>
-            <p class="scrolppp">Get access to millions of original stories that spark bright ideas, answer big
-                questions, and fuel bold ambitions.</p>
+        <h4 class="scrollhhh" style="margin-top: 100px">Unlock every story</h4>
+        <p class="scrolppp">
+          Get access to millions of original stories that spark bright ideas,
+          answer big questions, and fuel bold ambitions.
+        </p>
 
-            <h4 class="scrollhhh" style="margin-top: 100px;">Enhance your reading experience</h4>
-            <p class="scrolppp">Immerse yourself in audio stories, read offline wherever you go, and connect with the
-                Medium community on Mastodon.</p>
+        <h4 class="scrollhhh" style="margin-top: 100px">
+          Enhance your reading experience
+        </h4>
+        <p class="scrolppp">
+          Immerse yourself in audio stories, read offline wherever you go, and
+          connect with the Medium community on Mastodon.
+        </p>
 
-            <h4 class="scrollhhh" style="margin-top: 100px;">Elevate your writing</h4>
-            <p class="scrolppp">Create and contribute to publications to collaborate with other writers, create a custom
-                domain for your profile, and level up your writing with our simple but powerful publishing tools.</p>
+        <h4 class="scrollhhh" style="margin-top: 100px">
+          Elevate your writing
+        </h4>
+        <p class="scrolppp">
+          Create and contribute to publications to collaborate with other
+          writers, create a custom domain for your profile, and level up your
+          writing with our simple but powerful publishing tools.
+        </p>
 
-            <h4 class="scrollhhh" style="margin-top: 100px;">Support a mission that matters</h4>
-            <p class="scrolppp" style="margin-bottom: 60px;">Members are creating a world where original, human-crafted
-                stories thrive. As a
-                member-supported platform, quality comes first, not ads or clickbait.</p>
-        </div>
+        <h4 class="scrollhhh" style="margin-top: 100px">
+          Support a mission that matters
+        </h4>
+        <p class="scrolppp" style="margin-bottom: 60px">
+          Members are creating a world where original, human-crafted stories
+          thrive. As a member-supported platform, quality comes first, not ads
+          or clickbait.
+        </p>
+      </div>
     </div>
 
     <!-- second scroll  -->
     <div class="scrolfirst">
-        <div class="scrollfone">
-            <h1 class="positionst" style="margin-top: -10px; margin-left: 30px; font-size: 4.2em; font-weight:lighter;">
-                What members are saying</h1>
+      <div class="scrollfone">
+        <h1
+          class="positionst"
+          style="
+            margin-top: -10px;
+            margin-left: 30px;
+            font-size: 4.2em;
+            font-weight: lighter;
+          "
+        >
+          What members are saying
+        </h1>
+      </div>
+      <div class="scrollfsec2" style="border: none">
+        <!-- first  -->
+        <div class="inboxscroll" style="display: flex">
+          <div class="imgbox" style="border-radius: 50%">
+            <img
+              style="border-radius: 50%"
+              alt="Cassie Kozyrkov"
+              class="be cl hg jg jh hl"
+              src="https://miro.medium.com/v2/resize:fill:100:100/1*djKJlXxmezn6fBPzHnipnw.jpeg"
+              width="80"
+              height="80"
+              loading="lazy"
+            />
+          </div>
+          <div class="imgbox2">
+            <p
+              style="
+                margin-left: 25px;
+                font-size: 1.5em;
+                width: 65%;
+                margin-top: -10px;
+              "
+            >
+              The easy path in social media is promoting the worst content, the
+              cheapest, tackiest, lowest-effort stuff. That’s not what you get
+              on Medium. You can actually find content you can build your brain
+              with. I appreciate that, both as a reader and a writer.
+            </p>
+            <p style="margin-left: 25px">
+              <span style="font-weight: bold">Cassie Kozyrkov</span>, Chief
+              Decision Scientist at Google and Medium member
+            </p>
+          </div>
         </div>
-        <div class="scrollfsec2" style="border: none;">
-            <!-- first  -->
-            <div class="inboxscroll" style="display: flex;">
-                <div class="imgbox" style="border-radius: 50%;">
-                    <img style="border-radius: 50%;" alt="Cassie Kozyrkov" class="be cl hg jg jh hl"
-                        src="https://miro.medium.com/v2/resize:fill:100:100/1*djKJlXxmezn6fBPzHnipnw.jpeg" width="80"
-                        height="80" loading="lazy">
-                </div>
-                <div class="imgbox2">
-                    <p style="margin-left: 25px; font-size: 1.5em; width: 65%; margin-top: -10px;">The easy path in
-                        social media is promoting the
-                        worst content, the cheapest, tackiest, lowest-effort
-                        stuff. That’s not what you get on Medium. You can actually find content you can build your brain
-                        with. I appreciate that, both as a reader and a writer.</p>
-                    <p style=" margin-left: 25px;"><span style="font-weight: bold;">Cassie Kozyrkov</span>,
-                        Chief Decision Scientist at Google and
-                        Medium member</p>
-                </div>
-            </div>
 
-            <!-- second  -->
-            <div class="inboxscroll" style="display: flex; margin-top: 100px;">
-                <div class="imgbox">
-                    <img style="border-radius: 50%;" alt="Enrique Dans" class="be cl hg jg jh hl"
-                        src="https://miro.medium.com/v2/resize:fill:160:160/1*ZYP58jl-6KcKocr1P7r5Hw.jpeg" width="80"
-                        height="80" loading="lazy">
-                </div>
-                <div class="imgbox2">
-                    <p style="margin-left: 25px; font-size: 1.5em; width: 65%; margin-top: -10px;">Medium has proved a
-                        game-changer for me, and quickly became the subscription I value the most, and I have quite a
-                        few. The cost is nothing compared to the value Medium generates for me month after month</p>
-                    <p style=" margin-left: 25px;"><span style="font-weight: bold;">Enrique Dans</span>, Professor of
-                        Innovation at IE Business School and Medium member</p>
-                </div>
-            </div>
-
-            <!-- third  -->
-            <div class="inboxscroll" style="display: flex; margin-top: 120px;">
-                <div class="imgbox">
-                    <img style="border-radius: 50%;" alt="Wenqi Glantz" class="be cl hg jg jh hl"
-                        src="https://miro.medium.com/v2/resize:fill:160:160/1*Ce4jOl6gjeebSiHsknN2-A.jpeg" width="80"
-                        height="80" loading="lazy">
-                </div>
-                <div class="imgbox2">
-                    <p style="margin-left: 25px; font-size: 1.5em; width: 65%; margin-top: -10px;">For us tech folks,
-                        Medium membership unlocks a whole treasure trove of high-quality articles. One good technology
-                        book could sell for over the Medium membership fee amount. It’s your choice whether to buy one
-                        book, or buy hundreds and thousands of books by unlocking member-only reading on Medium.
-                        Investing in a Medium membership is one of the best investments I have ever made for my career.
-                    </p>
-                    <p style=" margin-left: 25px; margin-bottom: 80px;"><span style="font-weight: bold;">Wenqi
-                            Glantz</span>, Software Architect at ArisGlobal and Medium member</p>
-                </div>
-            </div>
+        <!-- second  -->
+        <div class="inboxscroll" style="display: flex; margin-top: 100px">
+          <div class="imgbox">
+            <img
+              style="border-radius: 50%"
+              alt="Enrique Dans"
+              class="be cl hg jg jh hl"
+              src="https://miro.medium.com/v2/resize:fill:160:160/1*ZYP58jl-6KcKocr1P7r5Hw.jpeg"
+              width="80"
+              height="80"
+              loading="lazy"
+            />
+          </div>
+          <div class="imgbox2">
+            <p
+              style="
+                margin-left: 25px;
+                font-size: 1.5em;
+                width: 65%;
+                margin-top: -10px;
+              "
+            >
+              Medium has proved a game-changer for me, and quickly became the
+              subscription I value the most, and I have quite a few. The cost is
+              nothing compared to the value Medium generates for me month after
+              month
+            </p>
+            <p style="margin-left: 25px">
+              <span style="font-weight: bold">Enrique Dans</span>, Professor of
+              Innovation at IE Business School and Medium member
+            </p>
+          </div>
         </div>
+
+        <!-- third  -->
+        <div class="inboxscroll" style="display: flex; margin-top: 120px">
+          <div class="imgbox">
+            <img
+              style="border-radius: 50%"
+              alt="Wenqi Glantz"
+              class="be cl hg jg jh hl"
+              src="https://miro.medium.com/v2/resize:fill:160:160/1*Ce4jOl6gjeebSiHsknN2-A.jpeg"
+              width="80"
+              height="80"
+              loading="lazy"
+            />
+          </div>
+          <div class="imgbox2">
+            <p
+              style="
+                margin-left: 25px;
+                font-size: 1.5em;
+                width: 65%;
+                margin-top: -10px;
+              "
+            >
+              For us tech folks, Medium membership unlocks a whole treasure
+              trove of high-quality articles. One good technology book could
+              sell for over the Medium membership fee amount. It’s your choice
+              whether to buy one book, or buy hundreds and thousands of books by
+              unlocking member-only reading on Medium. Investing in a Medium
+              membership is one of the best investments I have ever made for my
+              career.
+            </p>
+            <p style="margin-left: 25px; margin-bottom: 80px">
+              <span style="font-weight: bold">Wenqi Glantz</span>, Software
+              Architect at ArisGlobal and Medium member
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- third scroll  -->
-    <div class="scrolfirst" style="border: none;" >
-        <div class="scrollfone">
-            <h1 class="positionst" style="margin-top: 40px; margin-left: 30px; font-size: 4.7em; font-weight:lighter;">
-                Membership plans</h1>
-        </div>
-        <div class="scrollfsecccc" style="border: none;" >
-            <div class="cardone" style="border: 1px solid #dddddd; cursor: pointer;">
-                <div class="incardone" style=" width: 80%; height: auto; margin-left: 9%;">
-                    <svg width="35" height="35" viewBox="0 0 64 64" fill="none" class="rt1">
-                        <path
-                            d="M39.64 40.83L33.87 56.7a1.99 1.99 0 0 1-3.74 0l-5.77-15.87a2.02 2.02 0 0 0-1.2-1.2L7.3 33.88a1.99 1.99 0 0 1 0-3.74l15.87-5.77a2.02 2.02 0 0 0 1.2-1.2L30.12 7.3a1.99 1.99 0 0 1 3.74 0l5.77 15.87a2.02 2.02 0 0 0 1.2 1.2l15.86 5.76a1.99 1.99 0 0 1 0 3.74l-15.87 5.77a2.02 2.02 0 0 0-1.2 1.2z"
-                            fill="#FFC017"></path>
-                    </svg>
-                    <p class="mediam">Medium Member</p>
-                    <p class="monthdoler">$5/month or $60/year</p>
-                    <button class="scrollinbtn">Get started</button>
-                    <hr style="margin-top: 30px;">
-                    <div class="arr" style="display: flex; gap: 10px;">
-                        <span class="material-symbols-outlined" style="color: #1a8917; margin-top: 14px;">done</span>
-                        <p class="memberonly">Read member-only stories</p>
-                    </div>
-                    <div class="arr" style="display: flex; gap: 10px; margin-top: -5px; ">
-                        <span class="material-symbols-outlined" style="color: #1a8917; margin-top: 14px;">done</span>
-                        <p class="memberonly">Support writers you read most</p>
-                    </div>
-                    <div class="arr" style="display: flex; gap: 10px;margin-top: -5px;">
-                        <span class="material-symbols-outlined" style="color: #1a8917; margin-top: 14px;">done</span>
-                        <p class="memberonly">Earn money for your writing</p>
-                    </div>
-                    <div class="arr" style="display: flex; gap: 10px; margin-top: -5px;">
-                        <span class="material-symbols-outlined" style="color: #1a8917; margin-top: 14px;">done</span>
-                        <p class="memberonly">Listen to audio narrations</p>
-                    </div>
-                    <div class="arr" style="display: flex; gap: 10px; margin-top: -5px;">
-                        <span class="material-symbols-outlined" style="color: #1a8917; margin-top: 14px;">done</span>
-                        <p class="memberonly">Read offline with the Medium app</p>
-                    </div>
-                    <div class="arr" style="display: flex; gap: 10px; margin-top: -5px;">
-                        <span class="material-symbols-outlined" style="color: #1a8917; margin-top: 14px;">done</span>
-                        <p class="memberonly">Access our Mastodon community</p>
-                    </div>
-                    <div class="arr" style="display: flex; gap: 10px; margin-top: -5px;">
-                        <span class="material-symbols-outlined" style="color: #1a8917; margin-top: 14px;">done</span>
-                        <p class="memberonly">Connect your custom domain</p>
-                    </div>
-                    <div class="arr" style="display: flex; gap: 10px; margin-top: -5px;">
-                        <span class="material-symbols-outlined" style="color: #1a8917; margin-top: 14px;">done</span>
-                        <p class="memberonly">Create your own publications</p>
-                    </div>
-                </div>
+    <div class="scrolfirst" style="border: none">
+      <div class="scrollfone">
+        <h1
+          class="positionst"
+          style="
+            margin-top: 40px;
+            margin-left: 30px;
+            font-size: 4.7em;
+            font-weight: lighter;
+          "
+        >
+          Membership plans
+        </h1>
+      </div>
+      <div class="scrollfsecccc" style="border: none">
+        <div class="cardone" style="border: 1px solid #dddddd; cursor: pointer">
+          <div
+            class="incardone"
+            style="width: 80%; height: auto; margin-left: 9%"
+          >
+            <svg
+              width="35"
+              height="35"
+              viewBox="0 0 64 64"
+              fill="none"
+              class="rt1"
+            >
+              <path
+                d="M39.64 40.83L33.87 56.7a1.99 1.99 0 0 1-3.74 0l-5.77-15.87a2.02 2.02 0 0 0-1.2-1.2L7.3 33.88a1.99 1.99 0 0 1 0-3.74l15.87-5.77a2.02 2.02 0 0 0 1.2-1.2L30.12 7.3a1.99 1.99 0 0 1 3.74 0l5.77 15.87a2.02 2.02 0 0 0 1.2 1.2l15.86 5.76a1.99 1.99 0 0 1 0 3.74l-15.87 5.77a2.02 2.02 0 0 0-1.2 1.2z"
+                fill="#FFC017"
+              ></path>
+            </svg>
+            <p class="mediam">Medium Member</p>
+            <p class="monthdoler">$5/month or $60/year</p>
+            <button class="scrollinbtn">Get started</button>
+            <hr style="margin-top: 30px" />
+            <div class="arr" style="display: flex; gap: 10px">
+              <span
+                class="material-symbols-outlined"
+                style="color: #1a8917; margin-top: 14px"
+                >done</span
+              >
+              <p class="memberonly">Read member-only stories</p>
             </div>
-            <div class="cardsecond" style="border: 1px solid #dddddd; cursor: pointer;">
-                <div class="incardsecond" style=" width: 80%; height: auto; margin-left: 9%;">
-                    <svg width="35" height="35" style="margin-left: 44%;" viewBox="0 0 64 64" fill="none"
-                        role="presentation" aria-hidden="true" focusable="false" class="ui uj">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M56.48 38.3C58.13 36.58 60 34.6 60 32c0-2.6-1.88-4.57-3.52-6.3-.95-.97-1.98-2.05-2.3-2.88-.33-.82-.35-2.17-.38-3.49-.02-2.43-.07-5.2-2-7.13-1.92-1.92-4.7-1.97-7.13-2h-.43c-1.17-.02-2.29-.04-3.07-.38-.87-.37-1.9-1.35-2.87-2.3C36.58 5.89 34.6 4 32 4c-2.6 0-4.57 1.88-6.3 3.53-.97.94-2.05 1.97-2.88 2.3-.82.32-2.17.34-3.49.37-2.43.03-5.2.08-7.13 2-1.92 1.93-1.97 4.7-2 7.13v.43c-.02 1.17-.04 2.29-.38 3.06-.37.88-1.35 1.9-2.3 2.88C5.89 27.43 4 29.4 4 32c0 2.6 1.88 4.58 3.53 6.3.94.98 1.97 2.05 2.3 2.88.32.82.34 2.17.37 3.49.03 2.43.08 5.2 2 7.13 1.93 1.93 4.7 1.98 7.13 2h.43c1.17.02 2.29.04 3.06.38.88.37 1.9 1.34 2.88 2.3C27.43 58.13 29.4 60 32 60c2.6 0 4.58-1.88 6.3-3.52.98-.95 2.05-1.98 2.88-2.3.82-.33 2.17-.35 3.49-.38 2.43-.02 5.2-.07 7.13-2 1.93-1.92 1.98-4.7 2-7.13v-.43c.02-1.17.04-2.29.38-3.07.37-.87 1.34-1.9 2.3-2.87zM33.1 45.15c-.66.47-1.55.47-2.22 0C27.57 42.8 18 35.76 18 28.9c0-6.85 6.5-10.25 13.26-4.45.43.37 1.05.37 1.48 0 6.76-5.8 13.27-2.4 13.26 4.45 0 6.56-9.57 13.9-12.89 16.24z"
-                            fill="#FFC017"></path>
-                    </svg>
-                    <p class="mediam">Friend of Medium</p>
-                    <p class="monthdoler">$15/month or $150/year</p>
-                    <button class="scrollinbtn">Get started</button>
-                    <hr style="margin-top: 30px;">
-                    <div class="iconbox" style="display: flex;">
-                        <svg width="35" height="35" viewBox="0 0 64 64" fill="none" class="rtbox"
-                            style="margin-top: 1px;">
-                            <path
-                                d="M39.64 40.83L33.87 56.7a1.99 1.99 0 0 1-3.74 0l-5.77-15.87a2.02 2.02 0 0 0-1.2-1.2L7.3 33.88a1.99 1.99 0 0 1 0-3.74l15.87-5.77a2.02 2.02 0 0 0 1.2-1.2L30.12 7.3a1.99 1.99 0 0 1 3.74 0l5.77 15.87a2.02 2.02 0 0 0 1.2 1.2l15.86 5.76a1.99 1.99 0 0 1 0 3.74l-15.87 5.77a2.02 2.02 0 0 0-1.2 1.2z"
-                                fill="#FFC017"></path>
-                        </svg>
-                        <div class="insidecol">
-                            <p style="margin-left: 10px; margin-top: 9px;">All Medium member benefits</p>
-                            <div class="line">
-                                <span>PLUS</span>
-                            </div>
-                            <div class="arr" style="display: flex; gap: 10px; margin-top: -2px;">
-                                <span class="material-symbols-outlined"
-                                    style="color: #1a8917; margin-top: 14px;">done</span>
-                                <p class="memberonly" style="font-weight: bold; font-size: 0.9em;">Writers earn 4x when you read their stories</p>
-                            </div>
-                            <div class="arr" style="display: flex; gap: 10px; margin-top: -5px;">
-                                <span class="material-symbols-outlined"
-                                    style="color: #1a8917; margin-top: 14px;">done</span>
-                                <p class="memberonly">Share member-only stories with anyone and drive more earnings for writers</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="arr" style="display: flex; gap: 10px; margin-top: -5px">
+              <span
+                class="material-symbols-outlined"
+                style="color: #1a8917; margin-top: 14px"
+                >done</span
+              >
+              <p class="memberonly">Support writers you read most</p>
             </div>
+            <div class="arr" style="display: flex; gap: 10px; margin-top: -5px">
+              <span
+                class="material-symbols-outlined"
+                style="color: #1a8917; margin-top: 14px"
+                >done</span
+              >
+              <p class="memberonly">Earn money for your writing</p>
+            </div>
+            <div class="arr" style="display: flex; gap: 10px; margin-top: -5px">
+              <span
+                class="material-symbols-outlined"
+                style="color: #1a8917; margin-top: 14px"
+                >done</span
+              >
+              <p class="memberonly">Listen to audio narrations</p>
+            </div>
+            <div class="arr" style="display: flex; gap: 10px; margin-top: -5px">
+              <span
+                class="material-symbols-outlined"
+                style="color: #1a8917; margin-top: 14px"
+                >done</span
+              >
+              <p class="memberonly">Read offline with the Medium app</p>
+            </div>
+            <div class="arr" style="display: flex; gap: 10px; margin-top: -5px">
+              <span
+                class="material-symbols-outlined"
+                style="color: #1a8917; margin-top: 14px"
+                >done</span
+              >
+              <p class="memberonly">Access our Mastodon community</p>
+            </div>
+            <div class="arr" style="display: flex; gap: 10px; margin-top: -5px">
+              <span
+                class="material-symbols-outlined"
+                style="color: #1a8917; margin-top: 14px"
+                >done</span
+              >
+              <p class="memberonly">Connect your custom domain</p>
+            </div>
+            <div class="arr" style="display: flex; gap: 10px; margin-top: -5px">
+              <span
+                class="material-symbols-outlined"
+                style="color: #1a8917; margin-top: 14px"
+                >done</span
+              >
+              <p class="memberonly">Create your own publications</p>
+            </div>
+          </div>
         </div>
+        <div
+          class="cardsecond"
+          style="border: 1px solid #dddddd; cursor: pointer"
+        >
+          <div
+            class="incardsecond"
+            style="width: 80%; height: auto; margin-left: 9%"
+          >
+            <svg
+              width="35"
+              height="35"
+              style="margin-left: 44%"
+              viewBox="0 0 64 64"
+              fill="none"
+              role="presentation"
+              aria-hidden="true"
+              focusable="false"
+              class="ui uj"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M56.48 38.3C58.13 36.58 60 34.6 60 32c0-2.6-1.88-4.57-3.52-6.3-.95-.97-1.98-2.05-2.3-2.88-.33-.82-.35-2.17-.38-3.49-.02-2.43-.07-5.2-2-7.13-1.92-1.92-4.7-1.97-7.13-2h-.43c-1.17-.02-2.29-.04-3.07-.38-.87-.37-1.9-1.35-2.87-2.3C36.58 5.89 34.6 4 32 4c-2.6 0-4.57 1.88-6.3 3.53-.97.94-2.05 1.97-2.88 2.3-.82.32-2.17.34-3.49.37-2.43.03-5.2.08-7.13 2-1.92 1.93-1.97 4.7-2 7.13v.43c-.02 1.17-.04 2.29-.38 3.06-.37.88-1.35 1.9-2.3 2.88C5.89 27.43 4 29.4 4 32c0 2.6 1.88 4.58 3.53 6.3.94.98 1.97 2.05 2.3 2.88.32.82.34 2.17.37 3.49.03 2.43.08 5.2 2 7.13 1.93 1.93 4.7 1.98 7.13 2h.43c1.17.02 2.29.04 3.06.38.88.37 1.9 1.34 2.88 2.3C27.43 58.13 29.4 60 32 60c2.6 0 4.58-1.88 6.3-3.52.98-.95 2.05-1.98 2.88-2.3.82-.33 2.17-.35 3.49-.38 2.43-.02 5.2-.07 7.13-2 1.93-1.92 1.98-4.7 2-7.13v-.43c.02-1.17.04-2.29.38-3.07.37-.87 1.34-1.9 2.3-2.87zM33.1 45.15c-.66.47-1.55.47-2.22 0C27.57 42.8 18 35.76 18 28.9c0-6.85 6.5-10.25 13.26-4.45.43.37 1.05.37 1.48 0 6.76-5.8 13.27-2.4 13.26 4.45 0 6.56-9.57 13.9-12.89 16.24z"
+                fill="#FFC017"
+              ></path>
+            </svg>
+            <p class="mediam">Friend of Medium</p>
+            <p class="monthdoler">$15/month or $150/year</p>
+            <button class="scrollinbtn">Get started</button>
+            <hr style="margin-top: 30px" />
+            <div class="iconbox" style="display: flex">
+              <svg
+                width="35"
+                height="35"
+                viewBox="0 0 64 64"
+                fill="none"
+                class="rtbox"
+                style="margin-top: 1px"
+              >
+                <path
+                  d="M39.64 40.83L33.87 56.7a1.99 1.99 0 0 1-3.74 0l-5.77-15.87a2.02 2.02 0 0 0-1.2-1.2L7.3 33.88a1.99 1.99 0 0 1 0-3.74l15.87-5.77a2.02 2.02 0 0 0 1.2-1.2L30.12 7.3a1.99 1.99 0 0 1 3.74 0l5.77 15.87a2.02 2.02 0 0 0 1.2 1.2l15.86 5.76a1.99 1.99 0 0 1 0 3.74l-15.87 5.77a2.02 2.02 0 0 0-1.2 1.2z"
+                  fill="#FFC017"
+                ></path>
+              </svg>
+              <div class="insidecol">
+                <p style="margin-left: 10px; margin-top: 9px">
+                  All Medium member benefits
+                </p>
+                <div class="line">
+                  <span>PLUS</span>
+                </div>
+                <div
+                  class="arr"
+                  style="display: flex; gap: 10px; margin-top: -2px"
+                >
+                  <span
+                    class="material-symbols-outlined"
+                    style="color: #1a8917; margin-top: 14px"
+                    >done</span
+                  >
+                  <p
+                    class="memberonly"
+                    style="font-weight: bold; font-size: 0.9em"
+                  >
+                    Writers earn 4x when you read their stories
+                  </p>
+                </div>
+                <div
+                  class="arr"
+                  style="display: flex; gap: 10px; margin-top: -5px"
+                >
+                  <span
+                    class="material-symbols-outlined"
+                    style="color: #1a8917; margin-top: 14px"
+                    >done</span
+                  >
+                  <p class="memberonly">
+                    Share member-only stories with anyone and drive more
+                    earnings for writers
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- cardpart end  -->
-    <hr style="border: none; border-top: 1px solid black; margin-top: 100px;">
+    <hr style="border: none; border-top: 1px solid black; margin-top: 100px" />
 
     <!-- color card part start  -->
-    <div class="colorcard" style="margin-top: -70px;" >
-        <p class="colopara">Unlock a world of wisdom</p>
-        <div class="bttt">
-            <button class="colobtn">Get started</button>
-        </div>
+    <div class="colorcard" style="margin-top: -70px">
+      <p class="colopara">Unlock a world of wisdom</p>
+      <div class="bttt">
+        <button class="colobtn">Get started</button>
+      </div>
     </div>
     <!-- color card end  -->
     <footer id="footer">
-        <div class="fimg">
-            <img src="#" alt="">
-        </div>
-        <div id="secondfoot">
-            <ul class="ullist">
-                <li>About</li>
-                <li>Terms</li>
-                <li>Privacy</li>
-                <li>Help</li>
-                <li>Teams</li>
-                <li>press</li>
-            </ul>
-        </div>
+      <div class="fimg">
+        <img src="#" alt="" />
+      </div>
+      <div id="secondfoot">
+        <ul class="ullist">
+          <li>About</li>
+          <li>Terms</li>
+          <li>Privacy</li>
+          <li>Help</li>
+          <li>Teams</li>
+          <li>press</li>
+        </ul>
+      </div>
     </footer>
+
+    <!-- // Signin Form Details -->
+    <div
+      class="modal fade"
+      id="signInModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5 modal_head" id="exampleModalLabel">
+              Welcome back.
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="signInBtns">
+              <div id="google">
+                <div
+                  id="g_id_onload"
+                  data-client_id="117865134415-3r30fn4en6cq3orthqr42jrbisngmefj.apps.googleusercontent.com"
+                  data-context="signin"
+                  data-ux_mode="popup"
+                  data-login_uri="https://tech-tatva-2345-1.onrender.com/blog_posts"
+                  data-auto_prompt="false"
+                ></div>
+
+                <div
+                  class="g_id_signin"
+                  data-type="standard"
+                  data-shape="pill"
+                  data-theme="outline"
+                  data-text="signin_with"
+                  data-size="large"
+                  data-logo_alignment="left"
+                ></div>
+              </div>
+
+              <div class="vl"></div>
+
+              <div id="signInForm">
+                <form>
+                  <div class="mb-3">
+                    <label for="user_email" class="form-label"
+                      >Email address</label
+                    >
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="signin-username"
+                      aria-describedby="emailHelp"
+                    />
+                    <div id="emailHelp" class="form-text">
+                      We'll never share your email with anyone else.
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="user_pwd" class="form-label">Password</label>
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="signin-userPwd"
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    class="btn btn-outline-secondary"
+                    id="signin-submitBtn"
+                  >
+                    Submit
+                  </button>
+                </form>
+              </div>
+            </div>
+            <div class="modal_footer">
+              <div>
+                <p>
+                  No account ?
+                  <a
+                    href="#"
+                    class="signUp"
+                    data-bs-toggle="modal"
+                    data-bs-target="#signUpModal"
+                    >Create One</a
+                  >
+                </p>
+              </div>
+              <div>
+                <p class="grey">
+                  Forgot email or trouble signing in?
+                  <a href="#" class="grey">Get help.</a>
+                </p>
+              </div>
+              <div class="grey">
+                Click “Sign in” to agree to Medium’s
+                <a href="#" class="grey">Terms of Service</a> and acknowledge
+                that <br />
+                Medium’s
+                <a href="#" class="grey">Privacy Policy</a>
+                applies to you.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- // SignUp Form Details -->
+    <div
+      class="modal fade"
+      id="signUpModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5 modal_head" id="signUpModalLabel">
+              Join BlogSpot.
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="signInBtns">
+              <div>
+                <div
+                  id="g_id_onload"
+                  data-client_id="117865134415-3r30fn4en6cq3orthqr42jrbisngmefj.apps.googleusercontent.com"
+                  data-context="signin"
+                  data-ux_mode="popup"
+                  data-login_uri="https://tech-tatva-2345-1.onrender.com/blog_posts"
+                  data-auto_prompt="false"
+                ></div>
+
+                <div
+                  class="g_id_signin"
+                  data-type="standard"
+                  data-shape="pill"
+                  data-theme="outline"
+                  data-text="signin_with"
+                  data-size="large"
+                  data-logo_alignment="left"
+                ></div>
+              </div>
+              <div class="vl2"></div>
+
+              <div id="signUpForm">
+                <form>
+                  <div class="mb-3">
+                    <label for="signUp_email" class="form-label"
+                      >Email address</label
+                    >
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="signUp_email"
+                      aria-describedby="emailHelp"
+                    />
+                    <div id="emailhelp" class="form-text">
+                      We'll never share your email with anyone else.
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="signUp_pwd" class="form-label">Password</label>
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="signUp_pwd"
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    class="btn btn-outline-secondary"
+                    id="signUp_submit_btn"
+                  >
+                    Submit
+                  </button>
+                </form>
+              </div>
+            </div>
+            <div class="modal_footer">
+              <div>
+                <p>
+                  Already have an account?
+                  <a
+                    href="#"
+                    class="signUp"
+                    data-bs-toggle="modal"
+                    data-bs-target="#signInModal"
+                    >Sign In</a
+                  >
+                </p>
+              </div>
+              <div class="grey">
+                Click “Sign up” to agree to Medium’s
+                <a href="#" class="grey">Terms of Service</a> and acknowledge
+                that <br />
+                Medium’s
+                <a href="#" class="grey">Privacy Policy</a>
+                applies to you.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+          
+    </div>
+
     <!-- scrip  -->
     <script src="../JS files/ft30_067_Day_3.js"></script>
-</body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
 
+    <script
+      src="https://kit.fontawesome.com/6e1cf5e47b.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+  </body>
 </html>
