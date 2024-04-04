@@ -7,7 +7,7 @@ let uploattext=document.createElement("h1");
 uploattext.innerHTML="Post a Blog";
 uploattext.style.textAlign="center";
 uploattext.style.marginLeft="-80px";
-uploattext.style.color="#027e6f";
+// uploattext.style.color="#027e6f";
 
 
 // id
