@@ -668,13 +668,18 @@ function login() {
     // }
   }
 
-  alert("Invalid username or password!");
+  alert("Invalid username or password!");
 }
 
 // Function to handle SignUp
 let signUpEmail = document.getElementById("signUp_email");
 let signUpPassword = document.getElementById("signUp_pwd");
 let signUpSubmitBtn = document.getElementById("signUp_submit_btn");
+
+signUpSubmitBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  signup();
+});
 
 function signup() {
   let username = signUpEmail.value;
@@ -693,8 +698,3 @@ function signup() {
   alert("Signup successful!");
   window.location.href = "../Pages/land2.html";
 }
-
-signUpSubmitBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  signup();
-});
