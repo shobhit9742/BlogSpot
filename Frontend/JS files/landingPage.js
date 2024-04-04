@@ -659,7 +659,7 @@ function login() {
   // Check if user exists and password matches
   for (let user of users) {
     if (user.username === username && user.password === password) {
-      window.location.href = "../Frontend/Pages/land2.html";
+      window.location.href = "../Pages/land2.html";
       alert("Login successful!");
       return;
     }
