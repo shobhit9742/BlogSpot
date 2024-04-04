@@ -232,7 +232,9 @@ body {
   font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin-left: 100px;
   width: 65%;
-  margin-top: -40px;
+  /* fixed */
+  margin-top: 0px;
+  /*  */
   font-size: 1.3em;
 }
 
