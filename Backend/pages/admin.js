@@ -115,8 +115,6 @@ function createTable(data, index) {
   let num = document.createElement("td");
   let tag = document.createElement("td");
   let name = document.createElement("td");
-  // let edit = document.createElement("button");
-  // let del = document.createElement("button");
 
   // assigning Values
   rank.innerText = index + 1;

@@ -101,3 +101,8 @@
   overflow: hidden;
   margin-top: 5px;
 }
+
+.profileImg{
+  width: 30px;
+  padding: 0 !important;
+}

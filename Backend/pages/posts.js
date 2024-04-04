@@ -80,10 +80,16 @@ function createTable(item, index) {
   id.textContent = item.id;
   name.textContent = item.author_name;
   tag.textContent = item.tag;
-  image.src = item.img_src;
+  image.src =
+    item.img_src == ""
+      ? "https://images.unsplash.com/photo-1529909746513-b540c1680fdb?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      : item.img_src;
   title.textContent = item.title;
   description.textContent = item.description;
-  profile.src = item.profile_Img;
+  profile.src =
+    item.profile_Img == ""
+      ? "https://cdn.pixabay.com/photo/2018/08/28/12/41/avatar-3637425_1280.png"
+      : item.profile_Img;
   edit.textContent = "Edit";
   del.textContent = "Delete";
 
@@ -100,6 +106,7 @@ function createTable(item, index) {
   tag.setAttribute("class", "tagging");
   index;
   tr.setAttribute("id", "tableCard");
+  profile.setAttribute("class", "profileImg");
   // Edit Button Functionality
 
   edit.addEventListener("click", (e) => {
