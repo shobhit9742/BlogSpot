@@ -4,7 +4,7 @@
       "id": 1,
       "name": "Shobhit",
       "email": "user1@example.com",
-      "password": "$2a$10$D188Gt/lIXxemIS7C.SH5OMonX2pTTN7Iv7vgrmNWY6snhJZQa3My",
+      "password": "Password",
       "role": "Admin",
       "isAdmin": true
     },

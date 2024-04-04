@@ -31,109 +31,278 @@ fetchData();
 
 //create card
 function createCard(data) {
-  let blogCard = document.createElement("div");
-  blogCard.className = "card";
 
-  let allText = document.createElement("div");
-  allText.className = "ProImgText";
-  let imgAllText = document.createElement("div");
-  imgAllText.className = "imageAllText";
+    let blogCard = document.createElement("div")
+    blogCard.className = "card";
 
-  let img = document.createElement("img");
-  img.className = "profileImg";
-  // img.src = data.profile_Img;
-  img.src =
-    data.profile_Img == ""
-      ? "https://img.freepik.com/free-vector/isolated-young-handsome-man-different-poses-white-background-illustration_632498-859.jpg?w=740&t=st=1711880702~exp=1711881302~hmac=55bf17deceea9dac34197c009d68b5d3b845efc75619582df72d67b6ba31b280"
-      : data.profile_Img;
+    let allText = document.createElement("div")
+    allText.className = "ProImgText"
+    let imgAllText = document.createElement("div");
+    imgAllText.className = "imageAllText"
 
-  img.style.width = "30px";
-  img.style.height = "30px";
-  img.style.marginRight = "10px";
-  img.style.marginBottom = "15px";
-  img.style.borderRadius = "6px";
 
-  let name = document.createElement("p");
-  name.className = "name";
-  name.innerText = data.author_name;
-  name.style.fontFamily = "sohne, Helvetica Neue, Helvetica, Arial, sans-serif";
-  name.style.fontSize = "15px";
-  let by = document.createElement("p");
-  by.className = "byIn";
-  by.innerText = data.by2;
+    let img = document.createElement("img");
+    img.className = "profileImg";
+    // img.src = data.profile_Img;
+    img.src = (data.profile_Img == "" ? "https://img.freepik.com/free-vector/isolated-young-handsome-man-different-poses-white-background-illustration_632498-859.jpg?w=740&t=st=1711880702~exp=1711881302~hmac=55bf17deceea9dac34197c009d68b5d3b845efc75619582df72d67b6ba31b280" : data.profile_Img);
 
-  let name_title = document.createElement("p");
-  name_title.className = "nameTitle";
-  name_title.innerText = data.name_title;
-  name_title.style.fontSize = "15px";
+    img.style.width = "30px"
+    img.style.height = "30px"
+    img.style.marginRight = "10px"
+    img.style.marginBottom = "15px"
+    img.style.borderRadius = "6px"
 
-  let title = document.createElement("h4");
-  title.className = "cardTitle";
-  title.innerText = data.title;
-  title.style.marginTop = "-10px";
-  title.style.fontFamily =
-    "sohne, Helvetica Neue, Helvetica, Arial, sans-serif";
-  title.style.fontSize = "18px";
-  title.style.fontWeight = "600";
+    let name = document.createElement("p")
+    name.className = "name";
+    name.innerText = data.author_name;
+    name.style.fontFamily = "sohne, Helvetica Neue, Helvetica, Arial, sans-serif";
+    name.style.fontSize = "15px"
+    let by = document.createElement("p")
+    by.className = "byIn"
+    by.innerText = data.by2;
 
-  let description = document.createElement("p");
-  description.className = "details";
-  description.innerText = data.description;
-  description.style.marginTop = "-3px";
-  description.style.color = "Gray";
-  description.style.fontSize = "15px";
-  let dateLogoBox = document.createElement("div");
-  dateLogoBox.className = "dateTimelogo";
+    let name_title = document.createElement("p");
+    name_title.className = "nameTitle"
+    name_title.innerText = data.name_title;
+    name_title.style.fontSize = "15px"
 
-  let dateBox = document.createElement("div");
-  dateBox.className = "dataTimeTag";
-  let date_pub = document.createElement("span");
-  date_pub.innerText = data.date_pub;
-  date_pub.style.color = "Gray";
-  date_pub.style.marginRight = "10px";
-  date_pub.style.fontSize = "14px";
+    let title = document.createElement("h4");
+    title.className = "cardTitle"
+    title.innerText = data.title;
+    title.style.marginTop = "-10px"
+    title.style.fontFamily = "sohne, Helvetica Neue, Helvetica, Arial, sans-serif";
+    title.style.fontSize = "18px"
+    title.style.fontWeight = "600"
 
-  let reading_time = document.createElement("span");
-  reading_time.innerText = data.reading_time;
-  reading_time.style.color = "Gray";
-  reading_time.style.marginRight = "10px";
-  reading_time.style.fontSize = "14px";
+    let description = document.createElement("p");
+    description.className = "details"
+    description.innerText = data.description;
+    description.style.marginTop = "-3px"
+    description.style.color = "Gray"
+    description.style.fontSize = "15px"
+    let dateLogoBox = document.createElement("div")
+    dateLogoBox.className = "dateTimelogo";
 
-  let by_8 = document.createElement("span");
-  by_8.innerText = data.by8;
+    let dateBox = document.createElement("div")
+    dateBox.className = "dataTimeTag"
+    let date_pub = document.createElement("span");
+    date_pub.innerText = data.date_pub;
+    date_pub.style.color = "Gray"
+    date_pub.style.marginRight = "10px"
+    date_pub.style.fontSize = "14px"
 
-  let tag = document.createElement("button");
-  tag.className = "tagBtn";
-  tag.innerText = data.tag == "" ? "self Control" : data.tag;
-  tag.style.color = "Gray";
-  tag.style.marginRight = "10px";
-  tag.style.marginLeft = "5px";
-  tag.style.fontSize = "14px";
-  tag.style.paddingLeft = "10px";
-  tag.style.paddingRight = "10px";
-  tag.style.height = "27px";
-  tag.style.border = "none";
-  tag.style.borderRadius = "20px";
-  tag.style.backgroundColor = "ligthGray";
+    let reading_time = document.createElement("span")
+    reading_time.innerText = data.reading_time;
+    reading_time.style.color = "Gray"
+    reading_time.style.marginRight = "10px"
+    reading_time.style.fontSize = "14px"
 
-  let logoBox = document.createElement("div");
-  logoBox.className = "logoIcon";
-  let icon = document.createElement("img");
-  icon.src = "./bookmark.svg";
-  icon.style.cursor = "pointer";
+    let by_8 = document.createElement("span");
+    by_8.innerText = data.by8;
 
-  document.addEventListener("DOMContentLoaded", function () {
-    // Check if there is any saved data
-    let savedData = JSON.parse(localStorage.getItem("savedData")) || [];
-    savedData.forEach((savedItem) => {
-      // Find the corresponding card for each saved item
-      let card = document.querySelector(`.card[data-id="${savedItem.id}"]`);
-      if (card) {
-        // Find the bookmark icon within the card
-        let icon = card.querySelector(".logoIcon img");
-        if (icon) {
-          // Change the icon to the saved icon
-          icon.src = "./saved.svg";
+    let tag = document.createElement("button");
+    tag.className = "tagBtn"
+    tag.innerText = (data.tag == "" ? "self Control" : data.tag);
+    tag.style.color = "Gray"
+    tag.style.marginRight = "10px"
+    tag.style.marginLeft = "5px"
+    tag.style.fontSize = "14px"
+    tag.style.paddingLeft = "10px"
+    tag.style.paddingRight = "10px"
+    tag.style.height = "27px";
+    tag.style.border = "none"
+    tag.style.borderRadius = "20px"
+    tag.style.backgroundColor = "ligthGray"
+
+    let logoBox = document.createElement("div")
+    logoBox.className = "logoIcon"
+    let icon = document.createElement("img");
+    icon.src = "./bookmark.svg";
+    icon.style.cursor = "pointer";
+
+
+    // // signUpModal
+
+    icon.addEventListener("click", function () {
+        // Get a reference to the sign-up modal
+        let signUpModal = new bootstrap.Modal(document.getElementById('signUpModal'));
+        signUpModal.show();
+    });
+
+    // Function to check if the user is signed in
+    function isUserSignedIn() {
+        return localStorage.getItem('userAuthenticated') === 'true';
+    }
+
+    // Bookmark icon click event listener
+    icon.addEventListener("click", function () {
+        // Check if the user is signed in
+        if (isUserSignedIn()) {
+            saveCardData();
+        } else {
+            $('#signUpModal').modal('show');
+        }
+    });
+
+    // Function to save card data
+    function saveCardData() {
+        let savedData = JSON.parse(localStorage.getItem("savedData")) || [];
+        let dataIndex = savedData.findIndex(item => item.id === data.id);
+
+        if (dataIndex === -1) {
+            // If data is not saved, save it and change the icon
+            savedData.push(data);
+            localStorage.setItem("savedData", JSON.stringify(savedData));
+            icon.src = "./saved.svg";
+        } else {
+            // If data is already saved, remove it and change the icon
+            savedData.splice(dataIndex, 1);
+            localStorage.setItem("savedData", JSON.stringify(savedData));
+            icon.src = "./bookmark.svg";
+        }
+    }
+
+    // Function to handle sign-up submission
+    document.getElementById("signUp_submit_btn").addEventListener("click", function (event) {
+        event.preventDefault(); // Prevent form submission
+
+        // Perform sign-up process
+        signUpUser()
+            .then(() => {
+                // If sign-up successful, set flag indicating user is authenticated
+                localStorage.setItem('userAuthenticated', 'true');
+                window.location.href = "/Tech-Tatva-2345/Frontend/Pages/land2.html";
+            })
+            .catch(error => {
+                // Handle sign-up error
+                console.error("Sign-up failed:", error);
+                // Optionally display an error message to the user
+            });
+    });
+
+
+    function signUpUser() {
+        // Implement your sign-up process here
+        return new Promise((resolve, reject) => {
+            // Simulate a successful sign-up process (replace this with your actual sign-up logic)
+            setTimeout(() => {
+                resolve(); // Resolve the promise to indicate successful sign-up
+            }, 1000); // Simulate a delay of 1 second
+        });
+    }
+
+
+    //pre
+    ///////////////////
+    document.addEventListener("DOMContentLoaded", function () {
+
+        let savedData = JSON.parse(localStorage.getItem("savedData")) || [];
+        savedData.forEach(savedItem => {
+
+            let card = document.querySelector(`.card[data-id="${savedItem.id}"]`);
+            if (card) {
+
+                let icon = card.querySelector(".logoIcon img");
+                if (icon) {
+
+                    icon.src = "./saved.svg";
+                }
+            }
+        });
+    });
+
+    icon.addEventListener("click", function () {
+        let savedData = JSON.parse(localStorage.getItem("savedData")) || [];
+        let dataIndex = savedData.findIndex(item => item.id === data.id);
+
+        if (dataIndex === -1) {
+
+            savedData.push(data);
+            localStorage.setItem("savedData", JSON.stringify(savedData));
+            icon.src = "./saved.svg";
+        } else {
+
+            savedData.splice(dataIndex, 1);
+            localStorage.setItem("savedData", JSON.stringify(savedData));
+            icon.src = "./bookmark.svg";
+        }
+    });
+
+
+
+    let img_src = document.createElement("img");
+    img_src.className = "bigImage"
+    // img_src.src = data.img_src;
+    img_src.src = (data.img_src == "" ? "https://images.unsplash.com/photo-1529909746513-b540c1680fdb?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" : data.img_src);
+    img_src.style.width = "220px";
+    img_src.style.marginLeft = "15px"
+
+
+    dateBox.append(date_pub, reading_time, by_8, tag)
+    logoBox.append(icon)
+    dateLogoBox.append(dateBox, logoBox)
+    imgAllText.append(img, name, by, name_title)
+    allText.append(imgAllText, title, description, dateLogoBox)
+    blogCard.append(allText, img_src);
+
+    // Tooltip
+    name.addEventListener("mouseenter", () => {
+        let tooltipCard = document.createElement("div");
+        tooltipCard.className = "tooltip-card";
+
+        tooltipCard.style.backgroundColor = "white";
+        tooltipCard.style.position = "absolute";
+        tooltipCard.style.left = `${name.offsetLeft + name.offsetWidth + 10}px`; // Position to the right of the name
+        tooltipCard.style.top = `${name.offsetTop}px`;
+
+        let cardImage = document.createElement("img");
+        cardImage.src = data.profile_Img;
+        cardImage.style.width = "10%";
+        cardImage.style.borderRadius = "5px"
+        let userInfo = document.createElement("div");
+        userInfo.className = "user-info";
+
+        let userName = document.createElement("h6");
+        userName.innerText = data.author_name;
+        userName.style.fontFamily = "sohne, Helvetica Neue, Helvetica, Arial, sans-serif";
+        userName.style.fontWeight = "600"
+
+        let occupation = document.createElement("p");
+        occupation.innerText = data.description;
+        occupation.style.fontFamily = "sohne, Helvetica Neue, Helvetica, Arial, sans-serif";
+        occupation.style.fontSize = "14px"
+
+        let separator = document.createElement("hr");
+        separator.style.color = "lightGray"
+        separator.className = "hrSeparator"
+
+        let followers = document.createElement("span");
+        followers.innerText = "72 Followers";
+        followers.style.marginRight = "120px";
+        followers.style.fontFamily = "sohne, Helvetica Neue, Helvetica, Arial, sans-serif";
+        followers.style.fontSize = "15px"
+        let followButton = document.createElement("button");
+        followButton.innerText = "Follow";
+        followButton.style.color = "white"
+        followButton.style.border = "none"
+        followButton.style.borderRadius = "5px"
+        followButton.style.height = "30px"
+        followButton.style.width = "75px"
+        followButton.style.fontWeight = "600"
+        followButton.style.backgroundColor = "green"
+
+        userInfo.append(userName, occupation, separator, followers, followButton);
+        tooltipCard.appendChild(cardImage); // Append image to the detailed card
+        tooltipCard.appendChild(userInfo);
+
+        blogCard.appendChild(tooltipCard);
+    });
+
+    name.addEventListener("mouseleave", () => {
+        let tooltipCard = blogCard.querySelector(".tooltip-card");
+        if (tooltipCard) {
+            tooltipCard.remove();
+
         }
       }
     });

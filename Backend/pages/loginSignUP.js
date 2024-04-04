@@ -1,85 +1,51 @@
-let loginButton = document.getElementById("login-button");
-let logoutBtn = document.getElementById("profile");
+let loginAd = document.getElementById("loginAd");
 
-// logoutBtn.addEventListener("click",handleLogout);
+loginAd.addEventListener("click", () => {
+    login();
+})
 
-loginButton.addEventListener("click", () => {
-  handleLogin();
-});
 
-/* Allow user to login */
 
-// async function handleLogin(){
-//     try {
-//         let email = document.getElementById("Username").value;
-//         let password = document.getElementById("Password").value;
+// Dummy database to store user information
+let users = [
+    { username: 'sagar@1234.com', password: '123456' },
+    { username: 'shobhit@123mail.com', password: '999999' },
+    { username: 'jayant@hotmail.com', password: '000000' }
+];
+// Function to handle signup
+function signup() {
+    let username = document.getElementById('signup-username').value;
+    let password = document.getElementById('signup-password').value;
 
-//         let obj = {"email" : `${email}` , "password" : `${password}`};
-
-//         console.log(obj);
-//         let response = await fetch(`https://tech-tatva-2345-1.onrender.com/users`,{
-//             method : "POST",
-//             headers : {
-//                 "Content-type" : "application/json",
-//             },
-//             body : JSON.stringify(obj)
-//         });
-
-//         let data = await response.json();
-//         localStorage.setItem(`currUser`,JSON.stringify(data.user));
-
-//         console.log(data);
-//         if(data.users){
-//             window.location.href = "./admin.html";
-//             console.log("Hi there");
-//         }
-//         else{
-//             window.location.href = "./posts.html"
-//         }
-
-//     } catch (error) {
-//         let modal = document.getElementById("exampleModal");
-//         modal.classList.toggle("fade");
-//     }
-// }
-
-/* Allow User to login */
-
-async function handleLogin() {
-  try {
-    let email = document.getElementById("Username").value;
-    let password = document.getElementById("Password").value;
-
-    let obj = { email, password };
-
-    console.log(obj);
-    let response = await fetch(`https://tech-tatva-2345-1.onrender.com/users`, {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify(obj),
-    });
-
-    let data = await response.json();
-    //   localStorage.setItem(`currUser`, JSON.stringify(data.user));
-
-    console.log(data.user.isAdmin);
-    if (data.user.isAdmin) {
-      window.location.href = "./admin.html";
-      console.log("Hi there");
-    } else {
-      window.location.href = "./posts.html";
+    // Check if username is already taken
+    for (let user of users) {
+        if (user.username === username) {
+            alert('Username already taken!');
+            return;
+        }
     }
-  } catch (error) {
-    let modal = document.getElementById("exampleModal");
-    modal.classList.toggle("fade");
-  }
+
+    // Add new user to the database
+    users.push({ username, password });
+    alert('Signup successful!');
 }
 
-/* Allow User to logout */
+// Function to handle login
+function login() {
+    let username = document.getElementById('login-username').value;
+    let password = document.getElementById('login-password').value;
 
-function handleLogout() {
-  localStorage.removeItem(`currUser`);
-  window.location.href = "./home.html";
+    // Check if user exists and password matches
+    for (let user of users) {
+        if (user.username === username && user.password === password) {
+            window.location.href = "./admin.html";
+            alert('Login successful!');
+            return;
+        }
+        // else { 
+        //     window.location.href = "./admin.html";
+        // }
+    }
+
+    alert('Invalid username or password!');
 }
