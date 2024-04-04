@@ -21,7 +21,6 @@ body {
   gap: 20px;
 }
 
-
 #content_section {
   display: flex;
 }
@@ -199,11 +198,9 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* gap: 0.4rem; */
   width: 70%;
   padding: 1.3rem;
   min-height: calc(100vh - 310px);
-  /* overflow-y: scroll; */
   margin-top: 50px;
   position: absolute;
   z-index: 2;
@@ -295,4 +292,21 @@ body {
   /* border: 1px solid rgb(0, 255, 13); */
   display: flex;
   justify-content: space-between;
+}
+
+/* LogOut Tooltip  */
+
+.logout-tooltip-card {
+  width: 200px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin-top: -30px;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+#logout_div {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
 }
