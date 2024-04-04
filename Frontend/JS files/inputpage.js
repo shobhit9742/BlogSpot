@@ -6,7 +6,8 @@ page.style.flexDirection="column"
 let uploattext=document.createElement("h1");
 uploattext.innerHTML="Post a Blog";
 uploattext.style.textAlign="center";
-uploattext.style.marginLeft="-80px"
+uploattext.style.marginLeft="-80px";
+// uploattext.style.color="#027e6f";
 
 
 // id
@@ -122,7 +123,7 @@ titlediv.append(title,tinput);
 let briefdiv=document.createElement("div");
 briefdiv.style.display="flex";
 briefdiv.style.gap="20px";
-briefdiv.style.marginLeft="12%";
+briefdiv.style.marginLeft="11%";
 
 
 let brief=document.createElement("p")
@@ -130,7 +131,7 @@ brief.innerHTML="Description";
 brief.style.fontWeight="bold";
 
 let binput=document.createElement("input");
-binput.style.width="70%";
+binput.style.width="69.5%";
 binput.style.height="10%";
 binput.style.marginTop="15px"
 binput.style.marginLeft="-5px"
@@ -177,14 +178,14 @@ briefdiv.append(brief,binput);
 let urldiv=document.createElement("div");
 urldiv.style.display="flex";
 urldiv.style.gap="20px";
-urldiv.style.marginLeft="13%";
+urldiv.style.marginLeft="110px";
 
 let url=document.createElement("p")
 url.innerHTML="Image URL";
 url.style.fontWeight="bold";
 
 let urlinput=document.createElement("input");
-urlinput.style.width="71%";
+urlinput.style.width="69%";
 urlinput.style.height="10%";
 urlinput.style.marginTop="15px"
 urldiv.append(url,urlinput);
@@ -194,7 +195,7 @@ urldiv.append(url,urlinput);
 let categorydiv=document.createElement("div");
 categorydiv.style.display="flex";
 categorydiv.style.gap="20px";
-categorydiv.style.marginLeft="16%";
+categorydiv.style.marginLeft="16.5%";
 
 let category=document.createElement("p")
 category.innerHTML="Tag";
@@ -202,7 +203,7 @@ category.style.fontWeight="bold";
 
 
 let catinput=document.createElement("input");
-catinput.style.width="73.4%";
+catinput.style.width="74%";
 catinput.style.height="10%";
 catinput.style.marginTop="15px"
 catinput.style.marginLeft="-10px"
@@ -231,7 +232,7 @@ categorydiv.append(category,catinput);
 let articaldiv=document.createElement("div");
 articaldiv.style.display="flex";
 articaldiv.style.gap="20px";
-articaldiv.style.marginLeft="12%";
+articaldiv.style.marginLeft="11.3%";
 
 let artical=document.createElement("p")
 artical.innerHTML="Paragraph";
@@ -257,6 +258,8 @@ sbtn.style.borderRadius="25px";
 sbtn.style.marginLeft="43%";
 sbtn.style.marginTop="10px"
 sbtn.style.cursor="pointer";
+sbtn.style.marginBottom="20px"
+sbtn.style.boxShadow = "rgba(0, 0, 0, 0.5) 0px 10px 20px";
 
 page.append(uploattext,ntdiv, titlediv ,briefdiv,categorydiv,urldiv,articaldiv,sbtn);
 
