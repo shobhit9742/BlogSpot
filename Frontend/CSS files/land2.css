@@ -21,6 +21,11 @@ body {
   gap: 20px;
 }
 
+#saved_pages {
+  text-decoration: none;
+  color: black;
+}
+
 #content_section {
   display: flex;
 }
