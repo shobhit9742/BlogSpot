@@ -82,15 +82,15 @@ Steps:
 ![Write blog](https://github.com/shobhit9742/Tech-Tatva-2345/assets/116214825/9b863c81-c8d1-46af-99f9-a763d0fef13e)
 
 ### Admin Side
-+
++ The system presents an administrative login interface, requiring authorized personnel to enter their credentials for access to the admin dashboard.
 ![Admin login page](https://github.com/shobhit9742/Tech-Tatva-2345/assets/116214825/b68cf2c0-332f-48db-a195-a9e7071bd0f9)
-+
++ Following successful authentication with valid credentials, a confirmation pop-up will be displayed. Clicking on this pop-up will then redirect the authorized administrator to the dedicated admin dashboard.
 ![Admin success login pae](https://github.com/shobhit9742/Tech-Tatva-2345/assets/116214825/d4dc1311-bb92-468a-8e49-edf551d24771)
-+
++ This initial view within the admin dashboard serves as a landing page, presenting a user ranking table. The table is designed to showcase users ranked by the number of blog posts or articles they have contributed, along with their corresponding user details.
 ![Admin dashboard](https://github.com/shobhit9742/Tech-Tatva-2345/assets/116214825/2fd26e34-30ff-4a1b-b371-d8666f2a29e1)
-+
++ Selecting the "Post" button within the side menu redirects the administrator to a dedicated page showcasing details associated with user posts.
 ![Admin posts](https://github.com/shobhit9742/Tech-Tatva-2345/assets/116214825/1eeeeb48-52d8-4308-8167-396566e69f01)
-+
++ Clicking the "Edit" button associated with each individual card triggers the population of the edit form with the corresponding article's data. This functionality allows administrators to modify the details of the selected article within the edit menu.
 ![Admin edit fucntionality](https://github.com/shobhit9742/Tech-Tatva-2345/assets/116214825/b92fde6c-474e-4327-8488-be05a14a72dc)
 
 
