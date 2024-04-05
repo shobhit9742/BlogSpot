@@ -28,10 +28,11 @@ my-app/
 
 ## Video Walkthrough of the Project
 A comprehensive video presentation detailing the project and demonstrating its functionalities is available for viewing on the link below.
-#### Drive:- https://drive.google.com/file/d/1ubC4b79GUkpggD8Q30V3lfXyajWAgZ8I/view
+#### Drive:- 
 
 ## Video Walkthrough of the CodeBase
-
++ A video walkthrough of the project's codebase and folder structure is available for viewing on YouTube.
+#### Youtube:- https://youtu.be/nGyQvg-GjWo
 
 ## Features
 + Dynamic Content with Simulated Backend: The project leverages a mock server to achieve dynamic elements, enhancing user experience without requiring a full-fledged backend at this stage.
@@ -60,12 +61,44 @@ Steps:
 + Please note that the admin dashboard and its functionalities require authentication credentials. Currently, there is no guest access available for these features.
 
 ## Usage
+### User Side
++ The user journey commences on the landing page, which features a prominent navigation bar. This navigation bar incorporates the project logo alongside designated buttons for accessing various sections of the website. Additionally, login and signup functionalities are readily available for user account management.
+![main landing](https://github.com/shobhit9742/Tech-Tatva-2345/assets/116214825/e0281a32-6f25-473f-817a-c3f03b5893d1)
++ This is a dynamic user interface element that displays a user's published posts in a card format.
+![Main lnding Cards](https://github.com/shobhit9742/Tech-Tatva-2345/assets/116214825/345b81ba-fe5a-481c-aaef-889c6defd3ca)
++ Clicking on a card initiates an authentication flow, prompting users to sign in or create a Blogspot account for full post access.
+![SignupsignIN](https://github.com/shobhit9742/Tech-Tatva-2345/assets/116214825/561a8929-a4ef-4d54-bb8b-a029234ee353)
++ Following user credential entry and login button selection, a modal window displays a "logic successful" message, indicating a successful authentication process.
+![Logged IN](https://github.com/shobhit9742/Tech-Tatva-2345/assets/116214825/dfa06b13-010f-49d0-9365-8076cc92b3a5)
++ A successful login grants users access to a designated content portal, offering the ability to explore and engage with a collection of articles and blog posts.
+![2nd Loggedin page](https://github.com/shobhit9742/Tech-Tatva-2345/assets/116214825/77f8b003-857a-4f79-b053-9e6df55b251a)
++ Selecting a post will trigger a modal window to display, presenting the article's detailed information or description.
+![Opening model](https://github.com/shobhit9742/Tech-Tatva-2345/assets/116214825/de5c810e-453a-4faa-9ffe-e11ca40e89e7)
++ The website incorporates a search function that allows users to locate articles by title. Upon entering a search term, only matching article cards will be displayed.
+![Search Functionality](https://github.com/shobhit9742/Tech-Tatva-2345/assets/116214825/17f6e0c6-e2d0-46bb-8c69-208c11cf8639)
++ Selecting the bookmark icon adds the chosen article to the user's favorites list, allowing for easy access from a dedicated "Favorites" page.
+![Favourite](https://github.com/shobhit9742/Tech-Tatva-2345/assets/116214825/7b1dbc40-157b-4043-847d-79981a05e63b)
++ The website provides a designated "Write" page, empowering users to create and submit articles that will subsequently be displayed on the homepage.
+![Write blog](https://github.com/shobhit9742/Tech-Tatva-2345/assets/116214825/9b863c81-c8d1-46af-99f9-a763d0fef13e)
+
+### Admin Side
++
+![Admin login page](https://github.com/shobhit9742/Tech-Tatva-2345/assets/116214825/b68cf2c0-332f-48db-a195-a9e7071bd0f9)
++
+![Admin success login pae](https://github.com/shobhit9742/Tech-Tatva-2345/assets/116214825/d4dc1311-bb92-468a-8e49-edf551d24771)
++
+![Admin dashboard](https://github.com/shobhit9742/Tech-Tatva-2345/assets/116214825/2fd26e34-30ff-4a1b-b371-d8666f2a29e1)
++
+![Admin posts](https://github.com/shobhit9742/Tech-Tatva-2345/assets/116214825/1eeeeb48-52d8-4308-8167-396566e69f01)
++
+![Admin edit fucntionality](https://github.com/shobhit9742/Tech-Tatva-2345/assets/116214825/b92fde6c-474e-4327-8488-be05a14a72dc)
+
 
 
 ## Credentials
     BlogSpot Login:- 
-    ID -
-    Password - 
+    ID - sagar@1234.com
+    Password - 123456
 
     Admin Login:- 
     ID - shobhit@gmail.com
