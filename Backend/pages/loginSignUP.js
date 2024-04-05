@@ -8,8 +8,8 @@ loginAd.addEventListener("click", () => {
 
 // Dummy database to store user information
 let users = [
-    { username: 'sagar@1234.com', password: '123456' },
-    { username: 'shobhit@123mail.com', password: '999999' },
+    { username: 'sagar@yahoo.com', password: '123456' },
+    { username: 'shobhit@gmail.com', password: '1122334455' },
     { username: 'jayant@hotmail.com', password: '000000' }
 ];
 // Function to handle signup
