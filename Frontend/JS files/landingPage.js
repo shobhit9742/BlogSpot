@@ -695,6 +695,7 @@ function signup() {
 
   // Add new user to the database
   users.push({ username, password });
-  alert("Signup successful!");
+
   window.location.href = "../Pages/land2.html";
+  alert("Signup successful!");
 }
