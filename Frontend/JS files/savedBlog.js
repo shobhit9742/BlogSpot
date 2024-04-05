@@ -82,7 +82,7 @@ function createCard(data) {
     let logoBox = document.createElement("div")
     logoBox.className = "logoIcon"
     let icon = document.createElement("img");
-    icon.src = "/Tech-Tatva-2345/Frontend/saved.svg";
+    icon.src = "../image/saved.svg";
     icon.style.cursor = "pointer";
 
 
